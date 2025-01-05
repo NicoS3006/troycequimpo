@@ -9,7 +9,58 @@
         },
       ]);
     },
+    
     6213: function (e, t, i) {
+      // Standalone function to create the carousel
+function createCarousel() {
+  const newDiv = document.querySelector('.new-div');
+  if (!newDiv) return;
+
+  // Create carousel container
+  const carouselContainer = document.createElement('div');
+  carouselContainer.className = 'carousel-container';
+
+  // Create carousel track
+  const carouselTrack = document.createElement('div');
+  carouselTrack.className = 'carousel-track';
+
+  // Add images to the carousel
+  const totalImages = 10; // Total number of images
+  for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement('img');
+    img.src = `https://via.placeholder.com/300x200?text=Image+${i}`; // Replace with your image URLs
+    img.alt = `Image ${i}`;
+    img.className = 'carousel-image';
+    carouselTrack.appendChild(img);
+  }
+
+  // Append track to container
+  carouselContainer.appendChild(carouselTrack);
+  newDiv.appendChild(carouselContainer);
+
+  // Start the infinite scroll
+  startCarousel(carouselTrack);
+}
+
+// Standalone function to handle infinite scrolling
+function startCarousel(track) {
+  let scrollAmount = 0;
+
+  function scroll() {
+    scrollAmount += 1; // Adjust speed here
+    if (scrollAmount >= track.scrollWidth / 2) {
+      scrollAmount = 0; // Reset scroll to create infinite effect
+    }
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    requestAnimationFrame(scroll);
+  }
+
+  // Duplicate images for infinite effect
+  track.innerHTML += track.innerHTML;
+
+  // Start scrolling
+  scroll();
+}
       "use strict";
       i.r(t);
       var s = i(5893),
@@ -167,8 +218,15 @@
             (document.body.removeChild(this.detailsBackground),
             document.body.removeChild(this.detailsDiv),
             (this.detailsBackground = null),
-            (this.detailsDiv = null)),
-            this.handleCircleClickPostAnimation();
+            (this.detailsDiv = null));
+        
+          // Remove the new-div if it exists
+          if (this.newDiv) {
+            document.body.removeChild(this.newDiv);
+            this.newDiv = null;
+          }
+        
+          this.handleCircleClickPostAnimation();
         }
         handleCircleClickPostAnimation() {
           this.timeline && this.timeline.reverse();
@@ -212,33 +270,46 @@
                 "filter",
                 "invert(0)"
               ),
-              this.physicsSimRef.current.setPhysicsContainerStyle(
-                "right",
-                "10px"
-              ),
-              this.physicsSimRef.current.setPhysicsContainerStyle(
-                "bottom",
-                "5px"
-              ));
+              this.physicsSimRef.current.setPhysicsContainerStyle("right", "10px"),
+              this.physicsSimRef.current.setPhysicsContainerStyle("bottom", "5px"));
           let s = this.ease;
           (this.ease = 0.2), this.items[t];
           let o = e.getAttribute("data-title"),
-            a = e.getAttribute("data-description"),
-            n = document.createElement("div");
+            a = e.getAttribute("data-description");
+        
+          // Remove any existing 'new-div' directly from the DOM
+          const existingNewDiv = document.querySelector(".new-div");
+          if (existingNewDiv) {
+            document.body.removeChild(existingNewDiv);
+          }
+        
+          // Create the new div to be added above the 'details' div
+          let newDiv = document.createElement("div");
+          newDiv.className = "new-div";
+        
+          // Create the 'details' div
+          let n = document.createElement("div");
           (n.className = "details"),
             (n.innerHTML = "<h2>".concat(o, "</h2><p>").concat(a, "</p>"));
+        
+          // Append the new div and then the details div to the body
+          document.body.appendChild(newDiv);
+          document.body.appendChild(n);
+
+          createCarousel();
+        
           let r = n.cloneNode(!0);
           (r.className = "details background"),
-            document.body.appendChild(n),
             document.body.insertBefore(r, n.nextSibling);
+        
           let l = v.L.wrapWords(n.querySelector("p")),
             c = v.L.wrapWords(r.querySelector("p"));
           y.p8.set([...l.words, ...c.words], { opacity: 0.2 }),
             (this.detailsBackground = r),
             (this.detailsDiv = n);
+        
           let d = () => {
-            let e =
-              100 - ((0.96 * window.innerHeight) / window.innerWidth) * 100;
+            let e = 100 - ((0.96 * window.innerHeight) / window.innerWidth) * 100;
             (n.style.width = "".concat(e, "vw")),
               (r.style.width = "".concat(e, "vw"));
           };
@@ -513,7 +584,10 @@
                 }, 700);
             },
           });
-        }
+        } 
+
+        
+  
         startAnimation() {
           let e = () => {
             (this.currentPos += (this.target - this.currentPos) * this.ease),
@@ -671,7 +745,7 @@
               (0, s.jsx)(a(), { id: "d6a22ac56ece3798", children: "" }),
               !t &&
                 (0, s.jsx)("div", {
-                  className: "jsx-d6a22ac56ece3798 preloader",
+                  className: "jsx-d6a22ac56ece3798 preloader display-hidden",
                   children: (0, s.jsx)("div", {
                     className: "jsx-d6a22ac56ece3798 preloader-wrap",
                     children: (0, s.jsxs)("div", {
