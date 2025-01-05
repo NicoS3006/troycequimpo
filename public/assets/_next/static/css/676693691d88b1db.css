@@ -1,0 +1,353 @@
+.PhysicsSimulation_physicsContainer__l20q0 {
+  position: fixed;
+  width: 100vw;
+  height: 100svh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 99999999999;
+  background-color: #000;
+  transform-origin: bottom right;
+}
+
+.PhysicsSimulation_physicsContainer__l20q0 img {
+  height: auto;
+  transform-origin: center center;
+  filter: invert(1);
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+ .home-logo-svg {
+  position: relative;
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+.logo-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  width: 120%;
+  height: 120%;
+}
+
+.main-logo {
+  width: 40vw;
+  height: auto;
+  aspect-ratio: 1/1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.main-logo * {
+  pointer-events: all;
+}
+
+.hover-text {
+  margin-top: 2vh;
+  font-size: 2vw;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} 
+.hovered1 {
+  cursor: pointer;
+  color: rgb(74, 73, 73) !important;
+  position: relative;
+}
+
+.hovered2 {
+  cursor: pointer;
+  color: rgb(74, 73, 73)!important;
+}
+.hovered3 {
+  cursor: pointer;
+  color: rgb(74, 73, 73)!important;
+}
+.hoveredC {
+  cursor: pointer;
+  color: rgb(74, 73, 73) !important;
+  position: relative;
+}
+.hoveredC::after {
+    content: 'ABOUT' !important; 
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(74, 73, 73);
+    font-size: 4vw;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.hoveredC:hover::after {
+    opacity: 1;
+}
+
+.hover-target-edge2 {
+  cursor: pointer;
+  position: relative;
+}
+.hover-target-edge3 {
+  position: relative;
+  z-index: 10;
+}
+
+.PhysicsSimulation_physicsContainer__l20q0 img,.PhysicsSimulation_rigidBody__FrI2H {
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer
+}
+
+.PhysicsSimulation_rigidBody__FrI2H {
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  font-size: .65vw;
+  line-height: .6vw;
+  text-transform: uppercase;
+  letter-spacing: .01vw;
+  color: #fff;
+  animation: PhysicsSimulation_pulse__uhnA3 .5s infinite alternate
+}
+
+@keyframes PhysicsSimulation_pulse__uhnA3 {
+  0% {
+      opacity: .3
+  }
+
+  to {
+      opacity: .8
+  }
+}
+
+.PhysicsSimulation_mouseRigidBody__dPtOL {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 99999999999
+}
+
+.PhysicsSimulation_detached__AmdIZ {
+  transition: none!important;
+  pointer-events: none;
+  opacity: .5
+}
+
+@keyframes PhysicsSimulation_fadeIn__lWhCj {
+  0% {
+      opacity: 0
+  }
+
+  to {
+      opacity: 1
+  }
+}
+
+.PhysicsSimulation_fadeIn__lWhCj {
+  animation-name: PhysicsSimulation_fadeIn__lWhCj;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  opacity: 0
+}
+
+.audio-bars {
+  display: flex;
+  justify-content: space-around;
+  width: 20px;
+  height: .5vw;
+  cursor: pointer;
+  transform: scale(-1)
+}
+
+.bar {
+  width: 4px;
+  background-color: #000;
+  animation: bounce .5s infinite alternate
+}
+
+@keyframes bounce {
+  0% {
+      height: 10%
+  }
+
+  to {
+      height: 100%
+  }
+}
+
+.bar.paused {
+  animation: none;
+  height: .5vw
+}
+
+/* Responsive scaling */
+@media (max-width: 1200px) {
+  .main-logo {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-logo {
+    width: 70vw;
+  }
+}
+
+.contact-text {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-80%, -50%);
+  font-size: 4vw;
+  font-weight: bold;
+  color: rgb(74, 73, 73);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hover-target-contact:hover ~ .contact-text {
+  opacity: 1;
+}
+
+.hover-target-contact::after {
+    content: 'CONTACT';
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(74, 73, 73);
+    font-size: 4vw;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.hover-target-contact:hover::after {
+    opacity: 1;
+}
+
+.projects-visibility {
+  opacity: 1 !important;
+}
+
+.projects-text {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-80%, -50%);
+  font-size: 4vw;
+  font-weight: bold;
+  color: rgb(74, 73, 73);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hover-target-edge1:hover ~ .projects-text {
+  opacity: 1 !important;
+}
+
+.hover-target-edge1::after {
+  content: 'PROJECTS';
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(74, 73, 73);
+  font-size: 4vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.hover-target-edge1:hover::after {
+  opacity: 1;
+}
+
+.about-visibility {
+  opacity: 1 !important;
+}
+.about-text {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-80%, -50%);
+  font-size: 4vw;
+  font-weight: bold;
+  color: rgb(74, 73, 73);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.about-text::after {
+  content: 'PROJECTS';
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-80%, -50%);
+  color: rgb(74, 73, 73);
+  font-size: 4vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.principles-visibility {
+  opacity: 1 !important;
+  display: block !important;
+}
+.principles-text {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-85%, -50%);
+  font-size: 3.5vw;
+  font-weight: bold;
+  color: rgb(74, 73, 73);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.principles-text::after {
+  content: 'PRINCIPLES OF WORK';
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-85%, -50%);
+  color: rgb(74, 73, 73);
+  font-size: 3.5vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
