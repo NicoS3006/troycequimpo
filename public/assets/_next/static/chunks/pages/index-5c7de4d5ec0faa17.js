@@ -9,58 +9,124 @@
         },
       ]);
     },
-    
+
     6213: function (e, t, i) {
+      // Define the image URLs at the top of your file
+      const projectImages = {
+        "post-0": [
+          'https://via.placeholder.com/300x200?text=Post0-Image1',
+          'https://via.placeholder.com/300x200?text=Post0-Image2',
+          'https://via.placeholder.com/300x200?text=Post0-Image3',
+        ],
+        "post-1": [
+          'https://via.placeholder.com/300x200?text=Post1-Image1',
+          'https://via.placeholder.com/300x200?text=Post1-Image2',
+          'https://via.placeholder.com/300x200?text=Post1-Image3',
+        ],
+        "post-2": [
+          'https://via.placeholder.com/300x200?text=Post2-Image1',
+          'https://via.placeholder.com/300x200?text=Post2-Image2',
+          'https://via.placeholder.com/300x200?text=Post2-Image3',
+        ],
+      };      
+
       // Standalone function to create the carousel
-function createCarousel() {
-  const newDiv = document.querySelector('.new-div');
-  if (!newDiv) return;
+      function createCarousel(images = []) {
+        const newDiv = document.querySelector('.new-div');
+        if (!newDiv) return;
 
-  // Create carousel container
-  const carouselContainer = document.createElement('div');
-  carouselContainer.className = 'carousel-container';
+        // Create carousel container
+        const carouselContainer = document.createElement('div');
+        carouselContainer.className = 'carousel-container';
 
-  // Create carousel track
-  const carouselTrack = document.createElement('div');
-  carouselTrack.className = 'carousel-track';
+        // Create carousel track
+        const carouselTrack = document.createElement('div');
+        carouselTrack.className = 'carousel-track';
 
-  // Add images to the carousel
-  const totalImages = 10; // Total number of images
-  for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement('img');
-    img.src = `https://via.placeholder.com/300x200?text=Image+${i}`; // Replace with your image URLs
-    img.alt = `Image ${i}`;
-    img.className = 'carousel-image';
-    carouselTrack.appendChild(img);
-  }
+        // Add images to the carousel
+        images.forEach((imageUrl, index) => {
+          const img = document.createElement('img');
+          img.src = imageUrl; // Use the provided image URL
+          img.alt = `Image ${index + 1}`;
+          img.className = 'carousel-image';
+          carouselTrack.appendChild(img);
+        });
 
-  // Append track to container
-  carouselContainer.appendChild(carouselTrack);
-  newDiv.appendChild(carouselContainer);
+        // Append track to container
+        carouselContainer.appendChild(carouselTrack);
+        newDiv.appendChild(carouselContainer);
+        // Start the infinite scroll
+        startCarousel(carouselTrack);
 
-  // Start the infinite scroll
-  startCarousel(carouselTrack);
-}
+        // Attach click events for modal functionality
+        addModalClickEventToImages(carouselTrack);
 
-// Standalone function to handle infinite scrolling
-function startCarousel(track) {
-  let scrollAmount = 0;
+      }
+      // Function to handle infinite scrolling
+      function startCarousel(track) {
+        let scrollAmount = 0; // Tracks how far we've scrolled
 
-  function scroll() {
-    scrollAmount += 1; // Adjust speed here
-    if (scrollAmount >= track.scrollWidth / 2) {
-      scrollAmount = 0; // Reset scroll to create infinite effect
-    }
-    track.style.transform = `translateX(-${scrollAmount}px)`;
-    requestAnimationFrame(scroll);
-  }
+        function scroll() {
+          scrollAmount += 1; // Adjust this value to control the speed
+          if (scrollAmount >= track.scrollWidth / 2) {
+            scrollAmount = 0; // Reset scroll to create infinite effect
+          }
+          track.style.transform = `translateX(-${scrollAmount}px)`;
+          requestAnimationFrame(scroll); // Continuously call scroll
+        }
 
-  // Duplicate images for infinite effect
-  track.innerHTML += track.innerHTML;
+        // Duplicate the images for the infinite effect
+        track.innerHTML += track.innerHTML;
 
-  // Start scrolling
-  scroll();
-}
+        // Start the scrolling animation
+        scroll();
+      }
+      // Function to handle opening the image in a modal
+      function openImageModal(imageUrl) {
+        // Create a modal container if it doesn't exist
+        let modal = document.getElementById('image-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'image-modal';
+            modal.className = 'modal';
+            document.body.appendChild(modal);
+        }
+
+        // Set the modal content (show the clicked image)
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img src="${imageUrl}" alt="Modal Image">
+            </div>
+        `;
+
+        // Display the modal
+        modal.style.display = 'block';
+
+        // Add event listener for the close button
+        const closeButton = modal.querySelector('.close-button');
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside the content
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+      }
+
+      // Attach click event listeners to each image in the carousel
+      function addModalClickEventToImages(carouselTrack) {
+        const images = carouselTrack.querySelectorAll('img'); // Select all images in the carousel
+        images.forEach((img) => {
+            img.addEventListener('click', () => {
+                openImageModal(img.src); // Pass the clicked image's URL to the modal
+            });
+        });
+      }
+
       "use strict";
       i.r(t);
       var s = i(5893),
@@ -128,12 +194,12 @@ function startCarousel(track) {
               var o, a;
               t
                 ? null === (o = this.audioControllerRef.current) ||
-                  void 0 === o ||
-                  o.playSound()
+                void 0 === o ||
+                o.playSound()
                 : (i || s) &&
-                  (null === (a = this.audioControllerRef.current) ||
-                    void 0 === a ||
-                    a.playSound());
+                (null === (a = this.audioControllerRef.current) ||
+                  void 0 === a ||
+                  a.playSound());
             }
           });
         }
@@ -144,10 +210,10 @@ function startCarousel(track) {
               (this.circleVisible = !1),
               this.animationWords && this.animationWords.isActive()
                 ? this.animationWords
-                    .timeScale(10)
-                    .eventCallback("onComplete", () => {
-                      this.completeAndReverse();
-                    })
+                  .timeScale(10)
+                  .eventCallback("onComplete", () => {
+                    this.completeAndReverse();
+                  })
                 : this.completeAndReverse();
           };
           document.addEventListener("mousemove", this.handleMouseMove),
@@ -216,16 +282,15 @@ function startCarousel(track) {
           this.detailsBackground &&
             this.detailsDiv &&
             (document.body.removeChild(this.detailsBackground),
-            document.body.removeChild(this.detailsDiv),
-            (this.detailsBackground = null),
-            (this.detailsDiv = null));
-        
-          // Remove the new-div if it exists
-          if (this.newDiv) {
-            document.body.removeChild(this.newDiv);
-            this.newDiv = null;
+              document.body.removeChild(this.detailsDiv),
+              (this.detailsBackground = null),
+              (this.detailsDiv = null));
+
+          const existingNewDiv = document.querySelector(".new-div");
+          if (existingNewDiv) {
+            document.body.removeChild(existingNewDiv);
           }
-        
+
           this.handleCircleClickPostAnimation();
         }
         handleCircleClickPostAnimation() {
@@ -258,56 +323,56 @@ function startCarousel(track) {
           if (!this.clickable) return;
           (this.container.style.pointerEvents = "none"),
             null === (i = this.audioControllerRef.current) ||
-              void 0 === i ||
-              i.playSound(),
+            void 0 === i ||
+            i.playSound(),
             (this.userActive = !0),
             (this.wheel = !1),
             (this.clickable = !1),
             clearTimeout(this.autoScrollTimer),
             document.body.classList.add("dark"),
             this.physicsSimRef.current &&
-              (this.physicsSimRef.current.setPhysicsContainerStyle(
-                "filter",
-                "invert(0)"
-              ),
+            (this.physicsSimRef.current.setPhysicsContainerStyle(
+              "filter",
+              "invert(0)"
+            ),
               this.physicsSimRef.current.setPhysicsContainerStyle("right", "10px"),
               this.physicsSimRef.current.setPhysicsContainerStyle("bottom", "5px"));
           let s = this.ease;
           (this.ease = 0.2), this.items[t];
           let o = e.getAttribute("data-title"),
             a = e.getAttribute("data-description");
-        
+
           // Remove any existing 'new-div' directly from the DOM
           const existingNewDiv = document.querySelector(".new-div");
           if (existingNewDiv) {
             document.body.removeChild(existingNewDiv);
           }
-        
+
           // Create the new div to be added above the 'details' div
           let newDiv = document.createElement("div");
           newDiv.className = "new-div";
-        
+
           // Create the 'details' div
           let n = document.createElement("div");
           (n.className = "details"),
             (n.innerHTML = "<h2>".concat(o, "</h2><p>").concat(a, "</p>"));
-        
+
           // Append the new div and then the details div to the body
           document.body.appendChild(newDiv);
           document.body.appendChild(n);
 
-          createCarousel();
-        
+          createCarousel(imageUrls);
+
           let r = n.cloneNode(!0);
           (r.className = "details background"),
             document.body.insertBefore(r, n.nextSibling);
-        
+
           let l = v.L.wrapWords(n.querySelector("p")),
             c = v.L.wrapWords(r.querySelector("p"));
           y.p8.set([...l.words, ...c.words], { opacity: 0.2 }),
             (this.detailsBackground = r),
             (this.detailsDiv = n);
-        
+
           let d = () => {
             let e = 100 - ((0.96 * window.innerHeight) / window.innerWidth) * 100;
             (n.style.width = "".concat(e, "vw")),
@@ -340,8 +405,8 @@ function startCarousel(track) {
               (o.style.cssText =
                 "\n                    position: absolute;\n                    width: 100%;\n                    height: 100%;\n                    transform: translate(0%, 0%) scale(1);\n                    transform-origin: top center;\n                    border: 6px solid white; box-sizing: border-box;\n                    border-top:0px solid transparent;\n                "),
                 null === (i = this.audioControllerRef.current) ||
-                  void 0 === i ||
-                  i.playSound();
+                void 0 === i ||
+                i.playSound();
               let a = document.querySelector(".clone");
               a.appendChild(o);
               let c = this.items.length;
@@ -369,7 +434,7 @@ function startCarousel(track) {
                     i = d.left - t.left;
                   Math.abs(i) > 1 &&
                     ((this.target += (i / t.width) * 100),
-                    this.adjustSquaresPosition()),
+                      this.adjustSquaresPosition()),
                     (this.container.style.opacity = "0"),
                     (a.style.opacity = "1"),
                     (this.timeline = y.p8.timeline({
@@ -377,31 +442,31 @@ function startCarousel(track) {
                       onReverseComplete: () => {
                         for (
                           this.container.style.pointerEvents = "auto",
-                            this.container.style.opacity = "1",
-                            a.style.opacity = "0",
-                            document.body.classList.remove("dark"),
-                            this.physicsSimRef.current &&
-                              (this.physicsSimRef.current.setPhysicsContainerStyle(
-                                "filter",
-                                "invert(1)"
-                              ),
-                              this.physicsSimRef.current.setPhysicsContainerStyle(
-                                "right",
-                                "0px"
-                              ),
-                              this.physicsSimRef.current.setPhysicsContainerStyle(
-                                "bottom",
-                                "0px"
-                              )),
-                            y.p8.to(
-                              this.physicsSimRef.current.getPhysicsContainer(),
-                              {
-                                scale: 1,
-                                duration: 0.2,
-                                transformOrigin: "bottom right",
-                              }
+                          this.container.style.opacity = "1",
+                          a.style.opacity = "0",
+                          document.body.classList.remove("dark"),
+                          this.physicsSimRef.current &&
+                          (this.physicsSimRef.current.setPhysicsContainerStyle(
+                            "filter",
+                            "invert(1)"
+                          ),
+                            this.physicsSimRef.current.setPhysicsContainerStyle(
+                              "right",
+                              "0px"
                             ),
-                            y.p8.set(".dve", { y: "-22vw", opacity: 1 });
+                            this.physicsSimRef.current.setPhysicsContainerStyle(
+                              "bottom",
+                              "0px"
+                            )),
+                          y.p8.to(
+                            this.physicsSimRef.current.getPhysicsContainer(),
+                            {
+                              scale: 1,
+                              duration: 0.2,
+                              transformOrigin: "bottom right",
+                            }
+                          ),
+                          y.p8.set(".dve", { y: "-22vw", opacity: 1 });
                           a.firstChild;
 
                         )
@@ -482,8 +547,8 @@ function startCarousel(track) {
                       .querySelectorAll(".square:not(:first-child)")
                       .forEach((e) => {
                         let t = e.style.transform.match(
-                            /translateX\(([-\d]+)%\)/
-                          ),
+                          /translateX\(([-\d]+)%\)/
+                        ),
                           i = t ? parseFloat(t[1]) : 0,
                           s = i < 0 ? -100 : 100;
                         o.to(
@@ -542,7 +607,7 @@ function startCarousel(track) {
                       "<"
                     ),
                     this.circleVisible ||
-                      ((this.circleVisible = !0),
+                    ((this.circleVisible = !0),
                       y.p8.fromTo(
                         this.circle,
                         { scale: 0, opacity: 0 },
@@ -565,7 +630,7 @@ function startCarousel(track) {
                           "," === s || ";" === s
                             ? (i = 0.25)
                             : ("." === s || "!" === s || "?" === s) &&
-                              (i = 0.4),
+                            (i = 0.4),
                             this.animationWords.to(e, {
                               opacity: 1,
                               duration: 0.09,
@@ -578,16 +643,16 @@ function startCarousel(track) {
                               },
                             }),
                             i > 0 &&
-                              this.animationWords.to({}, { duration: i });
+                            this.animationWords.to({}, { duration: i });
                         });
                     }, 1500);
                 }, 700);
             },
           });
-        } 
+        }
 
-        
-  
+
+
         startAnimation() {
           let e = () => {
             (this.currentPos += (this.target - this.currentPos) * this.ease),
@@ -613,8 +678,8 @@ function startCarousel(track) {
                 s = this.target % 100;
               if (
                 (0 !== s && (i > 0 ? (i += 100 - s) : (i -= s)),
-                (this.target += i),
-                this.allImagesClicked)
+                  (this.target += i),
+                  this.allImagesClicked)
               ) {
                 var t;
                 null === (t = this.audioControllerRef.current) ||
@@ -744,37 +809,37 @@ function startCarousel(track) {
               }),
               (0, s.jsx)(a(), { id: "d6a22ac56ece3798", children: "" }),
               !t &&
-                (0, s.jsx)("div", {
-                  className: "jsx-d6a22ac56ece3798 preloader display-hidden",
-                  children: (0, s.jsx)("div", {
-                    className: "jsx-d6a22ac56ece3798 preloader-wrap",
-                    children: (0, s.jsxs)("div", {
-                      className: "jsx-d6a22ac56ece3798 preloader-bar",
-                      children: ["Loading... ", e, "%"],
-                    }),
+              (0, s.jsx)("div", {
+                className: "jsx-d6a22ac56ece3798 preloader display-hidden",
+                children: (0, s.jsx)("div", {
+                  className: "jsx-d6a22ac56ece3798 preloader-wrap",
+                  children: (0, s.jsxs)("div", {
+                    className: "jsx-d6a22ac56ece3798 preloader-bar",
+                    children: ["Loading... ", e, "%"],
                   }),
                 }),
+              }),
               i &&
-                (0, s.jsx)("div", {
-                  className: "jsx-d6a22ac56ece3798",
-                  children: (0, s.jsx)(u.default, {
-                    ref: this.physicsSimRef,
-                    scale: 0.4,
-                    velocityFactor: 1,
-                    rotationSpeedFactor: 4,
-                    debounceDelay: 200,
-                    mouseForceFactor: 0.05,
-                    opacityDuration: 100,
-                    positionDuration: 300,
-                    containerPadding: 20,
-                    initialLeftMargin: 10,
-                    initialBottomMargin: 10,
-                    rigidBodyMessage: "Click all the floating letters to start",
-                    onAllImagesClicked: this.handleAllImagesClicked,
-                    rigidBodyFontSize: ".7vw",
-                    playSound: this.playClickSound,
-                  }),
+              (0, s.jsx)("div", {
+                className: "jsx-d6a22ac56ece3798",
+                children: (0, s.jsx)(u.default, {
+                  ref: this.physicsSimRef,
+                  scale: 0.4,
+                  velocityFactor: 1,
+                  rotationSpeedFactor: 4,
+                  debounceDelay: 200,
+                  mouseForceFactor: 0.05,
+                  opacityDuration: 100,
+                  positionDuration: 300,
+                  containerPadding: 20,
+                  initialLeftMargin: 10,
+                  initialBottomMargin: 10,
+                  rigidBodyMessage: "Click all the floating letters to start",
+                  onAllImagesClicked: this.handleAllImagesClicked,
+                  rigidBodyFontSize: ".7vw",
+                  playSound: this.playClickSound,
                 }),
+              }),
               (0, s.jsx)("div", { className: "jsx-d6a22ac56ece3798 noise" }),
               (0, s.jsx)(m.default, { ref: this.audioControllerRef }),
               (0, s.jsx)("div", {
@@ -896,7 +961,7 @@ function startCarousel(track) {
           super(e),
             (this.touchStartY = null),
             (this.handleStart = () => {
-              this.setState({ readyToStart: !1 }, () => {});
+              this.setState({ readyToStart: !1 }, () => { });
             }),
             (this.getRandomItems = (e, t) =>
               e.sort(() => 0.5 - Math.random()).slice(0, t)),
@@ -959,10 +1024,10 @@ function startCarousel(track) {
                 document.body.removeChild(this.introBackground),
                 document.body.removeChild(this.introDiv),
                 this.physicsSimRef.current &&
-                  (this.physicsSimRef.current.setPhysicsContainerStyle(
-                    "right",
-                    "0px"
-                  ),
+                (this.physicsSimRef.current.setPhysicsContainerStyle(
+                  "right",
+                  "0px"
+                ),
                   this.physicsSimRef.current.setPhysicsContainerStyle(
                     "bottom",
                     "0px"
@@ -1036,7 +1101,7 @@ function startCarousel(track) {
       }
       t.default = b;
     },
-    8621: function () {},
+    8621: function () { },
   },
   function (e) {
     e.O(0, [888, 774, 179], function () {
