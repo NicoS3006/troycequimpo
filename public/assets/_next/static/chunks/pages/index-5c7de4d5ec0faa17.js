@@ -11,8 +11,164 @@
     },
     
     6213: function (e, t, i) {
+      const imageSets = {
+        0: [
+          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.png",
+
+        ],
+        1: [
+          "public/assets/images/002_URBAN_BATCH.jpg",
+          "public/assets/images/002_URBAN_BATCH.jpg",
+          "public/assets/images/002_HERO_BATCH.jpg",
+          "public/assets/images/002_HERO_BATCH.jpg",
+          "public/assets/images/002_HERO_BATCH.jpg",
+          "public/assets/images/002_HERO_BATCH.jpg",
+        ],
+        2: [
+          "public/assets/images/003_HERO_BATCH.jpg",
+          "public/assets/images/003_HERO_BATCH.jpg",
+          "public/assets/images/003_HERO_BATCH.jpg",
+          "public/assets/images/003_HERO_BATCH.jpg",
+          "public/assets/images/003_HERO_BATCH.jpg",
+          "public/assets/images/003_HERO_BATCH.jpg",
+        ],
+        3: [
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          "public/assets/images/004_URBAN_BATCH.jpg",
+          
+        ],
+        4: [
+          "public/assets/images/005_URBAN_BATCH.jpg",
+          "public/assets/images/005_URBAN_BATCH.jpg",
+          "public/assets/images/005_URBAN_BATCH.jpg",
+          "public/assets/images/005_URBAN_BATCH.jpg",
+          "public/assets/images/005_URBAN_BATCH.jpg",
+          "public/assets/images/005_URBAN_BATCH.jpg",
+        ],
+        5: [
+          "public/assets/images/006_HERO_BATCH.jpg",
+          "public/assets/images/006_HERO_BATCH.jpg",
+          "public/assets/images/006_HERO_BATCH.jpg",
+          "public/assets/images/006_HERO_BATCH.jpg",
+          "public/assets/images/006_HERO_BATCH.jpg",
+          "public/assets/images/006_HERO_BATCH.jpg",
+        ],
+        6: [
+          "public/assets/images/007_HERO_BATCH.jpg",
+          "public/assets/images/007_HERO_BATCH.jpg",
+          "public/assets/images/007_HERO_BATCH.jpg",
+          "public/assets/images/007_HERO_BATCH.jpg",
+          "public/assets/images/007_HERO_BATCH.jpg",
+          "public/assets/images/007_HERO_BATCH.jpg",
+        ],
+        7: [
+          "public/assets/images/008_HERO_BATCH.jpg",
+          "public/assets/images/008_HERO_BATCH.jpg",
+          "public/assets/images/008_HERO_BATCH.jpg",
+          "public/assets/images/008_HERO_BATCH.jpg",
+          "public/assets/images/008_HERO_BATCH.jpg",
+          "public/assets/images/008_HERO_BATCH.jpg",
+        ],
+        8: [
+          "public/assets/images/009_HERO_BATCH.jpg",
+          "public/assets/images/009_HERO_BATCH.jpg",
+          "public/assets/images/009_HERO_BATCH.jpg",
+          "public/assets/images/009_HERO_BATCH.jpg",
+          "public/assets/images/009_HERO_BATCH.jpg",
+          "public/assets/images/009_HERO_BATCH.jpg",
+         
+        ],
+        9: [
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/010_ARCHITECTURE_BATCH.jpg",
+          
+        ],
+        10: [
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          "public/assets/images/011_ARCHITECTURE_BATCH.png",
+          
+        ],
+        11: [
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/012_ARCHITECTURE_BATCH.jpg",
+
+        ],
+        12: [
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/013_ARCHITECTURE_BATCH.jpg",
+
+        ],
+        13: [
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+          "public/assets/images/014_ARCHITECTURE_BATCH.jpg",
+
+        ],
+        14: [
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+        ],
+        15: [
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+          "public/assets/images/016_DETAIL_BATCH.jpg",
+
+        ],
+        16: [
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+        ],
+        17: [
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+          "public/assets/images/015_DETAIL_BATCH.jpg",
+        ],
+        // Add more sets as needed
+      };
       // Standalone function to create the carousel
-      function createCarousel() {
+      function createCarousel(images) {
         const newDiv = document.querySelector('.new-div');
         if (!newDiv) return;
 
@@ -25,14 +181,13 @@
         carouselTrack.className = 'carousel-track';
 
         // Add images to the carousel
-        const totalImages = 10; // Total number of images
-        for (let i = 1; i <= totalImages; i++) {
+        images.forEach((imageUrl, index) => {
           const img = document.createElement('img');
-          img.src = `https://via.placeholder.com/300x200?text=Image+${i}`; // Replace with your image URLs
-          img.alt = `Image ${i}`;
+          img.src = imageUrl; // Use the passed image URL
+          img.alt = `Image ${index + 1}`;
           img.className = 'carousel-image';
           carouselTrack.appendChild(img);
-        }
+        });
 
         // Append track to container
         carouselContainer.appendChild(carouselTrack);
@@ -360,8 +515,13 @@
           document.body.appendChild(newDiv);
           document.body.appendChild(n);
           
+         // Get the specific image set for the clicked square
+          const imagesToDisplay = imageSets[t] || []; // Default to empty if not found
 
-          createCarousel();
+          // Carousel is called with specific images
+          setTimeout(() => {
+            createCarousel(imagesToDisplay); // Pass the images to the function
+          }, 2000); // Delay of 2000 milliseconds (2 seconds)
         
           let r = n.cloneNode(!0);
           (r.className = "details background"),

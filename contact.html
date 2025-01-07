@@ -472,7 +472,7 @@
 
                         /* Mobile Version Styling */
 
-         @media (max-width: 500px) {
+         @media (max-width: 600px) {
             body {
             display: flex;
             font-family: Arial, sans-serif;
@@ -497,7 +497,7 @@
             width: 100%;
             height: 100%;
             gap: 15px;
-            padding: 20px 20px 0px 0px;
+            padding: 5px 20px 0px 0px;
         }
         .right {
             width: 100%;
@@ -513,6 +513,9 @@
             justify-content: center;
             gap: 10%;
             padding: 10% 0 0 0%;
+        }
+        .contact-text {
+            margin-left: -20px;
         }
         .home-container {
             display: none !important;
@@ -543,13 +546,32 @@
             display: flex !important;
             justify-content: flex-end;
             width: 100%;
-            height: 3vh;
+            height: 5vh;
+            margin-left: -12%;
         }        
 
         .mobile-home-container {
-            height: 100%;
-            width: 10%;
+            height: 80%;
+            width: 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border: solid 1px black;
+            border-radius: 23px;
         }
+       
+        .pre-form-text {
+         overflow-wrap: break-word;
+         display: flex;
+         width: 90%;
+         justify-content: start;
+         align-items: start;
+         font-size: calc(18px + 4*(100vw - 1200px) / 720);
+         font-weight: 100;
+         line-height: 1.8em;
+         margin: 3% 0% 5% 0%;
+         }
 
         .mobile-home-image {
             width: 100%;
@@ -557,7 +579,17 @@
             object-fit: contain;
         }
 
+        .contactpage-image {
+            width: 110vw;  
+            left: -7%;
+            position: relative;
+        }
+         }
 
+         @media (min-width: 501px) and (max-width: 650px) {
+            .container {
+                gap: 5%;
+            }
          }
 
         .home-container {
@@ -594,7 +626,7 @@
     <div class="container">
         <div class="mobile-home-button">
             <a class="mobile-home-container" href="index.html">
-                <img src="public/assets/images/home.png" class="mobile-home-image">
+                Menu
             </a>
          </div>
         <div class="left">
@@ -620,7 +652,7 @@
         <div class="right">
             <div class="home-container">
                 <a href="index.html">
-                    <div class="home-button"> Return Home </div>    
+                    <div class="home-button"> Menu </div>    
                 </a>
             </div>
             <div class="pre-form-text">
