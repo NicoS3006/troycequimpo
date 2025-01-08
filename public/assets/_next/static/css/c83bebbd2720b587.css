@@ -473,7 +473,6 @@ html {
   height: 3vh;
   align-items: center;
   z-index: 999999;
-  display: none !important;
 }
 .noise {
   position: fixed;

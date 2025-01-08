@@ -1,883 +1,1033 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Page</title>
-    <script src="contact.js" defer ></script>
+    <script src="contact.js" defer></script>
     <style>
+      body {
+        display: flex;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+      }
+      .right {
+        width: 100%;
+        height: 100%;
+        padding: 4.3% 20px 20px 20px;
+      }
+      .contact-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contactpage-image {
+        height: 80%;
+        width: 80%;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        gap: 10%;
+        padding: 0 0 0 15%;
+      }
+      .email {
+        text-decoration: underline;
+        font-size: 1.5vw;
+        font-weight: lighter;
+      }
+      @media screen and (min-width: 1200px) {
+        .s-form-image__form,
+        .s-form-map__form {
+          flex-basis: calc((100vw - var(--scrollbar-width)) / 24 * 8);
+          max-width: calc((100vw - var(--scrollbar-width)) / 24 * 8);
+          -webkit-box-ordinal-group: 0;
+          order: -1;
+        }
+      }
+      .s-form-image__form {
+        -webkit-box-ordinal-group: 0;
+        order: -1;
+      }
+      .s-form-map__form {
+        padding-left: calc((100vw - var(--scrollbar-width)) / 24 * 2);
+        padding-right: calc((100vw - var(--scrollbar-width)) / 24 * 2);
+      }
+      @media screen and (min-width: 992px) {
+        .s-form-map__form {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .s-form-image__image,
+      .s-form-map__map {
+        position: relative;
+      }
+      @media screen and (min-width: 1200px) {
+        .s-form-image__image,
+        .s-form-map__map {
+          flex-basis: calc((100vw - var(--scrollbar-width)) / 24 * 7);
+          max-width: calc((100vw - var(--scrollbar-width)) / 24 * 7);
+        }
+      }
+      .s-form-image__image .s-form__image {
+        position: relative;
+        overflow: hidden;
+      }
+      .s-form-image__image .s-form__image:after {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 1px;
+        right: 1px;
+        bottom: 1px;
+        top: 1px;
+        background-color: #111;
+        z-index: -1;
+      }
+      .s-form {
+        width: 100%;
+        height: 80%;
+        margin-top: 1rem;
+      }
+      .s-form__field {
+        position: relative;
+      }
+      .s-form__label {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .s-form__label .s-label {
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        color: currentColor;
+        padding: 0.4em 0;
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-transition: -webkit-transform 0.2s ease;
+        transition: -webkit-transform 0.2s ease;
+        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+      }
+      .s-form__label.is-focus label {
+        -webkit-transform: translateY(-2em);
+        transform: translateY(-2em);
+      }
+
+      .s-form__input textarea.s-input {
+        height: 7em;
+        resize: none;
+      }
+      .s-form__input:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: currentColor;
+        opacity: 0.25;
+        -webkit-transition: height 0.2s ease;
+        transition: height 0.2s ease;
+      }
+      .s-form__input.is-focus:after {
+        height: 100%;
+      }
+      .s-form__field-spacer {
+        height: 2.5rem;
+      }
+      .s-checkbox {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+      }
+      .s-checkbox__label {
+        font-size: 0.8181rem;
+        cursor: pointer;
+        padding-left: 1em;
+      }
+      .s-checkbox__input {
+        cursor: pointer;
+      }
+      .s-checkbox__input:not(old) {
+        width: 1.2em;
+        height: 1.2em;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+      }
+      .s-checkbox__input:not(old):checked + .s-checkbox__box:after {
+        background-image: url(public/assets/images/checkbox-checked.svg);
+        background-size: cover;
+      }
+      .s-checkbox__box {
+        width: 1.2em;
+        height: 1.2em;
+        position: absolute;
+        pointer-events: none;
+      }
+      .s-checkbox__box:after {
+        content: "";
+        background-image: url(public/assets/images/checkbox.svg);
+        background-size: cover;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .s-spacer {
+        width: 100%;
+      }
+      .s-spacer--small {
+        height: 0.75rem;
+      }
+      @media screen and (min-width: 768px) {
+        .s-spacer--small {
+          height: 1.5rem;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        .s-spacer--small {
+          height: 1rem;
+        }
+      }
+      .s-spacer--medium {
+        height: 1.25rem;
+      }
+      @media screen and (min-width: 768px) {
+        .s-spacer--medium {
+          height: 1.5rem;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        .s-spacer--medium {
+          height: 2rem;
+        }
+      }
+      .s-spacer--large {
+        height: 2rem;
+      }
+      @media screen and (min-width: 768px) {
+        .s-spacer--large {
+          height: 2rem;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        .s-spacer--large {
+          height: 3rem;
+        }
+      }
+      .s-spacer--xlarge {
+        height: 5.8rem;
+      }
+      @media screen and (min-width: 768px) {
+        .s-spacer--xlarge {
+          height: 5.8rem;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        .s-spacer--xlarge {
+          height: 6rem;
+        }
+      }
+      .s-spacer--xxlarge {
+        height: 4rem;
+      }
+      @media screen and (min-width: 768px) {
+        .s-spacer--xxlarge {
+          height: 5.8rem;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        .s-spacer--xxlarge {
+          height: 6.8rem;
+        }
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+        padding: 0;
+        margin: 0;
+      }
+      label {
+        display: inline-block;
+        margin: 0;
+      }
+      .s-form__input .s-input {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 100%;
+        outline: 0;
+        background-color: transparent;
+        border-radius: 0;
+        -webkit-appearance: none;
+        appearance: button;
+        border: 0;
+        padding: 0.4em 0em;
+        position: relative;
+        z-index: 1;
+        color: currentColor;
+        font-size: calc(18px + 4 * (100vw - 1200px) / 720);
+      }
+      .s-form__input textarea.s-input {
+        height: 5.3em;
+        resize: none;
+      }
+
+      .s-input-top {
+        height: 1.4em !important;
+        resize: none;
+      }
+      .s-form__input:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: currentColor;
+        opacity: 0.25;
+        -webkit-transition: height 0.2s ease;
+        transition: height 0.2s ease;
+      }
+      .s-form__input.is-focus:after {
+        height: 100%;
+      }
+      .s-link-button {
+        display: -webkit-inline-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        background-color: transparent;
+        white-space: wrap;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: relative;
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: calc(100% - 30px);
+        padding: 1em;
+        margin: -1em;
+        color: currentColor;
+      }
+      .s-link-button__arrow {
+        position: relative;
+        display: -webkit-box;
+        display: flex;
+        margin-left: 2.2em;
+      }
+      .s-link-button__arrow svg path {
+        fill: currentColor;
+      }
+      .s-link-button__arrow svg line {
+        stroke: currentColor;
+      }
+      .s-link-button__arrow .s-link-button__circle {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 3rem;
+        height: 3rem;
+        pointer-events: none;
+      }
+      .s-link-button__arrow .s-link-button__circle svg {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .s-link-button__arrow .s-link-button__circle svg g {
+        stroke: hsla(0, 0%, 100%, 0.6);
+      }
+
+      .js-form-input::placeholder {
+        color: black; /* Placeholder color */
+        font-size: 0.8em;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .js-form-input.focused::placeholder {
+        color: transparent; /* Hide placeholder when focused */
+      }
+      .pre-form-text {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        font-size: calc(18px + 4 * (100vw - 1200px) / 720);
+        font-weight: 100;
+        line-height: 1.8em;
+        margin: 3% 0% 5% 0%;
+      }
+
+      .s-link-underline {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3%;
+      }
+      .s-link-underline:after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0.2em;
+        left: 0;
+        right: 0;
+        background-color: currentColor;
+        height: 1px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      .s-link-underline:hover:after {
+        opacity: 0;
+      }
+      .s-link-underline--multiline:after {
+        display: none;
+      }
+      .s-link-underline--multiline span {
+        display: inline-block;
+        position: relative;
+      }
+      .s-link-underline--multiline span:after {
+        display: block;
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0.2em;
+        height: 1px;
+        background-color: #000;
+        opacity: 1;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      .s-link-underline--multiline:hover span:after {
+        opacity: 0;
+      }
+      .s-contact-info {
+        line-height: 1.8em;
+        font-size: calc(18px + 4 * (100vw - 1200px) / 720);
+      }
+
+      body a,
+      html a {
+        text-decoration: none;
+        color: currentColor;
+      }
+
+      .contact-text {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Mobile Version Styling */
+
+      @media (max-width: 600px) {
         body {
-            display: flex;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
+          display: flex;
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          height: auto;
+          width: 100vw;
+          overflow-y: visible;
+          overflow-x: hidden;
         }
         .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            padding: 20px;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
         }
         .left {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          gap: 15px;
+          padding: 5px 20px 0px 0px;
         }
         .right {
-            width: 100%;
-            height: 100%;
-            padding: 4.3% 20px 20px 20px;
-
-        }
-        .contact-image {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .contactpage-image {
-            height: 80%;
-            width: 80%;
+          width: 100%;
+          height: 100%;
+          padding: 4.3% 20px 20px 0px;
         }
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-            height: 100%;
-            width: 100%;
-            justify-content: center;
-            gap: 10%;
-            padding: 0 0 0 15%;
-        }
-        .email  {
-            text-decoration: underline;
-            font-size: 1.5vw;
-            font-weight: lighter;
-        }
-        @media screen and (min-width: 1200px) {
-            .s-form-image__form,
-            .s-form-map__form {
-                flex-basis: calc((100vw - var(--scrollbar-width)) / 24 * 8);
-                max-width: calc((100vw - var(--scrollbar-width)) / 24 * 8);
-                -webkit-box-ordinal-group: 0;
-                order: -1;
-            }
-            }
-            .s-form-image__form {
-            -webkit-box-ordinal-group: 0;
-            order: -1;
-            }
-            .s-form-map__form {
-            padding-left: calc((100vw - var(--scrollbar-width)) / 24 * 2);
-            padding-right: calc((100vw - var(--scrollbar-width)) / 24 * 2);
-            }
-            @media screen and (min-width: 992px) {
-            .s-form-map__form {
-                padding-left: 0;
-                padding-right: 0;
-            }
-            }
-            .s-form-image__image,
-                .s-form-map__map {
-                position: relative;
-                }
-                @media screen and (min-width: 1200px) {
-                .s-form-image__image,
-                .s-form-map__map {
-                    flex-basis: calc((100vw - var(--scrollbar-width)) / 24 * 7);
-                    max-width: calc((100vw - var(--scrollbar-width)) / 24 * 7);
-                }
-                }
-                .s-form-image__image .s-form__image {
-                position: relative;
-                overflow: hidden;
-                }
-                .s-form-image__image .s-form__image:after {
-                position: absolute;
-                display: block;
-                content: "";
-                left: 1px;
-                right: 1px;
-                bottom: 1px;
-                top: 1px;
-                background-color: #111;
-                z-index: -1;
-                }
-                .s-form {
-                width: 100%;
-                height: 80%;
-                margin-top: 1rem;
-                }
-                .s-form__field {
-                position: relative;
-                }
-                .s-form__label {
-                display: block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                }
-                .s-form__label .s-label {
-                height: 100%;
-                width: 100%;
-                z-index: 0;
-                color: currentColor;
-                padding: 0.4em 0;
-                -webkit-transform-origin: top left;
-                transform-origin: top left;
-                -webkit-transition: -webkit-transform 0.2s ease;
-                transition: -webkit-transform 0.2s ease;
-                transition: transform 0.2s ease;
-                transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-                }
-                .s-form__label.is-focus label {
-                -webkit-transform: translateY(-2em);
-                transform: translateY(-2em);
-                }
-               
-                .s-form__input textarea.s-input {
-                height: 7em;
-                resize: none;
-                }
-                .s-form__input:after {
-                content: "";
-                display: block;
-                position: absolute;
-                height: 1px;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: currentColor;
-                opacity: 0.25;
-                -webkit-transition: height 0.2s ease;
-                transition: height 0.2s ease;
-                }
-                .s-form__input.is-focus:after {
-                height: 100%;
-                }
-                .s-form__field-spacer {
-                height: 2.5rem;
-                }
-                .s-checkbox {
-                display: -webkit-box;
-                display: flex;
-                -webkit-box-orient: horizontal;
-                -webkit-box-direction: normal;
-                flex-direction: row;
-                -webkit-box-align: center;
-                align-items: center;
-                }
-                .s-checkbox__label {
-                font-size: 0.8181rem;
-                cursor: pointer;
-                padding-left: 1em;
-                }
-                .s-checkbox__input {
-                cursor: pointer;
-                }
-                .s-checkbox__input:not(old) {
-                width: 1.2em;
-                height: 1.2em;
-                margin: 0;
-                padding: 0;
-                opacity: 0;
-                }
-                .s-checkbox__input:not(old):checked + .s-checkbox__box:after {
-                background-image: url(public/assets/images/checkbox-checked.svg);
-                background-size: cover;
-                }
-                .s-checkbox__box {
-                width: 1.2em;
-                height: 1.2em;
-                position: absolute;
-                pointer-events: none;
-                }
-                .s-checkbox__box:after {
-                content: "";
-                background-image: url(public/assets/images/checkbox.svg);
-                background-size: cover;
-                display: block;
-                position: absolute;
-                bottom: 0;
-                top: 0;
-                left: 0;
-                right: 0;
-                }
-
-
-                .s-spacer {
-                width: 100%;
-                }
-                .s-spacer--small {
-                height: 0.75rem;
-                }
-                @media screen and (min-width: 768px) {
-                .s-spacer--small {
-                    height: 1.5rem;
-                }
-                }
-                @media screen and (min-width: 992px) {
-                .s-spacer--small {
-                    height: 1rem;
-                }
-                }
-                .s-spacer--medium {
-                height: 1.25rem;
-                }
-                @media screen and (min-width: 768px) {
-                .s-spacer--medium {
-                    height: 1.5rem;
-                }
-                }
-                @media screen and (min-width: 992px) {
-                .s-spacer--medium {
-                    height: 2rem;
-                }
-                }
-                .s-spacer--large {
-                height: 2rem;
-                }
-                @media screen and (min-width: 768px) {
-                .s-spacer--large {
-                    height: 2rem;
-                }
-                }
-                @media screen and (min-width: 992px) {
-                .s-spacer--large {
-                    height: 3rem;
-                }
-                }
-                .s-spacer--xlarge {
-                height: 5.8rem;
-                }
-                @media screen and (min-width: 768px) {
-                .s-spacer--xlarge {
-                    height: 5.8rem;
-                }
-                }
-                @media screen and (min-width: 992px) {
-                .s-spacer--xlarge {
-                    height: 6rem;
-                }
-                }
-                .s-spacer--xxlarge {
-                height: 4rem;
-                }
-                @media screen and (min-width: 768px) {
-                .s-spacer--xxlarge {
-                    height: 5.8rem;
-                }
-                }
-                @media screen and (min-width: 992px) {
-                .s-spacer--xxlarge {
-                    height: 6.8rem;
-                }
-                }
-                *,
-                :after,
-                :before {
-                box-sizing: inherit;
-                padding: 0;
-                margin: 0;
-                }
-                label {
-                display: inline-block;
-                margin: 0;
-                }
-                .s-form__input .s-input {
-                    display: -webkit-box;
-                    display: flex;
-                    -webkit-box-align: center;
-                    align-items: center;
-                    width: 100%;
-                    outline: 0;
-                    background-color: transparent;
-                    border-radius: 0;
-                    -webkit-appearance: none;
-                    appearance: button;
-                    border: 0;
-                    padding: 0.4em 0em;
-                    position: relative;
-                    z-index: 1;
-                    color: currentColor;
-                    font-size: calc(18px + 4*(100vw - 1200px) / 720);
-                    }
-                    .s-form__input textarea.s-input {
-                    height: 5.3em;
-                    resize: none;
-                    }
-
-                    .s-input-top {
-                        height: 1.4em !important;
-                        resize: none;
-                    }
-                    .s-form__input:after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    height: 1px;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background-color: currentColor;
-                    opacity: 0.25;
-                    -webkit-transition: height 0.2s ease;
-                    transition: height 0.2s ease;
-                    }
-                    .s-form__input.is-focus:after {
-                    height: 100%;
-                    }
-                    .s-link-button {
-                        display: -webkit-inline-box;
-                        -webkit-box-align: center;
-                        -webkit-box-pack: center;
-                        background-color: transparent;
-                        white-space: wrap;
-                        cursor: pointer;
-                        outline: none;
-                        border: none;
-                        -webkit-user-select: none;
-                        -moz-user-select: none;
-                        -ms-user-select: none;
-                        user-select: none;
-                        position: relative;
-                        display: inline-flex;
-                        -webkit-box-orient: horizontal;
-                        -webkit-box-direction: normal;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: center;
-                        max-width: calc(100% - 30px);
-                        padding: 1em;
-                        margin: -1em;
-                        color: currentColor;
-                        }
-                        .s-link-button__arrow {
-                        position: relative;
-                        display: -webkit-box;
-                        display: flex;
-                        margin-left: 2.2em;
-                        }
-                        .s-link-button__arrow svg path {
-                        fill: currentColor;
-                        }
-                        .s-link-button__arrow svg line {
-                        stroke: currentColor;
-                        }
-                        .s-link-button__arrow .s-link-button__circle {
-                        display: block;
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        width: 3rem;
-                        height: 3rem;
-                        pointer-events: none;
-                        }
-                        .s-link-button__arrow .s-link-button__circle svg {
-                        -webkit-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                        }
-                        .s-link-button__arrow .s-link-button__circle svg g {
-                        stroke: hsla(0, 0%, 100%, 0.6);
-                        }
-
-                        .js-form-input::placeholder {
-                            color: black; /* Placeholder color */
-                            font-size: 0.8em;
-                            font-family: Arial, Helvetica, sans-serif;
-                        }
-
-                        .js-form-input.focused::placeholder {
-                            color: transparent; /* Hide placeholder when focused */
-                        }
-                    .pre-form-text {
-                        display: flex;
-                        justify-content: start;
-                        align-items: start;
-                        font-size: calc(18px + 4*(100vw - 1200px) / 720);
-                        font-weight: 100;
-                        line-height: 1.8em;
-                        margin: 3% 0% 5% 0%;
-                    }
-
-                    .s-link-underline {
-                        position: relative;
-                        display: inline-block;
-                        margin-bottom: 3%;
-                        }
-                        .s-link-underline:after {
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        bottom: 0.2em;
-                        left: 0;
-                        right: 0;
-                        background-color: currentColor;
-                        height: 1px;
-                        -webkit-transition: all 0.2s ease-in-out;
-                        transition: all 0.2s ease-in-out;
-                        }
-                        .s-link-underline:hover:after {
-                        opacity: 0;
-                        }
-                        .s-link-underline--multiline:after {
-                        display: none;
-                        }
-                        .s-link-underline--multiline span {
-                        display: inline-block;
-                        position: relative;
-                        }
-                        .s-link-underline--multiline span:after {
-                        display: block;
-                        position: absolute;
-                        content: "";
-                        left: 0;
-                        right: 0;
-                        bottom: 0.2em;
-                        height: 1px;
-                        background-color: #000;
-                        opacity: 1;
-                        -webkit-transition: all 0.2s ease-in-out;
-                        transition: all 0.2s ease-in-out;
-                        }
-                        .s-link-underline--multiline:hover span:after {
-                        opacity: 0;
-                        }
-                        .s-contact-info {
-                            line-height: 1.8em;
-                            font-size: calc(18px + 4*(100vw - 1200px) / 720);;
-                        }
-
-                        body a, html a {
-                            text-decoration: none;
-                            color: currentColor;
-                        }
-                        
-                        .contact-text {
-                            width: 100%;
-                            height: 20%;
-                            display: flex;
-                            justify-content: center;
-                        }
-
-                        /* Mobile Version Styling */
-
-         @media (max-width: 600px) {
-            body {
-            display: flex;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: auto;
-            width: 100vw;
-            overflow-y: visible;
-            overflow-x: hidden;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-        .left {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            gap: 15px;
-            padding: 5px 20px 0px 0px;
-        }
-        .right {
-            width: 100%;
-            height: 100%;
-            padding: 4.3% 20px 20px 0px;
-        }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-            height: 100%;
-            width: 100%;
-            justify-content: center;
-            gap: 10%;
-            padding: 10% 0 0 0%;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          height: 100%;
+          width: 100%;
+          justify-content: center;
+          gap: 10%;
+          padding: 10% 0 0 0%;
         }
         .contact-text {
-            margin-left: -20px;
+          margin-left: -20px;
         }
         .home-container {
-            display: none !important;
-            width: 100%;
-            height: 5%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+          display: none !important;
+          width: 100%;
+          height: 5%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
         }
 
         .home-button {
-            height: 100%;
-            width: 100%;
-            border: solid 1px black;
-            border-radius: 100px;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            transform: translateX(-20%);
+          height: 100%;
+          width: 100%;
+          border: solid 1px black;
+          border-radius: 100px;
+          padding: 10px;
+          display: flex;
+          justify-content: center;
+          transform: translateX(-20%);
         }
 
         .home-button:hover {
-            cursor: pointer;
+          cursor: pointer;
         }
-
 
         .mobile-home-button {
-            display: flex !important;
-            justify-content: flex-end;
-            width: 100%;
-            height: 5vh;
-            margin-left: -12%;
-        }        
+          display: flex !important;
+          justify-content: flex-end;
+          width: 100%;
+          height: 5vh;
+          margin-left: -12%;
+        }
 
         .mobile-home-container {
-            height: 80%;
-            width: 15%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            border: solid 1px black;
-            border-radius: 23px;
+          height: 80%;
+          width: 15%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          border: solid 1px black;
+          border-radius: 23px;
         }
-       
+
         .pre-form-text {
-         overflow-wrap: break-word;
-         display: flex;
-         width: 90%;
-         justify-content: start;
-         align-items: start;
-         font-size: calc(18px + 4*(100vw - 1200px) / 720);
-         font-weight: 100;
-         line-height: 1.8em;
-         margin: 3% 0% 5% 0%;
-         }
+          overflow-wrap: break-word;
+          display: flex;
+          width: 90%;
+          justify-content: start;
+          align-items: start;
+          font-size: calc(18px + 4 * (100vw - 1200px) / 720);
+          font-weight: 100;
+          line-height: 1.8em;
+          margin: 3% 0% 5% 0%;
+        }
 
         .mobile-home-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
 
         .contactpage-image {
-            width: 110vw;  
-            left: -7%;
-            position: relative;
+          width: 110vw;
+          left: -7%;
+          position: relative;
         }
-         }
+      }
 
-         @media (min-width: 501px) and (max-width: 650px) {
-            .container {
-                gap: 5%;
-            }
-         }
-
-        .home-container {
-            width: 100%;
-            height: 5%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+      @media (min-width: 501px) and (max-width: 650px) {
+        .container {
+          gap: 5%;
         }
+      }
 
-        .home-button {
-            height: 100%;
-            width: 100%;
-            border: solid 1px black;
-            border-radius: 100px;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            transform: translateX(-20%);
-        }
+      .home-container {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
 
-        .home-button:hover {
-            cursor: pointer;
-        }
-        
-        .mobile-home-button {
-           display: none;
-        }       
+      .home-button {
+        height: 100%;
+        width: 100%;
+        border: solid 1px black;
+        border-radius: 100px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        transform: translateX(-20%);
+      }
 
+      .home-button:hover {
+        cursor: pointer;
+      }
 
+      .mobile-home-button {
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="mobile-home-button">
-            <a class="mobile-home-container" href="index.html">
-                Menu
-            </a>
-         </div>
-        <div class="left">
-            <div class="contact-image">
-                <img src="public/assets/images/010_ARCHITECTURE_BATCH.jpg" alt="Contact Image" class="contactpage-image">
+      <div class="mobile-home-button">
+        <a class="mobile-home-container" href="index.html"> Menu </a>
+      </div>
+      <div class="left">
+        <div class="contact-image">
+          <img
+            src="public/assets/images/010_ARCHITECTURE_BATCH.webp"
+            alt="Contact Image"
+            class="contactpage-image"
+          />
+        </div>
+        <div class="contact-text">
+          <img
+            src="public/assets/char3/c.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+          <img
+            src="public/assets/char3/o.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+          <img
+            src="public/assets/char3/n.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+          <img
+            src="public/assets/char3/t.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+          <img
+            src="public/assets/char3/a.svg"
+            style="position: relative; height: 100%; width: 10%; margin: 0 -1%"
+          />
+          <img
+            src="public/assets/char3/c.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+          <img
+            src="public/assets/char3/t.svg"
+            style="position: relative; height: 100%; width: 10%"
+          />
+        </div>
+        <div class="contact-info">
+          <div class="s-contact-info">
+            <a href="tel:+3250539396" class="s-link-underline"
+              >T +61 (7) 3172 6810</a
+            ><br />
+            <a
+              href="mailto:emailplaceholder@quackstudios.com.au"
+              class="s-link-underline"
+              >emailplaceholder@quackstudios.com.au</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="home-container">
+          <a href="index.html">
+            <div class="home-button">Menu</div>
+          </a>
+        </div>
+        <div class="pre-form-text">
+          Want to enquiry about past projects or a future vision of your own?
+          <br />
+          Fill out the form below to get in touch.
+        </div>
+
+        <div class="s-form">
+          <form
+            id="contactForm"
+            class="contact-form"
+            method="POST"
+            accept-charset="UTF-8"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="pageTitle" value="Contact" />
+
+            <div class="s-form__field">
+              <div class="s-form__label">
+                <label class="s-label" for="contactForm_fullName">
+                  <span class="s-form__label__info"></span
+                ></label>
+              </div>
+              <div class="s-form__input">
+                <input
+                  type="text"
+                  name="fullName"
+                  class="s-input js-form-input"
+                  placeholder="Name and Surname *"
+                  id="contactForm_fullName"
+                  required=""
+                />
+              </div>
             </div>
-            <div class="contact-text">
-                <img src="public/assets/char3/c.svg" style= "position: relative; height: 100%; width: 10%;">
-                <img src="public/assets/char3/o.svg" style= "position: relative; height: 100%; width: 10%;">
-                <img src="public/assets/char3/n.svg" style= "position: relative; height: 100%; width: 10%;">
-                <img src="public/assets/char3/t.svg" style= "position: relative; height: 100%; width: 10%;">
-                <img src="public/assets/char3/a.svg" style= "position: relative; height: 100%; width: 10%; margin: 0 -1%;">
-                <img src="public/assets/char3/c.svg" style= "position: relative; height: 100%; width: 10%;" >
-                <img src="public/assets/char3/t.svg" style= "position: relative; height: 100%; width: 10%;" >
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div class="s-form__field">
+              <div class="s-form__label">
+                <label class="s-label" for="contactForm_phone"></label>
+              </div>
+              <div class="s-form__input">
+                <input
+                  type="text"
+                  name="phone"
+                  class="s-input js-form-input"
+                  placeholder="Phone Number *"
+                  id="contactForm_phone"
+                />
+              </div>
             </div>
-            <div class="contact-info">
-                <div class="s-contact-info">
-                    <a href="tel:+3250539396" class="s-link-underline">T +61 (7) 3172 6810</a><br>
-                    <a href="mailto:emailplaceholder@quackstudios.com.au" class="s-link-underline">emailplaceholder@quackstudios.com.au</a>
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div class="s-form__field">
+              <div class="s-form__label">
+                <label class="s-label" for="contactForm_email">
+                  <span class="s-form__label__info"></span
+                ></label>
+              </div>
+              <div class="s-form__input">
+                <input
+                  type="email"
+                  name="email"
+                  class="s-input js-form-input"
+                  placeholder="Email Address *"
+                  id="contactForm_email"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div class="s-form__field">
+              <div class="s-form__label">
+                <label class="s-label" for="contactForm_message">
+                  <span class="s-form__label__info"></span
+                ></label>
+              </div>
+              <div class="s-form__input">
+                <textarea
+                  name="message"
+                  class="s-input s-input--textarea js-form-input s-input-top"
+                  placeholder="Type of Project *"
+                  id="contactForm_message"
+                  required=""
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div class="s-form__field">
+              <div class="s-form__label">
+                <label class="s-label" for="contactForm_message">
+                  <span class="s-form__label__info"></span
+                ></label>
+              </div>
+              <div class="s-form__input">
+                <textarea
+                  name="message"
+                  class="s-input s-input--textarea js-form-input"
+                  placeholder="Your Enquiry *"
+                  id="contactForm_message"
+                  required=""
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div class="s-form__field">
+              <div class="s-checkbox">
+                <input
+                  class="s-checkbox__input"
+                  type="checkbox"
+                  name="privacyPolicy"
+                  id="contactForm_privacyPolicy"
+                  required=""
+                />
+                <div class="s-checkbox__box"></div>
+                <label
+                  class="s-checkbox__label s-text--markup"
+                  for="contactForm_privacyPolicy"
+                  >I agree to the privacy conditions<span
+                    class="s-form__label__info"
+                    >*</span
+                  ></label
+                >
+              </div>
+            </div>
+            <div class="s-spacer s-spacer--medium"></div>
+
+            <div
+              class="s-form__field s-form__field--full s-form__field--button"
+            >
+              <button type="submit" class="s-link-button js-link-button">
+                <div class="s-link-button__text s-title s-title--small">
+                  Submit
                 </div>
+                <div class="s-link-button__arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="23.5"
+                    height="5"
+                    viewBox="0 0 23.5 5"
+                  >
+                    <path
+                      d="M2.5,0,5,3.5H0Z"
+                      transform="translate(23.5) rotate(90)"
+                    ></path>
+                    <line
+                      x2="20"
+                      transform="translate(0 2.5)"
+                      fill="none"
+                      stroke="#000"
+                      stroke-width="1"
+                      vector-effect="non-scaling-stroke"
+                    ></line>
+                  </svg>
+                  <div class="s-link-button__circle js-link-button-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                      <g fill="none" stroke="#aaa" stroke-width="1">
+                        <circle cx="40" cy="40" r="40" stroke="grey"></circle>
+                        <circle
+                          cx="40"
+                          cy="40"
+                          r="39.5"
+                          fill="none"
+                          vector-effect="non-scaling-stroke"
+                        ></circle>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </button>
             </div>
+          </form>
         </div>
-        <div class="right">
-            <div class="home-container">
-                <a href="index.html">
-                    <div class="home-button"> Menu </div>    
-                </a>
-            </div>
-            <div class="pre-form-text">
-              Want to enquiry about past projects or a future vision of your own? <br> Fill out the form below to get in touch.
-            </div>
-            
-            <div class="s-form">
-                <form id="contactForm"
-                      class="contact-form"
-                      method="POST"
-                      accept-charset="UTF-8"
-                      enctype="multipart/form-data">
-                    <input type="hidden" name="pageTitle" value="Contact">
-                    
-                    <div class="s-form__field">
-                        <div class="s-form__label">
-                            <label class="s-label" for="contactForm_fullName"> <span class="s-form__label__info"></span></label>
-                        </div>
-                        <div class="s-form__input">
-                            <input type="text" name="fullName" class="s-input js-form-input" placeholder="Name and Surname *" id="contactForm_fullName" required="">
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-                    
-                    <div class="s-form__field">
-                        <div class="s-form__label">
-                            <label class="s-label" for="contactForm_phone"></label>
-                        </div>
-                        <div class="s-form__input">
-                            <input type="text" name="phone" class="s-input js-form-input" placeholder="Phone Number *" id="contactForm_phone">
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-                    
-                    <div class="s-form__field">
-                        <div class="s-form__label">
-                            <label class="s-label" for="contactForm_email"> <span class="s-form__label__info"></span></label>
-                        </div>
-                        <div class="s-form__input">
-                            <input type="email" name="email" class="s-input js-form-input" placeholder="Email Address *" id="contactForm_email" required="">
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-
-                    <div class="s-form__field">
-                        <div class="s-form__label">
-                            <label class="s-label" for="contactForm_message"> <span class="s-form__label__info"></span></label>
-                        </div>
-                        <div class="s-form__input">
-                            <textarea name="message" class="s-input s-input--textarea js-form-input s-input-top" placeholder="Type of Project *" id="contactForm_message" required="" rows="5"></textarea>
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-                    
-                    <div class="s-form__field">
-                        <div class="s-form__label">
-                            <label class="s-label" for="contactForm_message"> <span class="s-form__label__info"></span></label>
-                        </div>
-                        <div class="s-form__input">
-                            <textarea name="message" class="s-input s-input--textarea js-form-input" placeholder="Your Enquiry *" id="contactForm_message" required="" rows="5"></textarea>
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-
-
-                    
-                    <div class="s-form__field">
-                        <div class="s-checkbox">
-                            <input class="s-checkbox__input" type="checkbox" name="privacyPolicy" id="contactForm_privacyPolicy" required="">
-                            <div class="s-checkbox__box"></div>
-                            <label class="s-checkbox__label s-text--markup" for="contactForm_privacyPolicy">I agree to the privacy conditions<span class="s-form__label__info">*</span></label>
-                        </div>
-                    </div>
-                    <div class="s-spacer s-spacer--medium"></div>
-                    
-                    <div class="s-form__field s-form__field--full s-form__field--button">
-                        <button type="submit" class="s-link-button js-link-button">
-                            <div class="s-link-button__text s-title s-title--small">Submit</div>
-                            <div class="s-link-button__arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23.5" height="5" viewBox="0 0 23.5 5">
-                                    <path d="M2.5,0,5,3.5H0Z" transform="translate(23.5) rotate(90)"></path>
-                                    <line x2="20" transform="translate(0 2.5)" fill="none" stroke="#000" stroke-width="1" vector-effect="non-scaling-stroke"></line>
-                                </svg>
-                                <div class="s-link-button__circle js-link-button-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                                        <g fill="none" stroke="#aaa" stroke-width="1">
-                                            <circle cx="40" cy="40" r="40" stroke="grey"></circle>
-                                            <circle cx="40" cy="40" r="39.5" fill="none" vector-effect="non-scaling-stroke"></circle>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div id="overlay" class="popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:99;"></div>
-                        <div id="thankYouPopup" class="popup-content" 
-                          style="display:none; 
-                          position:fixed; 
-                          height: 30%; 
-                          width: 30%; 
-                          left:50%; 
-                          top:50%; 
-                          transform:translate(-50%, -50%);
-                          padding:20px; 
-                          background-color:#ebebeb; 
-                          z-index:100; 
-                          align-content: center;
-                          text-align: center;">
-                            <h2 style="margin-bottom: 8px;">Thank You!</h2>
-                            <p style="margin-bottom: 17px;">Your submission has been received.</p>
-                            <button id="closePopup" 
-                            style="padding: 12px 25px; 
-                                background-color: #222; 
-                                color: white; 
-                                border: none; 
-                                font-size: 16px; 
-                                cursor: pointer; 
-                                border-radius: 5px; 
-                                transition: background-color 0.3s ease;"
-                                onmouseover="this.style.backgroundColor='#444';" 
-                                onmouseout="this.style.backgroundColor='#222';"
-                            >Close</button>
-                        </div>
-                        <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                        const form = document.getElementById('contactForm');
-                        const thankYouPopup = document.getElementById('thankYouPopup');
-                        const overlay = document.getElementById('overlay');
-                        const closePopup = document.getElementById('closePopup');
-
-                        form.addEventListener('submit', function (event) {
-                            event.preventDefault();
-                            console.log('Form submission intercepted');
-                            const formData = new FormData(form);
-
-                            fetch('https://formkeep.com/f/87c15317d18f', {
-                                method: 'POST',
-                                body: formData,
-                                headers: {
-                                    'Accept': 'application/json'
-                                }
-                            }).then(response => {
-                                if (response.ok) {
-                                    console.log('Form submitted successfully');
-                                    overlay.style.display = 'block';
-                                    thankYouPopup.style.display = 'block';
-                                } else {
-                                    console.error('Form submission failed with status:', response.status);
-                                    alert('There was an issue submitting the form. Please try again.');
-                                }
-                            }).catch(error => {
-                                console.error('Error:', error);
-                                alert('There was an issue submitting the form. Please try again.');
-                            });
-                        });
-
-                        closePopup.addEventListener('click', function () {
-                            overlay.style.display = 'none';
-                            thankYouPopup.style.display = 'none';
-                            resetForm();
-                        });
-
-                        function resetForm() {
-                            // Reset the form fields
-                            form.reset();
-
-                            // Clear input values and reset any inline styles
-                            form.querySelectorAll('input:not([type="checkbox"]), textarea').forEach(field => {
-                                field.value = '';
-                                field.style.removeProperty('background-color');
-                                field.style.removeProperty('border');
-                                field.style.removeProperty('color');
-                                field.style.removeProperty('padding');
-                                field.classList.remove('filled', 'has-value', 'is-focused');
-
-                                // Trigger collapse/expand behavior
-                                if (field.classList.contains('expanded')) {
-                                    field.classList.remove('expanded');
-                                }
-
-                                // Remove focus class to collapse the input
-                                field.dispatchEvent(new Event('blur'));
-                            });
-
-                            // Reset checkboxes
-                            form.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-                                checkbox.checked = false;
-                            });
-
-                            // Remove custom class styling on form fields
-                            form.querySelectorAll('.s-form__field, .form-field').forEach(field => {
-                                field.classList.remove('has-value', 'is-focused', 'filled');
-                            });
-
-                            // Reset any labels that might be stuck in an active state
-                            form.querySelectorAll('label').forEach(label => {
-                                label.classList.remove('filled', 'active', 'has-value');
-                            });
-
-                            // Reset placeholders if they exist
-                            form.querySelectorAll('.placeholder').forEach(placeholder => {
-                                placeholder.style.transform = '';
-                                placeholder.style.transition = '';
-                            });
-
-                            // Remove any validation-related classes
-                            form.querySelectorAll('.is-invalid, .is-valid').forEach(field => {
-                                field.classList.remove('is-invalid', 'is-valid');
-                            });
-
-                            // Reset custom elements like select boxes or checkboxes
-                            form.querySelectorAll('.custom-select, .custom-checkbox').forEach(element => {
-                                element.classList.remove('selected', 'checked');
-                            });
-
-                            // Force a repaint to ensure all style resets take effect
-                            form.style.display = 'none';
-                            setTimeout(() => {
-                                form.style.display = 'block';
-                            }, 10);
-                        }
-                    });
-                    </script>    
+        <div
+          id="overlay"
+          class="popup-overlay"
+          style="
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+          "
+        ></div>
+        <div
+          id="thankYouPopup"
+          class="popup-content"
+          style="
+            display: none;
+            position: fixed;
+            height: 30%;
+            width: 30%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #ebebeb;
+            z-index: 100;
+            align-content: center;
+            text-align: center;
+          "
+        >
+          <h2 style="margin-bottom: 8px">Thank You!</h2>
+          <p style="margin-bottom: 17px">Your submission has been received.</p>
+          <button
+            id="closePopup"
+            style="
+              padding: 12px 25px;
+              background-color: #222;
+              color: white;
+              border: none;
+              font-size: 16px;
+              cursor: pointer;
+              border-radius: 5px;
+              transition: background-color 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#444';"
+            onmouseout="this.style.backgroundColor='#222';"
+          >
+            Close
+          </button>
         </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+            const thankYouPopup = document.getElementById("thankYouPopup");
+            const overlay = document.getElementById("overlay");
+            const closePopup = document.getElementById("closePopup");
+
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
+              console.log("Form submission intercepted");
+              const formData = new FormData(form);
+
+              fetch("https://formkeep.com/f/87c15317d18f", {
+                method: "POST",
+                body: formData,
+                headers: {
+                  Accept: "application/json",
+                },
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    console.log("Form submitted successfully");
+                    overlay.style.display = "block";
+                    thankYouPopup.style.display = "block";
+                  } else {
+                    console.error(
+                      "Form submission failed with status:",
+                      response.status
+                    );
+                    alert(
+                      "There was an issue submitting the form. Please try again."
+                    );
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  alert(
+                    "There was an issue submitting the form. Please try again."
+                  );
+                });
+            });
+
+            closePopup.addEventListener("click", function () {
+              overlay.style.display = "none";
+              thankYouPopup.style.display = "none";
+              resetForm();
+            });
+
+            function resetForm() {
+              // Reset the form fields
+              form.reset();
+
+              // Clear input values and reset any inline styles
+              form
+                .querySelectorAll('input:not([type="checkbox"]), textarea')
+                .forEach((field) => {
+                  field.value = "";
+                  field.style.removeProperty("background-color");
+                  field.style.removeProperty("border");
+                  field.style.removeProperty("color");
+                  field.style.removeProperty("padding");
+                  field.classList.remove("filled", "has-value", "is-focused");
+
+                  // Trigger collapse/expand behavior
+                  if (field.classList.contains("expanded")) {
+                    field.classList.remove("expanded");
+                  }
+
+                  // Remove focus class to collapse the input
+                  field.dispatchEvent(new Event("blur"));
+                });
+
+              // Reset checkboxes
+              form
+                .querySelectorAll('input[type="checkbox"]')
+                .forEach((checkbox) => {
+                  checkbox.checked = false;
+                });
+
+              // Remove custom class styling on form fields
+              form
+                .querySelectorAll(".s-form__field, .form-field")
+                .forEach((field) => {
+                  field.classList.remove("has-value", "is-focused", "filled");
+                });
+
+              // Reset any labels that might be stuck in an active state
+              form.querySelectorAll("label").forEach((label) => {
+                label.classList.remove("filled", "active", "has-value");
+              });
+
+              // Reset placeholders if they exist
+              form.querySelectorAll(".placeholder").forEach((placeholder) => {
+                placeholder.style.transform = "";
+                placeholder.style.transition = "";
+              });
+
+              // Remove any validation-related classes
+              form
+                .querySelectorAll(".is-invalid, .is-valid")
+                .forEach((field) => {
+                  field.classList.remove("is-invalid", "is-valid");
+                });
+
+              // Reset custom elements like select boxes or checkboxes
+              form
+                .querySelectorAll(".custom-select, .custom-checkbox")
+                .forEach((element) => {
+                  element.classList.remove("selected", "checked");
+                });
+
+              // Force a repaint to ensure all style resets take effect
+              form.style.display = "none";
+              setTimeout(() => {
+                form.style.display = "block";
+              }, 10);
+            }
+          });
+        </script>
+      </div>
     </div>
-</body>
+  </body>
 </html>
