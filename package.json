@@ -23,9 +23,8 @@
     "@babel/preset-react": "^7.0.0",
     "html-webpack-plugin": "^5.0.0",
     "style-loader": "^3.0.0",
-    "css-loader": "^6.0.0", 
-    "gh-pages": "^5.0.0",
-    "file-loader": "^8.0.0" 
+    "css-loader": "^6.0.0",
+    "gh-pages": "^5.0.0"
   },
   "browserslist": {
     "development": [

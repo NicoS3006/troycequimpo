@@ -24,7 +24,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'], // Load CSS files and inject styles into DOM
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|webp)$/, // Match image files
+        test: /\.(png|jpg|jpeg|gif|svg|webp|ico)$/, // Match image files
         type: 'asset/resource', // Handle assets using Webpack's asset module
       },
       {
