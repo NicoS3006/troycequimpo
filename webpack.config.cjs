@@ -3,47 +3,51 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production', // Set to production for live deployment
-  entry: './src/index.js',
+  entry: './src/index.js', // Entry point for your application
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'), // Output directory
+    filename: 'bundle.js', // Name of the output JS file
     publicPath: './', // Use relative paths for compatibility with GitHub Pages or custom domains
-    assetModuleFilename: 'assets/[name][ext]', // Handle static assets
+    assetModuleFilename: 'assets/[name][ext]', // Define where static assets will be output
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/, // Match JavaScript and JSX files
+        exclude: /node_modules/, // Exclude dependencies in node_modules
         use: {
-          loader: 'babel-loader',
+          loader: 'babel-loader', // Use Babel for transpiling
         },
       },
       {
-        test: /\.css$/, // Add CSS loader
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/, // Match CSS files
+        use: ['style-loader', 'css-loader'], // Load CSS files and inject styles into DOM
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/, // Handle static assets
-        type: 'asset/resource',
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/, // Match image files
+        type: 'asset/resource', // Handle assets using Webpack's asset module
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/, // Match font files
+        type: 'asset/resource', // Handle fonts as assets
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx'], // Resolve these file extensions
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Ensure paths are correct for HtmlWebpackPlugin
-      filename: 'index.html',
+      template: './src/index.html', // Path to the HTML template
+      filename: 'index.html', // Name of the output HTML file
     }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'dist'), // Directory to serve
     },
-    compress: true,
-    port: 9000,
+    compress: true, // Enable Gzip compression
+    port: 9000, // Port for the development server
     open: true, // Automatically opens the browser for local testing
   },
 };
