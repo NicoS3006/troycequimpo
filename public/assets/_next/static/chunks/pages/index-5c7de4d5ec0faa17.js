@@ -13,12 +13,12 @@
     6213: function (e, t, i) {
       const imageSets = {
         0: [
-          "public/assets/images/001_HERO_BATCH.png",
-          "public/assets/images/001_HERO_BATCH.png",
-          "public/assets/images/001_HERO_BATCH.png",
-          "public/assets/images/001_HERO_BATCH.png",
-          "public/assets/images/001_HERO_BATCH.png",
-          "public/assets/images/001_HERO_BATCH.png",
+          "public/assets/images/001_HERO_BATCH.jpg",
+          "public/assets/images/001_HERO_BATCH.jpg",
+          "public/assets/images/001_HERO_BATCH.jpg",
+          "public/assets/images/001_HERO_BATCH.jpg",
+          "public/assets/images/001_HERO_BATCH.jpg",
+          "public/assets/images/001_HERO_BATCH.jpg",
 
         ],
         1: [
@@ -521,7 +521,7 @@
           // Carousel is called with specific images
           setTimeout(() => {
             createCarousel(imagesToDisplay); // Pass the images to the function
-          }, 2000); // Delay of 2000 milliseconds (2 seconds)
+          }, 1500); // Delay of 1500 milliseconds (2 seconds)
         
           let r = n.cloneNode(!0);
           (r.className = "details background"),

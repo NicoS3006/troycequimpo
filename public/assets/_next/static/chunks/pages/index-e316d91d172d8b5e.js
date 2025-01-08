@@ -1,1 +1,662 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[405],{8312:function(e,t,s){(window.__NEXT_P=window.__NEXT_P||[]).push(["/",function(){return s(3058)}])},4038:function(e,t,s){"use strict";var a=s(5893);s(7294);var n=s(1664),i=s.n(n),r=s(1016);t.Z=function(){let{isModalOpen:e,setModalOpen:t}=(0,r.d)();return(0,a.jsx)("div",{className:" py-40 max-[1024px]:py-16",children:(0,a.jsxs)("div",{className:" w-11/12 m-auto max-w-[1600px]  flex place-content-between max-[1024px]:flex-col",children:[(0,a.jsxs)("div",{className:" w-full max-w-[850px]  mr-20 fade-in","data-fade-in":!0,children:[(0,a.jsx)("h2",{className:"text-4xl max-w-[750px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px] mb-5",children:"What does zolviz cost?"}),(0,a.jsxs)("p",{className:"text-sm mt-5 max-w-[580px]",children:["At zolviz, ",(0,a.jsx)("strong",{children:" we specialize in 3D visualizations of common areas in homes."})," However, our advanced 3D Visualization system can cater to most spaces within a residence. Curious about the investment for a zolviz 3D Visualization? Pricing is generally determined by square meterage, with a typical ",(0,a.jsx)("strong",{children:" rate of €200 per square meter."})," Below are our pricing brackets:"]}),(0,a.jsxs)("div",{className:"mt-20",children:[(0,a.jsxs)("div",{className:"flex place-content-between items-center border-t py-6 border-black",children:[(0,a.jsxs)("div",{className:" mr-5",children:[(0,a.jsx)("h4",{className:"uppercase text-[#0000FF] font-bold",children:"Small Spaces (2-10m\xb2)"}),(0,a.jsx)("p",{children:"Starting at around €400, includes one review session."})]}),(0,a.jsx)("div",{className:"text-4xl min-w-fit max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",children:"€400 - €2000"})]}),(0,a.jsxs)("div",{className:"flex place-content-between items-center border-t py-6 border-black",children:[(0,a.jsxs)("div",{className:" mr-5",children:[(0,a.jsx)("h4",{className:"uppercase text-[#0000FF] font-bold",children:"Medium Spaces (10-24m\xb2)"}),(0,a.jsx)("p",{children:"Pricing ranges from €2000 to €4800 and includes two review sessions."})]}),(0,a.jsx)("div",{className:"text-4xl min-w-fit max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",children:"€2000 - €4800"})]}),(0,a.jsxs)("div",{className:"flex place-content-between items-center border-y py-6 border-black",children:[(0,a.jsxs)("div",{className:" mr-5",children:[(0,a.jsx)("h4",{className:"uppercase text-[#0000FF] font-bold",children:"Large Spaces (25+m\xb2)"}),(0,a.jsx)("p",{children:"Estimates range from €5000+ and come with three review sessions."})]}),(0,a.jsx)("div",{className:"text-4xl min-w-fit max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",children:"€5000+"})]})]}),(0,a.jsx)(i(),{href:"/honest-pricing",className:"text-sm  inline-block text-black  underline mt-10 hover:text-[#0000FF]",children:"*Check our Honest Pricing Concept"})]}),(0,a.jsxs)("div",{className:"bg-lime-200 w-11/12 max-w-[500px] p-16 mt-40 self-start max-[1024px]:mt-16 max-[1024px]:p-12 max-[1024px]:max-w-[100%] max-[1024px]:w-[100%] fade-in","data-fade-in":!0,children:[(0,a.jsx)("h2",{className:"text-4xl max-w-[750px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]  mb-5",children:"So how do you price your space?"}),(0,a.jsxs)("p",{children:["The first step is to Book a Meeting with us ",(0,a.jsx)("strong",{children:"(€99 for  1-hour video appointment)"}),"  Our user-friendly ",(0,a.jsx)("strong",{children:"Book a Meeting form"})," uses simple information about your space and preferences to provide a price estimate. We then work with you to develop an approach that will achieve your goals."]}),(0,a.jsx)("div",{onClick:()=>t(!e),className:" cursor-pointer inline-block bg-black text-white px-6 py-1  mt-5",children:"Book a Meeting"})]})]})})}},3058:function(e,t,s){"use strict";s.r(t);var a=s(5893),n=s(7294),i=s(5675),r=s.n(i),l=s(1664),o=s.n(l),c=s(4038),m=s(9008),x=s.n(m),d=s(1016),p=s(5907);let u=(0,p.T)();t.default=function(){let[e,t]=(0,n.useState)(50),s=(0,n.useRef)(null),{isModalOpen:i,setModalOpen:l}=(0,d.d)(),m=(0,n.useRef)(null),updateVideoTime=e=>{if(m.current){let t=m.current.duration;t&&(m.current.currentTime=e/100*t)}},[p,h]=(0,n.useState)("/assets/demo/seq/0007.png"),getImageSrc=e=>"/assets/demo/seq/".concat(String(13-(Math.min(Math.max(Math.round(e/100*12),0),12)+1-1)).padStart(4,"0"),".png");function getRandomImageName(e,t){return"".concat(e,"-").concat(String(Math.floor(Math.random()*t)+1).padStart(2,"0"),".jpg")}(0,n.useEffect)(()=>{let e;let a=s.current;if(!a)return;let handleMouseMove=a=>{if(s.current){let n=s.current.getBoundingClientRect(),i=(a.clientX-n.left)/n.width*100;t(i=Math.max(0,Math.min(i,100))),cancelAnimationFrame(e),e=requestAnimationFrame(()=>updateVideoTime(i));let r=getImageSrc(i);h(r)}},handleTouchMove=a=>{if(s.current){let n=s.current.getBoundingClientRect(),i=a.touches[0].clientX,r=(i-n.left)/n.width*100;t(r=Math.max(0,Math.min(r,100))),cancelAnimationFrame(e),e=requestAnimationFrame(()=>updateVideoTime(r));let l=getImageSrc(r);h(l)}};return window.addEventListener("mousemove",handleMouseMove),a.addEventListener("touchmove",handleTouchMove,{passive:!1}),()=>{window.removeEventListener("mousemove",handleMouseMove),a.removeEventListener("touchmove",handleTouchMove)}},[s]);let g=getRandomImageName("t",5),w=getRandomImageName("f",5),f=["/assets/images/selection/001.png","/assets/images/selection/002.png","/assets/images/selection/003.png","/assets/images/selection/006.png","/assets/images/selection/005.png","/assets/images/selection/004.png","/assets/images/selection/007.png","/assets/images/selection/008.png","/assets/images/selection/009.png","/assets/images/selection/010.png","/assets/images/selection/011.png","/assets/images/selection/012.png","/assets/images/selection/013.png","/assets/images/selection/014.png","/assets/images/selection/015.png","/assets/images/selection/016.png","/assets/images/selection/017.png","/assets/images/selection/018.png","/assets/images/selection/019.png","/assets/images/selection/020.png","/assets/images/selection/021.png","/assets/images/selection/022.png","/assets/images/selection/023.png","/assets/images/selection/024.png","/assets/images/selection/025.png","/assets/images/selection/026.png","/assets/images/selection/027.png","/assets/images/selection/028.png","/assets/images/selection/029.png","/assets/images/selection/030.png","/assets/images/selection/031.png","/assets/images/selection/032.png","/assets/images/selection/033.png","/assets/images/selection/034.png","/assets/images/selection/035.png","/assets/images/selection/036.png"],[v,b]=(0,n.useState)("fade-in"),handleImageLoad=e=>{e.currentTarget.classList.add("fade-in-active")},[j,y]=(0,n.useState)([]);(0,n.useEffect)(()=>{let e=function(e){for(let t=e.length-1;t>0;t--){let s=Math.floor(Math.random()*(t+1));[e[t],e[s]]=[e[s],e[t]]}return e}([...f]),t=e.slice(0,6),s=e.slice(0,6),a=[...t,...s];y(a)},[]);let N=(0,n.useRef)(null),[k,z]=(0,n.useState)(!1),[L,E]=(0,n.useState)(0),[M,T]=(0,n.useState)(0),D=(0,n.useRef)(null),S=(0,n.useRef)(null),[F,A]=(0,n.useState)(0),[q,I]=(0,n.useState)(!1);(0,n.useEffect)(()=>{let handleResize=()=>{I(window.innerWidth<=768)};return handleResize(),window.addEventListener("resize",handleResize),()=>window.removeEventListener("resize",handleResize)},[]),(0,n.useEffect)(()=>{let handleMouseDown=e=>{var t;z(!0),E(e.pageX-N.current.offsetLeft),T(N.current.scrollLeft),null===(t=N.current)||void 0===t||t.classList.add("cursor-grabbing"),D.current&&(cancelAnimationFrame(D.current),D.current=null),S.current&&clearTimeout(S.current)},handleTouchStart=e=>{z(!0);let t=e.touches[0];E(t.pageX-N.current.offsetLeft),A(t.pageY),T(N.current.scrollLeft),D.current&&(cancelAnimationFrame(D.current),D.current=null),S.current&&clearTimeout(S.current)},e=N.current;e&&(e.addEventListener("mousedown",handleMouseDown),document.addEventListener("mousemove",handleMouseMove),document.addEventListener("mouseup",handleMouseUp),e.addEventListener("touchstart",handleTouchStart),e.addEventListener("touchmove",handleTouchMove),e.addEventListener("touchend",handleTouchEnd));let animateScroll=()=>{if(N.current){var e=N.current.querySelectorAll("img")[6],t=N.current.scrollLeft;(null==e?void 0:e.offsetLeft)-t<0?N.current.scrollLeft=3:N.current.scrollLeft+=q?1:2,D.current=requestAnimationFrame(animateScroll)}};return D.current=requestAnimationFrame(animateScroll),()=>{e&&(e.removeEventListener("mousedown",handleMouseDown),document.removeEventListener("mousemove",handleMouseMove),document.removeEventListener("mouseup",handleMouseUp),e.removeEventListener("touchstart",handleTouchStart),e.removeEventListener("touchmove",handleTouchMove),e.removeEventListener("touchend",handleTouchEnd)),D.current&&cancelAnimationFrame(D.current),S.current&&clearTimeout(S.current)}},[k,L,M,j]);let handleMouseMove=e=>{if(!k)return;e.preventDefault();let t=e.pageX-N.current.offsetLeft,s=(t-L)*(q?1:2);N.current.scrollLeft=M-s;var a=N.current.querySelectorAll("img")[6],n=N.current.scrollLeft,i=a.offsetLeft-n;i<0&&(N.current.scrollLeft=-i),D.current&&(cancelAnimationFrame(D.current),D.current=null),S.current&&clearTimeout(S.current)},handleTouchMove=e=>{if(!k)return;let t=e.touches[0],s=t.pageX-N.current.offsetLeft,a=t.pageY,n=Math.abs(s-L);if(n>Math.abs(a-F)){e.preventDefault();let t=(s-L)*(q?1:2);N.current.scrollLeft=M-t}var i=N.current.querySelectorAll("img")[6],r=N.current.scrollLeft,l=i.offsetLeft-r;l<0&&(N.current.scrollLeft=-l),D.current&&(cancelAnimationFrame(D.current),D.current=null),S.current&&clearTimeout(S.current)},handleMouseUp=()=>{var e;z(!1),null===(e=N.current)||void 0===e||e.classList.remove("cursor-grabbing")},handleTouchEnd=()=>{z(!1)};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(x(),{children:[(0,a.jsx)("title",{children:"zolviz - Transform Your Space with Expert 3D Room Design"}),(0,a.jsx)("meta",{name:"description",content:"zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more."}),(0,a.jsx)("meta",{property:"og:title",content:"zolviz - Transform Your Space with Expert 3D Room Design"}),(0,a.jsx)("meta",{property:"og:description",content:"zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more."}),(0,a.jsx)("meta",{property:"og:url",content:"".concat(u)}),(0,a.jsx)("meta",{name:"twitter:card",content:"summary_large_image"}),(0,a.jsx)("meta",{name:"twitter:title",content:"zolviz - Transform Your Space with Expert 3D Room Design"}),(0,a.jsx)("meta",{name:"twitter:description",content:"zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more."}),(0,a.jsx)("meta",{name:"twitter:image",content:"".concat(u,"/assets/social/").concat(g)}),(0,a.jsx)("meta",{property:"og:image",content:"".concat(u,"/assets/social/").concat(w)})]}),(0,a.jsxs)("div",{className:" pt-20",children:[(0,a.jsxs)("div",{className:"w-full  pb-40 max-[1024px]:pb-16 fade-in","data-fade-in":!0,children:[(0,a.jsx)("div",{className:"w-11/12 m-auto max-w-[1600px]",children:(0,a.jsx)("h2",{className:"text-4xl max-w-[820px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",children:"Welcome to zolviz, where we turn your visions into exquisite reality. Specializing in 3D room designs for commercial and residential spaces, including kitchens, bathrooms, living rooms, bedrooms, and more."})}),(0,a.jsx)(r(),{className:"mt-20 w-full pointer-events-none hidden",src:"/assets/images/hero-023.png",alt:"zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",width:1600,height:760,loading:"lazy"}),(0,a.jsx)("div",{className:"mt-20 max-[700px]:mt-10 overflow-hidden w-[100%] cursor-grab",ref:N,children:(0,a.jsx)("div",{className:"banner flex",children:j.map((e,t)=>(0,a.jsx)(r(),{onLoad:handleImageLoad,className:"box-content border border-[3px] border-white ".concat(v),width:760,height:760,src:e,alt:"zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",priority:!0},"first-set-".concat(t)))})})]}),(0,a.jsx)("div",{className:" py-40   bg-neutral-100 max-[1024px]:py-16",children:(0,a.jsxs)("div",{className:" w-11/12 m-auto max-w-[1600px]",children:[(0,a.jsxs)("div",{className:" fade-in","data-fade-in":!0,children:[(0,a.jsx)("h5",{className:"uppercase font-bold tracking-tighter mb-5",children:"Benefits of 3d Visualization"}),(0,a.jsx)("h2",{className:"text-4xl max-w-[840px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",children:"Witness emptiness transforming into a 3D masterpiece. Curated items, links where to buy, and cost estimates appear before your eyes. Experience precise color simulation of both natural and artificial light, mirroring your space, vision and style."}),(0,a.jsx)(o(),{href:"/demo",className:" cursor-pointer inline-block bg-black text-white px-6 py-1 mt-5",children:"Try our Demo"})]}),(0,a.jsxs)("div",{className:"py-40 relative mt-20 max-[1024px]:py-[12vw] max-[1024px]:mt-10  fade-in","data-fade-in":!0,children:[(0,a.jsx)("div",{className:"absolute h-full top-0 left-0 w-full",children:(0,a.jsx)("div",{className:"w-full h-full  max-w-[1100px] bg-lime-200 mx-auto"})}),(0,a.jsxs)("div",{className:"relative w-11/12 max-w-[800px] m-auto z-1  select-none max-[1024px]:w-[70vw]",ref:s,children:[(0,a.jsx)(r(),{className:"w-full pointer-events-none object-cover object-left-top",src:"/assets/images/demo-b.png",alt:"Witness emptiness transforming into a 3D masterpiece. Curated items, links where to buy, and cost estimates appear before your eyes. Experience precise color simulation of both natural and artificial light, mirroring your space, vision and style.",width:800,height:800,loading:"lazy"}),(0,a.jsxs)("div",{style:{width:"".concat(e,"%")},className:"absolute top-0 left-0 h-full overflow-hidden border-r-2  border-white ",children:[(0,a.jsx)("div",{className:"absolute w-full h-full",children:(0,a.jsxs)("div",{className:"absolute h-full z-10 text-white absolute  text-white  max-w-[800px] max-[1024px]:w-[70vw] w-[800px]",children:[(0,a.jsxs)("div",{className:"flex absolute",style:{top:"35.99%",left:"50.05%"},children:[(0,a.jsx)("div",{className:"mr-2 max-[1024px]:mr-[1vw]",children:(0,a.jsx)("div",{className:"border-white bg-white/30 border-2 rounded-full h-9 w-9 flex justify-center  max-[1024px]:h-[3vw]  max-[1024px]:w-[3vw]  max-[1024px]:border-[.3vw]",children:(0,a.jsx)("div",{className:"rounded-full bg-white w-[6px] h-[6px] self-center  max-[1024px]:h-[.7vw]  max-[1024px]:w-[.7vw]"})})}),(0,a.jsxs)("a",{href:"https://arturel.nl/products/wave-series-original?variant=47208941224279",target:"_blank",rel:"noopener noreferrer",className:"flex flex-col place-content-center inline-block  min-w-fit  max-[1024px]:text-[1.1vw]  max-[1024px]:leading-[1.95vw]  ",children:[(0,a.jsx)("p",{className:"min-w-fit",children:"Wave Original x2"}),(0,a.jsx)("p",{className:"-mt-1",children:"€861"})]})]}),(0,a.jsxs)("div",{className:"flex absolute",style:{top:"78.17%",left:"61.28%"},children:[(0,a.jsx)("div",{className:"mr-2 max-[1024px]:mr-[1vw]",children:(0,a.jsx)("div",{className:"border-white bg-white/30 border-2 rounded-full h-9 w-9 flex justify-center  max-[1024px]:h-[3vw]  max-[1024px]:w-[3vw]  max-[1024px]:border-[.3vw]",children:(0,a.jsx)("div",{className:"rounded-full bg-white w-[6px] h-[6px] self-center  max-[1024px]:h-[.7vw]  max-[1024px]:w-[.7vw]"})})}),(0,a.jsxs)("a",{href:"https://www.rugvista.nl/p/neti-2018-200x300-cm-greige-multicolor-groot-wollen-tapijt-CVD22066",target:"_blank",rel:"noopener noreferrer",className:"flex flex-col place-content-center inline-block  min-w-fit  max-[1024px]:text-[1.1vw]  max-[1024px]:leading-[1.95vw]  ",children:[(0,a.jsx)("p",{className:"min-w-fit",children:"Neti - Greige / Multicolor"}),(0,a.jsx)("p",{className:"-mt-1",children:"€897"})]})]}),(0,a.jsxs)("div",{className:"flex absolute",style:{top:"47.12%",left:"17.11%"},children:[(0,a.jsx)("div",{className:"mr-2 max-[1024px]:mr-[1vw]",children:(0,a.jsx)("div",{className:"border-white bg-white/30 border-2 rounded-full h-9 w-9 flex justify-center  max-[1024px]:h-[3vw]  max-[1024px]:w-[3vw]  max-[1024px]:border-[.3vw]",children:(0,a.jsx)("div",{className:"rounded-full bg-white w-[6px] h-[6px] self-center  max-[1024px]:h-[.7vw]  max-[1024px]:w-[.7vw]"})})}),(0,a.jsxs)("a",{href:"https://www.fleurdirect.nl/ficus.html?gclid=Cj0KCQiA7OqrBhD9ARIsAK3UXh3pmskRIbiBmBQwJCUQrT0op2Fejsob0YzdNTpKzOlAwjIhFKF50XEaAqz2EALw_wcB",target:"_blank",rel:"noopener noreferrer",className:"flex flex-col place-content-center inline-block  min-w-fit  max-[1024px]:text-[1.1vw]  max-[1024px]:leading-[1.95vw]  ",children:[(0,a.jsx)("p",{className:"min-w-fit",children:"Ficus Carica"}),(0,a.jsx)("p",{className:"-mt-1",children:"€24"})]})]}),(0,a.jsxs)("div",{className:"flex absolute",style:{top:"79.3%",left:"4.56%"},children:[(0,a.jsx)("div",{className:"mr-2 max-[1024px]:mr-[1vw]",children:(0,a.jsx)("div",{className:"border-white bg-white/30 border-2 rounded-full h-9 w-9 flex justify-center  max-[1024px]:h-[3vw]  max-[1024px]:w-[3vw]  max-[1024px]:border-[.3vw]",children:(0,a.jsx)("div",{className:"rounded-full bg-white w-[6px] h-[6px] self-center  max-[1024px]:h-[.7vw]  max-[1024px]:w-[.7vw]"})})}),(0,a.jsxs)("a",{href:"https://www.estudiopersona.com/products/bow-floor-lamp",target:"_blank",rel:"noopener noreferrer",className:"flex flex-col place-content-center inline-block  min-w-fit  max-[1024px]:text-[1.1vw]  max-[1024px]:leading-[1.95vw]  ",children:[(0,a.jsx)("p",{className:"min-w-fit",children:"Bow floor Lamp"}),(0,a.jsx)("p",{className:"-mt-1",children:"€4000"})]})]}),(0,a.jsxs)("div",{className:"flex absolute",style:{top:"47%",left:"76.3%"},children:[(0,a.jsx)("div",{className:"mr-2 max-[1024px]:mr-[1vw]",children:(0,a.jsx)("div",{className:"border-white bg-white/30 border-2 rounded-full h-9 w-9 flex justify-center  max-[1024px]:h-[3vw]  max-[1024px]:w-[3vw]  max-[1024px]:border-[.3vw]",children:(0,a.jsx)("div",{className:"rounded-full bg-white w-[6px] h-[6px] self-center  max-[1024px]:h-[.7vw]  max-[1024px]:w-[.7vw]"})})}),(0,a.jsxs)("a",{href:"https://www.misterdesign.nl/artemide-nesso-tafellamp.html",target:"_blank",rel:"noopener noreferrer",className:"flex flex-col place-content-center inline-block  min-w-fit  max-[1024px]:text-[1.1vw]  max-[1024px]:leading-[1.95vw]  ",children:[(0,a.jsx)("p",{className:"min-w-fit",children:"Nesso Lamp"}),(0,a.jsx)("p",{className:"-mt-1",children:"€315"})]})]})]})}),(0,a.jsx)("div",{className:"mobile-container w-full pointer-events-none object-cover object-left-top h-full min-[1024px]:hidden",children:(0,a.jsx)(r(),{onLoad:handleImageLoad,className:"w-full pointer-events-none object-cover object-left-top h-full ".concat(v),src:p,alt:"Gain full control through our interactive dashboard. Unlock features like real product lists, object swaps, and additional renderings.Tailor your design as you navigate. zolviz proudly uses real objects, and our 3D designs are crafted by our team of experts</strong>, ensuring authenticity. <strong>This is a personalized interior design service, not an AI tool, so you can trust the authenticity of every detail",width:350,height:350,priority:!0})}),(0,a.jsx)("div",{className:"mobile-container w-full pointer-events-none object-cover object-left-top h-full max-[1024px]:hidden",children:(0,a.jsx)(r(),{onLoad:handleImageLoad,className:"w-full pointer-events-none object-cover object-left-top h-full ".concat(v),src:p,alt:"Gain full control through our interactive dashboard. Unlock features like real product lists, object swaps, and additional renderings.Tailor your design as you navigate. zolviz proudly uses real objects, and our 3D designs are crafted by our team of experts</strong>, ensuring authenticity. <strong>This is a personalized interior design service, not an AI tool, so you can trust the authenticity of every detail",width:800,height:800,priority:!0})}),(0,a.jsx)("video",{ref:m,className:"w-full pointer-events-none object-cover object-left-top h-full  relative hidden",width:800,height:800,muted:!0,children:(0,a.jsx)("source",{src:"/assets/demo/Comp2.mp4",type:"video/mp4"})})]})]}),(0,a.jsx)("div",{className:"max-w-[800px] w-11/12 m-auto flex place-content-end mt-2 relative z-1  max-[1024px]:w-[70vw]",children:(0,a.jsxs)("p",{className:"max-w-[380px] ",children:["Gain full control through our interactive dashboard. ",(0,a.jsx)("strong",{children:"Unlock features like real product lists, object swaps, and additional renderings."})," Tailor your design as you navigate. ",(0,a.jsx)("strong",{children:" zolviz proudly uses real objects, and our 3D designs are crafted by our team of experts"}),", ensuring authenticity. ",(0,a.jsx)("strong",{children:"This is a personalized interior design service, not an AI tool, "}),"so you can trust the authenticity of every detail."]})})]})]})}),(0,a.jsxs)("div",{className:"w-11/12 m-auto max-w-[1600px]  py-40  max-[1024px]:py-16",children:[(0,a.jsx)("h2",{className:"text-4xl max-w-[840px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]  fade-in","data-fade-in":!0,children:"Our Process"}),(0,a.jsxs)("div",{className:"flex place-content-between  max-[1024px]:block",children:[(0,a.jsxs)("div",{className:"max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10  max-[580px]:flex-col fade-in","data-fade-in":!0,children:[(0,a.jsx)("div",{className:"bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",children:(0,a.jsx)(r(),{className:" w-full pointer-events-none",src:"/assets/images/003.png",alt:"Easily share your space with us by uploading photos and dimensions. Include some selected image to capture your style inspiration.",width:480,height:480,loading:"lazy"})}),(0,a.jsxs)("div",{className:" max-[1024px]:w-[65%] max-[580px]:w-[100%]",children:[(0,a.jsxs)("div",{className:"flex place-content-between mb-8 mt-3 items-center",children:[(0,a.jsx)("strong",{className:"text-[#0000FF] text-sm",children:"1. Share Your Space"}),(0,a.jsx)("button",{onClick:()=>l(!i),className:" cursor-pointer inline-block bg-black text-white px-6 py-1 min-w-max",children:"Book a Meeting"})]}),(0,a.jsxs)("p",{className:"max-[760px]:text-sm",children:["Easily share your space with us by ",(0,a.jsx)("strong",{children:"uploading photos and dimensions. Include some selected images"})," to capture your style inspiration."]})]})]}),(0,a.jsxs)("div",{className:"max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10 max-[580px]:flex-col fade-in","data-fade-in":!0,children:[(0,a.jsx)("div",{className:"bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",children:(0,a.jsx)(r(),{className:" w-full pointer-events-none  ",src:"/assets/images/004.png",alt:"Our team marries your ideas with our skill to forge a 3D masterpiece in just two weeks.</strong> Your preferences shape every element, from furnishings to hues.",width:480,height:480,loading:"lazy"})}),(0,a.jsxs)("div",{className:" max-[1024px]:w-[65%] max-[580px]:w-[100%]",children:[(0,a.jsxs)("div",{className:"flex place-content-between mb-8 mt-3 items-center",children:[(0,a.jsx)("strong",{className:"text-[#0000FF] text-sm",children:"2. Expert Craftsmanship"}),(0,a.jsx)(o(),{href:"/benefits-of-3d-visualization",className:" cursor-pointer inline-block bg-black text-white px-6 py-1 ml-10 min-w-max",children:"Benefits of 3D Vis"})]}),(0,a.jsxs)("p",{className:"max-[760px]:text-sm",children:["Our team marries your ideas with our skill to forge a ",(0,a.jsx)("strong",{children:"3D masterpiece in just two weeks."})," Your preferences shape every element, from furnishings to hues."]})]})]}),(0,a.jsxs)("div",{className:"max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10 max-[580px]:flex-col fade-in","data-fade-in":!0,children:[(0,a.jsx)("div",{className:"bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",children:(0,a.jsx)(r(),{className:" w-full pointer-events-none",src:"/assets/images/005.png",alt:"Experience full control with our interactive dashboard. Explore real product options, object swaps, and more. Every 3D design is meticulously handcrafted by our experts for an authentic interior design service, not an AI tool.",width:480,height:480,loading:"lazy"})}),(0,a.jsxs)("div",{className:" max-[1024px]:w-[65%] max-[580px]:w-[100%]",children:[(0,a.jsxs)("div",{className:"flex place-content-between mb-8 mt-3 items-center",children:[(0,a.jsx)("strong",{className:"text-[#0000FF] text-sm",children:"3. Immersive Exploration"}),(0,a.jsx)(o(),{href:"/demo",className:" cursor-pointer inline-block bg-black text-white px-6 py-1 ml-10 min-w-max",children:"Try our Demo"})]}),(0,a.jsxs)("p",{className:"max-[760px]:text-sm",children:["Experience full control with our interactive dashboard. ",(0,a.jsx)("strong",{children:"Explore real product options, object swaps, and more."})," Every 3D design is meticulously handcrafted by our experts for an authentic interior design service, not an AI tool."]})]})]})]})]}),(0,a.jsx)("div",{className:" py-40 bg-neutral-800  text-white max-[1024px]:py-16",children:(0,a.jsxs)("div",{className:" w-11/12 m-auto max-w-[1300px]",children:[(0,a.jsxs)("div",{className:"mb-20 flex place-content-between max-[1024px]:flex-col",children:[(0,a.jsxs)("div",{className:"mr-20 max-[1024px]:mr-0 max-[1024px]:mb-16 fade-in","data-fade-in":!0,children:[(0,a.jsx)("h2",{className:"text-4xl max-w-[750px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px] ",children:"Upon completing your design journey, you'll gain access to an exclusive login dashboard, complete with a timeline that empowers you to tailor your experience. As you progress, you can set reviews and request new versions as well as add objects according to your evolving needs."}),(0,a.jsx)(o(),{href:"/how-it-works",className:" cursor-pointer inline-block bg-white text-black px-6 py-1 mt-5",children:"How it Works"})]}),(0,a.jsxs)("div",{className:"max-w-[300px]",children:[(0,a.jsxs)("div",{className:"mb-14 fade-in","data-fade-in":!0,children:[(0,a.jsx)("strong",{className:" text-sm mb-3 inline-block",children:"High-Quality Realistic 3D Renders"}),(0,a.jsx)("p",{className:"",children:"Our design package encompasses two versions of high-quality, photorealistic 3D renders that immerse you in the envisioned space. These visuals offer an authentic depiction of your future room from different angles, allowing you to virtually step into the transformation."})]}),(0,a.jsxs)("div",{className:" fade-in","data-fade-in":!0,children:[(0,a.jsx)("strong",{className:" text-sm mb-3 inline-block",children:"Object and Furniture List"}),(0,a.jsx)("p",{className:"",children:"We curate a list of suggested objects and furniture based on your style and preferences. This includes items from your moodboard as well as expertly chosen pieces that harmonize with your design. The list features everything down to appliances and d\xe9cor, complete with purchasing information."})]}),(0,a.jsx)("div",{})]})]}),(0,a.jsx)("div",{className:" fade-in","data-fade-in":!0,children:(0,a.jsx)(r(),{className:" pointer-events-none mt-50 w-full select-none",src:"/assets/images/006i.png",alt:"Upon completing your design journey, you will gain access to an exclusive login dashboard, complete with a timeline that empowers you to tailor your experience. As you progress, you can pay to unlock sections and add objects according to your evolving needs.",width:1378,height:1020})})]})}),(0,a.jsx)(c.Z,{})]})]})}},5907:function(e,t,s){"use strict";s.d(t,{T:function(){return getAppUrl}});let getAppUrl=()=>"https://zolviz.com"}},function(e){e.O(0,[774,888,179],function(){return e(e.s=8312)}),_N_E=e.O()}]);
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+  [405],
+  {
+    8312: function (e, t, s) {
+      (window.__NEXT_P = window.__NEXT_P || []).push([
+        "/",
+        function () {
+          return s(3058);
+        },
+      ]);
+    },
+    4038: function (e, t, s) {
+      "use strict";
+      var a = s(5893);
+      s(7294);
+      var n = s(1664),
+        i = s.n(n),
+        r = s(1016);
+      t.Z = function () {
+        let { isModalOpen: e, setModalOpen: t } = (0, r.d)();
+      };
+    },
+    3058: function (e, t, s) {
+      "use strict";
+      s.r(t);
+      var a = s(5893),
+        n = s(7294),
+        i = s(5675),
+        r = s.n(i),
+        l = s(1664),
+        o = s.n(l),
+        c = s(4038),
+        m = s(9008),
+        x = s.n(m),
+        d = s(1016),
+        p = s(5907);
+      let u = (0, p.T)();
+      t.default = function () {
+        let [e, t] = (0, n.useState)(50),
+          s = (0, n.useRef)(null),
+          { isModalOpen: i, setModalOpen: l } = (0, d.d)(),
+          m = (0, n.useRef)(null),
+          updateVideoTime = (e) => {
+            if (m.current) {
+              let t = m.current.duration;
+              t && (m.current.currentTime = (e / 100) * t);
+            }
+          },
+          [p, h] = (0, n.useState)("/assets/demo/seq/0007.png"),
+          getImageSrc = (e) =>
+            "/assets/demo/seq/".concat(
+              String(
+                13 -
+                  (Math.min(Math.max(Math.round((e / 100) * 12), 0), 12) +
+                    1 -
+                    1)
+              ).padStart(4, "0"),
+              ".png"
+            );
+        function getRandomImageName(e, t) {
+          return ""
+            .concat(e, "-")
+            .concat(
+              String(Math.floor(Math.random() * t) + 1).padStart(2, "0"),
+              ".jpg"
+            );
+        }
+        (0, n.useEffect)(() => {
+          let e;
+          let a = s.current;
+          if (!a) return;
+          let handleMouseMove = (a) => {
+              if (s.current) {
+                let n = s.current.getBoundingClientRect(),
+                  i = ((a.clientX - n.left) / n.width) * 100;
+                t((i = Math.max(0, Math.min(i, 100)))),
+                  cancelAnimationFrame(e),
+                  (e = requestAnimationFrame(() => updateVideoTime(i)));
+                let r = getImageSrc(i);
+                h(r);
+              }
+            },
+            handleTouchMove = (a) => {
+              if (s.current) {
+                let n = s.current.getBoundingClientRect(),
+                  i = a.touches[0].clientX,
+                  r = ((i - n.left) / n.width) * 100;
+                t((r = Math.max(0, Math.min(r, 100)))),
+                  cancelAnimationFrame(e),
+                  (e = requestAnimationFrame(() => updateVideoTime(r)));
+                let l = getImageSrc(r);
+                h(l);
+              }
+            };
+          return (
+            window.addEventListener("mousemove", handleMouseMove),
+            a.addEventListener("touchmove", handleTouchMove, { passive: !1 }),
+            () => {
+              window.removeEventListener("mousemove", handleMouseMove),
+                a.removeEventListener("touchmove", handleTouchMove);
+            }
+          );
+        }, [s]);
+        let g = getRandomImageName("t", 5),
+          w = getRandomImageName("f", 5),
+          f = [
+            "/assets/images/selection/001.png",
+            "/assets/images/selection/002.png",
+            "/assets/images/selection/003.png",
+            "/assets/images/selection/006.png",
+            "/assets/images/selection/005.png",
+            "/assets/images/selection/004.png",
+            "/assets/images/selection/007.png",
+            "/assets/images/selection/008.png",
+            "/assets/images/selection/009.png",
+            "/assets/images/selection/010.png",
+            "/assets/images/selection/011.png",
+            "/assets/images/selection/012.png",
+            "/assets/images/selection/013.png",
+            "/assets/images/selection/014.png",
+            "/assets/images/selection/015.png",
+            "/assets/images/selection/016.png",
+            "/assets/images/selection/017.png",
+            "/assets/images/selection/018.png",
+            "/assets/images/selection/019.png",
+            "/assets/images/selection/020.png",
+            "/assets/images/selection/021.png",
+            "/assets/images/selection/022.png",
+            "/assets/images/selection/023.png",
+            "/assets/images/selection/024.png",
+            "/assets/images/selection/025.png",
+            "/assets/images/selection/026.png",
+            "/assets/images/selection/027.png",
+            "/assets/images/selection/028.png",
+            "/assets/images/selection/029.png",
+            "/assets/images/selection/030.png",
+            "/assets/images/selection/031.png",
+            "/assets/images/selection/032.png",
+            "/assets/images/selection/033.png",
+            "/assets/images/selection/034.png",
+            "/assets/images/selection/035.png",
+            "/assets/images/selection/036.png",
+          ],
+          [v, b] = (0, n.useState)("fade-in"),
+          handleImageLoad = (e) => {
+            e.currentTarget.classList.add("fade-in-active");
+          },
+          [j, y] = (0, n.useState)([]);
+        (0, n.useEffect)(() => {
+          let e = (function (e) {
+              for (let t = e.length - 1; t > 0; t--) {
+                let s = Math.floor(Math.random() * (t + 1));
+                [e[t], e[s]] = [e[s], e[t]];
+              }
+              return e;
+            })([...f]),
+            t = e.slice(0, 6),
+            s = e.slice(0, 6),
+            a = [...t, ...s];
+          y(a);
+        }, []);
+        let N = (0, n.useRef)(null),
+          [k, z] = (0, n.useState)(!1),
+          [L, E] = (0, n.useState)(0),
+          [M, T] = (0, n.useState)(0),
+          D = (0, n.useRef)(null),
+          S = (0, n.useRef)(null),
+          [F, A] = (0, n.useState)(0),
+          [q, I] = (0, n.useState)(!1);
+        (0, n.useEffect)(() => {
+          let handleResize = () => {
+            I(window.innerWidth <= 768);
+          };
+          return (
+            handleResize(),
+            window.addEventListener("resize", handleResize),
+            () => window.removeEventListener("resize", handleResize)
+          );
+        }, []),
+          (0, n.useEffect)(() => {
+            let handleMouseDown = (e) => {
+                var t;
+                z(!0),
+                  E(e.pageX - N.current.offsetLeft),
+                  T(N.current.scrollLeft),
+                  null === (t = N.current) ||
+                    void 0 === t ||
+                    t.classList.add("cursor-grabbing"),
+                  D.current &&
+                    (cancelAnimationFrame(D.current), (D.current = null)),
+                  S.current && clearTimeout(S.current);
+              },
+              handleTouchStart = (e) => {
+                z(!0);
+                let t = e.touches[0];
+                E(t.pageX - N.current.offsetLeft),
+                  A(t.pageY),
+                  T(N.current.scrollLeft),
+                  D.current &&
+                    (cancelAnimationFrame(D.current), (D.current = null)),
+                  S.current && clearTimeout(S.current);
+              },
+              e = N.current;
+            e &&
+              (e.addEventListener("mousedown", handleMouseDown),
+              document.addEventListener("mousemove", handleMouseMove),
+              document.addEventListener("mouseup", handleMouseUp),
+              e.addEventListener("touchstart", handleTouchStart),
+              e.addEventListener("touchmove", handleTouchMove),
+              e.addEventListener("touchend", handleTouchEnd));
+            let animateScroll = () => {
+              if (N.current) {
+                var e = N.current.querySelectorAll("img")[6],
+                  t = N.current.scrollLeft;
+                (null == e ? void 0 : e.offsetLeft) - t < 0
+                  ? (N.current.scrollLeft = 3)
+                  : (N.current.scrollLeft += q ? 1 : 2),
+                  (D.current = requestAnimationFrame(animateScroll));
+              }
+            };
+            return (
+              (D.current = requestAnimationFrame(animateScroll)),
+              () => {
+                e &&
+                  (e.removeEventListener("mousedown", handleMouseDown),
+                  document.removeEventListener("mousemove", handleMouseMove),
+                  document.removeEventListener("mouseup", handleMouseUp),
+                  e.removeEventListener("touchstart", handleTouchStart),
+                  e.removeEventListener("touchmove", handleTouchMove),
+                  e.removeEventListener("touchend", handleTouchEnd)),
+                  D.current && cancelAnimationFrame(D.current),
+                  S.current && clearTimeout(S.current);
+              }
+            );
+          }, [k, L, M, j]);
+        let handleMouseMove = (e) => {
+            if (!k) return;
+            e.preventDefault();
+            let t = e.pageX - N.current.offsetLeft,
+              s = (t - L) * (q ? 1 : 2);
+            N.current.scrollLeft = M - s;
+            var a = N.current.querySelectorAll("img")[6],
+              n = N.current.scrollLeft,
+              i = a.offsetLeft - n;
+            i < 0 && (N.current.scrollLeft = -i),
+              D.current &&
+                (cancelAnimationFrame(D.current), (D.current = null)),
+              S.current && clearTimeout(S.current);
+          },
+          handleTouchMove = (e) => {
+            if (!k) return;
+            let t = e.touches[0],
+              s = t.pageX - N.current.offsetLeft,
+              a = t.pageY,
+              n = Math.abs(s - L);
+            if (n > Math.abs(a - F)) {
+              e.preventDefault();
+              let t = (s - L) * (q ? 1 : 2);
+              N.current.scrollLeft = M - t;
+            }
+            var i = N.current.querySelectorAll("img")[6],
+              r = N.current.scrollLeft,
+              l = i.offsetLeft - r;
+            l < 0 && (N.current.scrollLeft = -l),
+              D.current &&
+                (cancelAnimationFrame(D.current), (D.current = null)),
+              S.current && clearTimeout(S.current);
+          },
+          handleMouseUp = () => {
+            var e;
+            z(!1),
+              null === (e = N.current) ||
+                void 0 === e ||
+                e.classList.remove("cursor-grabbing");
+          },
+          handleTouchEnd = () => {
+            z(!1);
+          };
+        return (0, a.jsxs)(a.Fragment, {
+          children: [
+            (0, a.jsxs)(x(), {
+              children: [
+                (0, a.jsx)("title", {
+                  children:
+                    "zolviz - Transform Your Space with Expert 3D Room Design",
+                }),
+                (0, a.jsx)("meta", {
+                  name: "description",
+                  content:
+                    "zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",
+                }),
+                (0, a.jsx)("meta", {
+                  property: "og:title",
+                  content:
+                    "zolviz - Transform Your Space with Expert 3D Room Design",
+                }),
+                (0, a.jsx)("meta", {
+                  property: "og:description",
+                  content:
+                    "zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",
+                }),
+                (0, a.jsx)("meta", {
+                  property: "og:url",
+                  content: "".concat(u),
+                }),
+                (0, a.jsx)("meta", {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                }),
+                (0, a.jsx)("meta", {
+                  name: "twitter:title",
+                  content:
+                    "zolviz - Transform Your Space with Expert 3D Room Design",
+                }),
+                (0, a.jsx)("meta", {
+                  name: "twitter:description",
+                  content:
+                    "zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",
+                }),
+                (0, a.jsx)("meta", {
+                  name: "twitter:image",
+                  content: "".concat(u, "/assets/social/").concat(g),
+                }),
+                (0, a.jsx)("meta", {
+                  property: "og:image",
+                  content: "".concat(u, "/assets/social/").concat(w),
+                }),
+              ],
+            }),
+            (0, a.jsxs)("div", {
+              className: " pt-20",
+              children: [
+                (0, a.jsxs)("div", {
+                  className: "w-full  pb-40 max-[1024px]:pb-16 fade-in",
+                  "data-fade-in": !0,
+                  children: [
+                    (0, a.jsx)("div", {
+                      className: "w-11/12 m-auto max-w-[1600px]",
+                      children: (0, a.jsx)("h2", {
+                        className:
+                          "text-4xl max-w-[820px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]",
+                        children:
+                          "Welcome to zolviz, where we turn your visions into exquisite reality. Specializing in 3D room designs for commercial and residential spaces, including kitchens, bathrooms, living rooms, bedrooms, and more.",
+                      }),
+                    }),
+                    (0, a.jsx)(r(), {
+                      className: "mt-20 w-full pointer-events-none hidden",
+                      src: "/assets/images/hero-023.png",
+                      alt: "zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",
+                      width: 1600,
+                      height: 760,
+                      loading: "lazy",
+                    }),
+                    (0, a.jsx)("div", {
+                      className:
+                        "mt-20 max-[700px]:mt-10 overflow-hidden w-[100%] cursor-grab",
+                      ref: N,
+                      children: (0, a.jsx)("div", {
+                        className: "banner flex",
+                        children: j.map((e, t) =>
+                          (0, a.jsx)(
+                            r(),
+                            {
+                              onLoad: handleImageLoad,
+                              className:
+                                "box-content border border-[3px] border-white ".concat(
+                                  v
+                                ),
+                              width: 760,
+                              height: 760,
+                              src: e,
+                              alt: "zolviz specializes in bringing your dream spaces to life through expert 3D room design. Discover our unique approach to transforming kitchens, bathrooms, living rooms, and more.",
+                              priority: !0,
+                            },
+                            "first-set-".concat(t)
+                          )
+                        ),
+                      }),
+                    }),
+                  ],
+                }),
+                (0, a.jsxs)("div", {
+                  className:
+                    "w-11/12 m-auto max-w-[1600px]  py-40  max-[1024px]:py-16",
+                  children: [
+                    (0, a.jsx)("h2", {
+                      className:
+                        "text-4xl max-w-[840px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px]  fade-in",
+                      "data-fade-in": !0,
+                      children: "Our Process",
+                    }),
+                    (0, a.jsxs)("div", {
+                      className:
+                        "flex place-content-between  max-[1024px]:block",
+                      children: [
+                        (0, a.jsxs)("div", {
+                          className:
+                            "max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10  max-[580px]:flex-col fade-in",
+                          "data-fade-in": !0,
+                          children: [
+                            (0, a.jsx)("div", {
+                              className:
+                                "bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",
+                              children: (0, a.jsx)(r(), {
+                                className: " w-full pointer-events-none",
+                                src: "/assets/images/003.png",
+                                alt: "Easily share your space with us by uploading photos and dimensions. Include some selected image to capture your style inspiration.",
+                                width: 480,
+                                height: 480,
+                                loading: "lazy",
+                              }),
+                            }),
+                            (0, a.jsxs)("div", {
+                              className:
+                                " max-[1024px]:w-[65%] max-[580px]:w-[100%]",
+                              children: [
+                                (0, a.jsxs)("div", {
+                                  className:
+                                    "flex place-content-between mb-8 mt-3 items-center",
+                                  children: [
+                                    (0, a.jsx)("strong", {
+                                      className: "text-[#0000FF] text-sm",
+                                      children: "1. Share Your Space",
+                                    }),
+                                    (0, a.jsx)("button", {
+                                      onClick: () => l(!i),
+                                      className:
+                                        " cursor-pointer inline-block bg-black text-white px-6 py-1 min-w-max",
+                                      children: "Book a Meeting",
+                                    }),
+                                  ],
+                                }),
+                                (0, a.jsxs)("p", {
+                                  className: "max-[760px]:text-sm",
+                                  children: [
+                                    "Easily share your space with us by ",
+                                    (0, a.jsx)("strong", {
+                                      children:
+                                        "uploading photos and dimensions. Include some selected images",
+                                    }),
+                                    " to capture your style inspiration.",
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, a.jsxs)("div", {
+                          className:
+                            "max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10 max-[580px]:flex-col fade-in",
+                          "data-fade-in": !0,
+                          children: [
+                            (0, a.jsx)("div", {
+                              className:
+                                "bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",
+                              children: (0, a.jsx)(r(), {
+                                className: " w-full pointer-events-none  ",
+                                src: "/assets/images/004.png",
+                                alt: "Our team marries your ideas with our skill to forge a 3D masterpiece in just two weeks.</strong> Your preferences shape every element, from furnishings to hues.",
+                                width: 480,
+                                height: 480,
+                                loading: "lazy",
+                              }),
+                            }),
+                            (0, a.jsxs)("div", {
+                              className:
+                                " max-[1024px]:w-[65%] max-[580px]:w-[100%]",
+                              children: [
+                                (0, a.jsxs)("div", {
+                                  className:
+                                    "flex place-content-between mb-8 mt-3 items-center",
+                                  children: [
+                                    (0, a.jsx)("strong", {
+                                      className: "text-[#0000FF] text-sm",
+                                      children: "2. Expert Craftsmanship",
+                                    }),
+                                    (0, a.jsx)(o(), {
+                                      href: "/benefits-of-3d-visualization",
+                                      className:
+                                        " cursor-pointer inline-block bg-black text-white px-6 py-1 ml-10 min-w-max",
+                                      children: "Benefits of 3D Vis",
+                                    }),
+                                  ],
+                                }),
+                                (0, a.jsxs)("p", {
+                                  className: "max-[760px]:text-sm",
+                                  children: [
+                                    "Our team marries your ideas with our skill to forge a ",
+                                    (0, a.jsx)("strong", {
+                                      children:
+                                        "3D masterpiece in just two weeks.",
+                                    }),
+                                    " Your preferences shape every element, from furnishings to hues.",
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, a.jsxs)("div", {
+                          className:
+                            "max-w-[370px] w-3/12  min-w-[280px]  max-[1024px]:min-w-[0px]  max-[1024px]:max-w-[100%] max-[1024px]:w-[100%]  max-[1024px]:flex max-[1024px]:flex-wrap max-[1024px]:place-content-between  max-[1024px]:pt-10 max-[580px]:flex-col fade-in",
+                          "data-fade-in": !0,
+                          children: [
+                            (0, a.jsx)("div", {
+                              className:
+                                "bg-neutral-100 mb-2   max-[1024px]:w-[30%] max-[580px]:w-[100%]",
+                              children: (0, a.jsx)(r(), {
+                                className: " w-full pointer-events-none",
+                                src: "/assets/images/005.png",
+                                alt: "Experience full control with our interactive dashboard. Explore real product options, object swaps, and more. Every 3D design is meticulously handcrafted by our experts for an authentic interior design service, not an AI tool.",
+                                width: 480,
+                                height: 480,
+                                loading: "lazy",
+                              }),
+                            }),
+                            (0, a.jsxs)("div", {
+                              className:
+                                " max-[1024px]:w-[65%] max-[580px]:w-[100%]",
+                              children: [
+                                (0, a.jsxs)("div", {
+                                  className:
+                                    "flex place-content-between mb-8 mt-3 items-center",
+                                  children: [
+                                    (0, a.jsx)("strong", {
+                                      className: "text-[#0000FF] text-sm",
+                                      children: "3. Immersive Exploration",
+                                    }),
+                                    (0, a.jsx)(o(), {
+                                      href: "/demo",
+                                      className:
+                                        " cursor-pointer inline-block bg-black text-white px-6 py-1 ml-10 min-w-max",
+                                      children: "Try our Demo",
+                                    }),
+                                  ],
+                                }),
+                                (0, a.jsxs)("p", {
+                                  className: "max-[760px]:text-sm",
+                                  children: [
+                                    "Experience full control with our interactive dashboard. ",
+                                    (0, a.jsx)("strong", {
+                                      children:
+                                        "Explore real product options, object swaps, and more.",
+                                    }),
+                                    " Every 3D design is meticulously handcrafted by our experts for an authentic interior design service, not an AI tool.",
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+                (0, a.jsx)("div", {
+                  className:
+                    " py-40 bg-neutral-800  text-white max-[1024px]:py-16",
+                  children: (0, a.jsxs)("div", {
+                    className: " w-11/12 m-auto max-w-[1300px]",
+                    children: [
+                      (0, a.jsxs)("div", {
+                        className:
+                          "mb-20 flex place-content-between max-[1024px]:flex-col",
+                        children: [
+                          (0, a.jsxs)("div", {
+                            className:
+                              "mr-20 max-[1024px]:mr-0 max-[1024px]:mb-16 fade-in",
+                            "data-fade-in": !0,
+                            children: [
+                              (0, a.jsx)("h2", {
+                                className:
+                                  "text-4xl max-w-[750px] leading-10 tracking-tight max-[1024px]:text-[3.5vw] max-[1024px]:leading-[3.8vw] max-[700px]:text-[24px] max-[700px]:leading-[27px] ",
+                                children:
+                                  "Upon completing your design journey, you'll gain access to an exclusive login dashboard, complete with a timeline that empowers you to tailor your experience. As you progress, you can set reviews and request new versions as well as add objects according to your evolving needs.",
+                              }),
+                              (0, a.jsx)(o(), {
+                                href: "/how-it-works",
+                                className:
+                                  " cursor-pointer inline-block bg-white text-black px-6 py-1 mt-5",
+                                children: "How it Works",
+                              }),
+                            ],
+                          }),
+                          (0, a.jsxs)("div", {
+                            className: "max-w-[300px]",
+                            children: [
+                              (0, a.jsxs)("div", {
+                                className: "mb-14 fade-in",
+                                "data-fade-in": !0,
+                                children: [
+                                  (0, a.jsx)("strong", {
+                                    className: " text-sm mb-3 inline-block",
+                                    children:
+                                      "High-Quality Realistic 3D Renders",
+                                  }),
+                                  (0, a.jsx)("p", {
+                                    className: "",
+                                    children:
+                                      "Our design package encompasses two versions of high-quality, photorealistic 3D renders that immerse you in the envisioned space. These visuals offer an authentic depiction of your future room from different angles, allowing you to virtually step into the transformation.",
+                                  }),
+                                ],
+                              }),
+                              (0, a.jsxs)("div", {
+                                className: " fade-in",
+                                "data-fade-in": !0,
+                                children: [
+                                  (0, a.jsx)("strong", {
+                                    className: " text-sm mb-3 inline-block",
+                                    children: "Object and Furniture List",
+                                  }),
+                                  (0, a.jsx)("p", {
+                                    className: "",
+                                    children:
+                                      "We curate a list of suggested objects and furniture based on your style and preferences. This includes items from your moodboard as well as expertly chosen pieces that harmonize with your design. The list features everything down to appliances and d\xe9cor, complete with purchasing information.",
+                                  }),
+                                ],
+                              }),
+                              (0, a.jsx)("div", {}),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, a.jsx)("div", {
+                        className: " fade-in",
+                        "data-fade-in": !0,
+                        children: (0, a.jsx)(r(), {
+                          className:
+                            " pointer-events-none mt-50 w-full select-none",
+                          src: "/assets/images/006i.png",
+                          alt: "Upon completing your design journey, you will gain access to an exclusive login dashboard, complete with a timeline that empowers you to tailor your experience. As you progress, you can pay to unlock sections and add objects according to your evolving needs.",
+                          width: 1378,
+                          height: 1020,
+                        }),
+                      }),
+                    ],
+                  }),
+                }),
+                (0, a.jsx)(c.Z, {}),
+              ],
+            }),
+          ],
+        });
+      };
+    },
+    5907: function (e, t, s) {
+      "use strict";
+      s.d(t, {
+        T: function () {
+          return getAppUrl;
+        },
+      });
+      let getAppUrl = () => "https://zolviz.com";
+    },
+  },
+  function (e) {
+    e.O(0, [774, 888, 179], function () {
+      return e((e.s = 8312));
+    }),
+      (_N_E = e.O());
+  },
+]);

@@ -105,7 +105,7 @@
                       "data-fade-in": !0,
                       src: "social/troyce-portrait.jpeg",
                       width: "800",
-                      height: "1024",
+                      height: "200",
                     }),
                     (0, a.jsxs)("div", {
                       className:
