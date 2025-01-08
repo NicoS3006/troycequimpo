@@ -56,59 +56,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
-      href="/troycequimpo/public/assets/_next/static/css/676693691d88b1db.css"
+      href="public/assets/_next/static/css/676693691d88b1db.css"
       as="style"
     />
     <link
       rel="stylesheet"
-      href="/troycequimpo/public/assets/_next/static/css/676693691d88b1db.css"
+      href="public/assets/_next/static/css/676693691d88b1db.css"
       data-n-g=""
     />
     <link
       rel="preload"
-      href="/troycequimpo/public/assets/_next/static/css/c83bebbd2720b587.css"
+      href="public/assets/_next/static/css/c83bebbd2720b587.css"
       as="style"
     />
     <link
       rel="stylesheet"
-      href="/troycequimpo/public/assets/_next/static/css/c83bebbd2720b587.css"
+      href="public/assets/_next/static/css/c83bebbd2720b587.css"
       data-n-p=""
     />
     <noscript data-n-css=""></noscript>
     <script
       defer=""
       nomodule=""
-      src="/troycequimpo/public/assets/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"
+      src="public/assets/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/chunks/webpack-968c099e5c325147.js"
+      src="public/assets/_next/static/chunks/webpack-968c099e5c325147.js"
       defer=""
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/chunks/framework-a4fe41b12ce3d8ef.js"
+      src="public/assets/_next/static/chunks/framework-a4fe41b12ce3d8ef.js"
       defer=""
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/chunks/main-ccc12c2cae3ae711.js"
+      src="public/assets/_next/static/chunks/main-ccc12c2cae3ae711.js"
       defer=""
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/chunks/pages/_app-2613110f7962a6e8.js"
+      src="public/assets/_next/static/chunks/pages/_app-2613110f7962a6e8.js"
       defer=""
     ></script>
     <script
-       type="module" src="/troycequimpo/public/assets/_next/static/chunks/pages/index-5c7de4d5ec0faa17.js"
+       type="module" src="public/assets/_next/static/chunks/pages/index-5c7de4d5ec0faa17.js"
       defer=""
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/llMEj_HwMW_I3Z7c7Qqj1/_buildManifest.js"
+      src="public/assets/_next/static/llMEj_HwMW_I3Z7c7Qqj1/_buildManifest.js"
       defer=""
     ></script>
     <script
-      src="/troycequimpo/public/assets/_next/static/llMEj_HwMW_I3Z7c7Qqj1/_ssgManifest.js"
+      src="public/assets/_next/static/llMEj_HwMW_I3Z7c7Qqj1/_ssgManifest.js"
       defer=""
     ></script>
-    <script type="module" src="/troycequimpo/public/assets/_next/static/chunks/pages/_error-9a890acb1e81c3fc.js"></script>
+    <script type="module" src="public/assets/_next/static/chunks/pages/_error-9a890acb1e81c3fc.js"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script type="module" src="../dist/bundle.js" type="text/javascript"></script>
@@ -1566,7 +1566,7 @@
             const match = currentSrc.match(/Selection%2F(\d+)\.png/i);
             if (match) {
               const imageNumber = match[1];
-              const newSrc = `/troycequimpo/public/assets/selection/${imageNumber.padStart(3, '0')}.png`;
+              const newSrc = `public/assets/selection/${imageNumber.padStart(3, '0')}.png`;
               if (img.hasAttribute('src')) {
                 img.setAttribute('src', newSrc);
               }
@@ -1587,7 +1587,7 @@
           if (currentSrc && currentSrc.includes('.svg')) {
             const svgName = currentSrc.match(/[a-z]\d\.svg$/i)?.[0];
             if (svgName) {
-              const newSrc = `/troycequimpo/public/assets/char3/${svgName}`;
+              const newSrc = `public/assets/char3/${svgName}`;
               if (element.hasAttribute('src')) {
                 element.setAttribute('src', newSrc);
               }
@@ -1625,12 +1625,12 @@
           if (url.includes('public/assets_next/image')) {
             const match = url.match(/Selection%2F(\d+)\.png/i);
             if (match) {
-              url = `/troycequimpo/public/assets/selection/${match[1].padStart(3, '0')}.png`;
+              url = `public/assets/selection/${match[1].padStart(3, '0')}.png`;
             }
           } else if (url.includes('char3')) {
             const svgMatch = url.match(/[a-z]\d\.svg$/i);
             if (svgMatch) {
-              url = `/troycequimpo/public/assets/char3/${svgMatch[0]}`;
+              url = `public/assets/char3/${svgMatch[0]}`;
             }
           }
         }
