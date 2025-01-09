@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   // Entry point for your application
-  entry: './public/assets/_next/static/chunks/pages/index-5c7de4d5ec0faa17.js', // Update this path if needed
+  entry: './index.html', // Update this path if needed
 
   // Output configuration
   output: {
