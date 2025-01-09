@@ -1,3 +1,4 @@
+/* Desktop Styles (UNCHANGED) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +14,6 @@ body, html {
     display: flex;
     height: 100vh; /* Full height of the viewport */
 }
-
 
 .lhs {
     width: 100%;
@@ -41,16 +41,18 @@ body, html {
     justify-content: center;
 }
 
-.tp-image  {
+.tp-image {
     width: 80%;
     height: 95%;
 }
+
 .about-text {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
+
 .letters {
     width: 40%;
     height: 35%;
@@ -63,7 +65,7 @@ body, html {
     font-size: 1.5rem;
 }
 
-.rhs-title {
+.rhs-title, .rhs-title-2, .rhs-title-3, .rhs-title-4{
     line-height: 1rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -72,11 +74,13 @@ body, html {
     font-family: sans-serif;
 }
 
-.rhs-text {
+.rhs-text, .rhs-text-2, .rhs-text-3, .rhs-text-4 {
     font-family: sans-serif;
     font-size: 17px;
     font-weight: 400;
 }
+
+
 
 .home-container {
     width: 100%;
@@ -97,7 +101,6 @@ body, html {
     display: flex;
     justify-content: center;
     transform: translateX(-20%);
-
 }
 
 .home-button:hover {
@@ -105,5 +108,324 @@ body, html {
 }
 
 .mobile-home-button {
-   display: none;
-} 
+    display: none;
+}
+
+/* Mobile Styles (ONLY CHANGES FOR MOBILE) */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* Allow content to scroll */
+        flex-direction: column;
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .lhs, .rhs {
+        padding: 10px;
+        align-items: center;
+        text-align: center; /* Center text for readability */
+    }
+
+    .tp-image {
+        width: 100%; /* Full width for mobile */
+        max-width: 300px;
+    }
+
+    .about-text {
+        display: flex; /* Align letters in a single line */
+        justify-content: center;
+        flex-wrap: nowrap; /* Ensure no wrapping */
+        align-items: center;
+        gap: 20%; /* Add small gap between letters */
+        width: 50%; /* Ensure it fits content */
+        margin: 10px auto; /* Center align */
+    }
+    .home-container {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: -2%;
+        transform: translate(-3%, -1090%);
+    }
+    .lhs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 5% 20px 20px 20px;
+        gap: 0%;
+        transform: translateY(10%);
+    }
+    body, html {
+        height: 100%;
+        overflow: visible;
+    }
+    .rhs-1 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+        padding-bottom: 5%;
+    }
+    .rhs-title-2 {
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+    .rhs-text-2 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        padding-bottom: 5%;
+    }
+    .rhs-title-3 {
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+    .rhs-text-3 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        padding-bottom: 5%;
+    }
+    .rhs-title-4 {
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+    .rhs-text-4 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        padding-bottom: 5%;
+    }
+}
+@media (max-width: 1440px) {
+    body, html {
+        height: 100%;
+        overflow: visible;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh; /* Full height of the viewport */
+    }
+
+    .lhs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 5% 20px 20px 20px;
+        gap: 0%;
+    }
+
+    .rhs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 5% 10% 20px 20px;
+        justify-content: start;
+        gap: 8%;
+    }
+
+    .tp {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tp-image {
+        width: 80%;
+        height: 95%;
+    }
+
+    .about-text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .letters {
+        width: 40%;
+        height: 35%;
+        margin: 0% -13%;
+    }
+
+    .rhs-1 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+
+    .rhs-title, .rhs-title-2, .rhs-title-3, .rhs-title-4{
+        line-height: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+
+    .rhs-text, .rhs-text-2, .rhs-text-3, .rhs-text-4 {
+        font-family: sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+
+
+    .home-container {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: -2%;
+    }
+
+    .home-button {
+        height: 100%;
+        width: 150%;
+        border: solid 1px black;
+        border-radius: 100px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        transform: translateX(-20%);
+    }
+
+    .home-button:hover {
+        cursor: pointer;
+    }
+
+    .mobile-home-button {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    body, html {
+        height: 100%;
+        overflow: visible;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh; /* Full height of the viewport */
+    }
+
+    .lhs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 5% 20px 20px 20px;
+        gap: 0%;
+    }
+
+    .rhs {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        padding: 5% 10% 20px 20px;
+        justify-content: start;
+        gap: 8%;
+    }
+
+    .tp {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tp-image {
+        width: 80%;
+        height: 95%;
+    }
+
+    .about-text {
+        display: flex; /* Align letters in a single line */
+        justify-content: center;
+        flex-wrap: nowrap; /* Ensure no wrapping */
+        align-items: center;
+        gap: 20%; /* Add small gap between letters */
+        width: 50%; /* Ensure it fits content */
+        margin: 10px auto; /* Center align */
+        transform: translateY(-40%);
+    }
+
+    .letters {
+        width: 40%;
+        height: 35%;
+        margin: 0% -13%;
+    }
+
+    .rhs-1 {
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+
+    .rhs-title, .rhs-title-2, .rhs-title-3, .rhs-title-4{
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+
+    .rhs-text, .rhs-text-2, .rhs-text-3, .rhs-text-4 {
+        font-family: sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+
+
+    .home-container {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: -2%;
+    }
+
+    .home-button {
+        height: 100%;
+        width: 150%;
+        border: solid 1px black;
+        border-radius: 100px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        transform: translateX(-20%);
+    }
+
+    .home-button:hover {
+        cursor: pointer;
+    }
+
+    .mobile-home-button {
+        display: none;
+    }
+}
