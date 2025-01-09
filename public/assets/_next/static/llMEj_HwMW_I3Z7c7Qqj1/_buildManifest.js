@@ -1,10 +1,10 @@
 (self.__BUILD_MANIFEST = {
   __rewrites: { afterFiles: [], beforeFiles: [], fallback: [] },
   "/": [
-    "assets/static/css/c83bebbd2720b587.css",
-    "static/chunks/pages/index-5c7de4d5ec0faa17.js",
+    "public/assets/_next/static/css/c83bebbd2720b587.css",
+    "public/assets/_next/static/chunks/pages/index-5c7de4d5ec0faa17.js",
   ],
-  "/_error": ["assets/static/chunks/pages/_error-9a890acb1e81c3fc.js"],
+  "/_error": ["public/assets/_next/static/chunks/pages/_error-9a890acb1e81c3fc.js"],
   "/components/AudioController": [
     "assets/static/chunks/pages/components/AudioController-7c87f6277081e046.js",
   ],
