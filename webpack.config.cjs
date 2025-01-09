@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), // Output directory
     filename: 'bundle.js', // Name of the output JS file
     publicPath: './', // Use relative paths for compatibility with GitHub Pages or custom domains
-    assetModuleFilename: 'assets/[name][ext]', // Define where static assets will be output
+    assetModuleFilename: 'public/assets/[name][ext]', // Define where static assets will be output
   },
   module: {
     rules: [
