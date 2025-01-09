@@ -1,53 +1,65 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'production', // Set to production for live deployment
-  entry: './src/index.js', // Entry point for your application
+  // Entry point for your application
+  entry: './public/assets/_next/static/chunks/pages/index-5c7de4d5ec0faa17.js', // Update this path if needed
+
+  // Output configuration
   output: {
-    path: path.resolve(__dirname, 'dist'), // Output directory
-    filename: 'bundle.js', // Name of the output JS file
-    publicPath: './', // Use relative paths for compatibility with GitHub Pages or custom domains
-    assetModuleFilename: 'public/assets/[name][ext]', // Define where static assets will be output
+    path: path.resolve(__dirname, 'public'), // Output directly to the 'public' folder
+    filename: 'assets/_next/static/chunks/pages/[name].bundle.js', // Keep the structure
   },
+
+  // Mode: 'development' or 'production'
+  mode: 'development', // Change to 'production' for optimized builds
+
+  // Module rules for handling different file types
   module: {
     rules: [
+      // JavaScript: Use Babel to transpile modern JavaScript
       {
-        test: /\.jsx?$/, // Match JavaScript and JSX files
-        exclude: /node_modules/, // Exclude dependencies in node_modules
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // Use Babel for transpiling
+          loader: 'babel-loader',
         },
       },
+
+      // CSS: Load and bundle CSS files
       {
-        test: /\.css$/, // Match CSS files
-        use: ['style-loader', 'css-loader'], // Load CSS files and inject styles into DOM
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
+
+      // Images: Load image files
       {
-        test: /\.(png|jpg|jpeg|gif|svg|webp|ico)$/, // Match image files
-        type: 'asset/resource', // Handle assets using Webpack's asset module
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/, // Match font files
-        type: 'asset/resource', // Handle fonts as assets
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][ext]', // Keep images in the same structure
+        },
       },
     ],
   },
-  resolve: {
-    extensions: ['.js', '.jsx'], // Resolve these file extensions
-  },
+
+  // Plugins
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html', // Path to the HTML template
-      filename: 'index.html', // Name of the output HTML file
+    // Copy static assets to retain the directory structure
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/assets', to: 'assets' }, // Copy everything from 'public/assets' to 'assets'
+      ],
     }),
   ],
+
+  // Development server configuration
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'), // Directory to serve
+      directory: path.join(__dirname, 'public'), // Serve files from the 'public' folder
     },
-    compress: true, // Enable Gzip compression
-    port: 9000, // Port for the development server
-    open: true, // Automatically opens the browser for local testing
+    compress: true,
+    port: 9000,
+    open: true, // Automatically open the browser
   },
 };
