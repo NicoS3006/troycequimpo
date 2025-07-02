@@ -4973,14 +4973,14 @@
               className: a().physicsContainer,
               children: [(0,
               n.jsx)("img", {
-                  src: "public/assets/char3/t.svg",
+                  src: "public/assets/char3/works/T.svg",
                   style: {
                       marginBottom: "0px",
                       opacity: 0
                   }
               }), (0,
               n.jsx)("img", {
-                  src: "public/assets/char3/r.svg",
+                  src: "public/assets/char3/works/underscore.svg",
                   style: {
                       opacity: 0,
                       marginRight: "0px",
@@ -4988,7 +4988,7 @@
                   }
               }), (0,
               n.jsx)("img", {
-                  src: "public/assets/char3/o.svg",
+                  src: "public/assets/char3/works/a.svg",
                   style: {
                       marginBottom: "0px",
                       opacity: 0,
@@ -4996,14 +4996,14 @@
                   }
               }), (0,
               n.jsx)("img", {
-                  src: "public/assets/char3/y.svg",
+                  src: "public/assets/char3/works/lt.svg",
                   style: {
                       opacity: 0,
                       marginLeft: "-.65vw"
                   }
               }), (0,
               n.jsx)("img", {
-                  src: "public/assets/char3/c.svg",
+                  src: "public/assets/char3/works/e.svg",
                   className: "i-l",
                   style: {
                       opacity: 0,
@@ -5011,7 +5011,31 @@
                   }
               }), (0,
               n.jsx)("img", {
-                  src: "public/assets/char3/e.svg",
+                  src: "public/assets/char3/works/l.svg",
+                  style: {
+                      marginLeft: "0vw",
+                      marginBottom: "0px",
+                      opacity: 0
+                  }
+              }),(0,
+              n.jsx)("img", {
+                  src: "public/assets/char3/works/i.svg",
+                  style: {
+                      marginLeft: "0vw",
+                      marginBottom: "0px",
+                      opacity: 0
+                  }
+              }),(0,
+              n.jsx)("img", {
+                  src: "public/assets/char3/works/e.svg",
+                  style: {
+                      marginLeft: "0vw",
+                      marginBottom: "0px",
+                      opacity: 0
+                  }
+              }),(0,
+              n.jsx)("img", {
+                  src: "public/assets/char3/works/r.svg",
                   style: {
                       marginLeft: "0vw",
                       marginBottom: "0px",
