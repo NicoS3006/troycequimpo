@@ -2,48 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout</title>
+    <title>About</title>
     <link rel="stylesheet" href="public/assets/_next/static/css/about.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
     <div class="container">
         <div class="lhs">
-            <div class="tp"> <img src="social/troyce-portrait.jpeg" class="tp-image"> </div>
-            <div class="about-text">
-                <img class="letters" src="public/assets/char3/a.svg" alt="a">
-                <img class="letters" src="public/assets/char3/b.svg" alt="b">
-                <img class="letters" src="public/assets/char3/o.svg" alt="o">
-                <img class="letters" src="public/assets/char3/u.svg" alt="u">
-                <img class="letters" src="public/assets/char3/t.svg" alt="t">
+            <div class="lhs-content">
+                <div class="tp">
+                    <img src="social/about-image.jpg" class="tp-image" alt="about image">
+                </div>
+                <div class="about-letters">
+                    <img class="letters" src="public/assets/char3/a.svg" alt="a">
+                    <img class="letters" src="public/assets/char3/b.svg" alt="b">
+                    <img class="letters" src="public/assets/char3/o.svg" alt="o">
+                    <img class="letters" src="public/assets/char3/u.svg" alt="u">
+                    <img class="letters" src="public/assets/char3/t.svg" alt="t">
+                </div>
+                <p class="about-subtext">
+                    “… My work may seem <br>
+                    crude to you; but it harbours a subtle meaning which cannot be explained in words. I <br>
+                    myself acquired it only after many long years, and even if I wanted to, I could not automatically pass it on to my son, if he himself did not wish to <br>
+                    acquire it – and I think he would rather take up another occupation. This craft can be traced back from apprentice to master until one reaches our Lord Seth, the son of Adam. It was he who first taught it to <br>
+                    men, and what a Prophet brings — for Seth was a Prophet — must clearly have a special purpose, both outwardly and inwardly. I gradually came to understand that there is nothing fortuitous about this craft, that each movement and each procedure is the bearer of an <br>
+                    element of wisdom. But not everyone can understand this. But even if one does not know this, it is still stupid and reprehensible to rob men of the inheritance of Prophets, and to put them in front of a machine where, day in and day out, they must perform a meaningless task.”<br>
+                    <br>
+                    <span class="about-source">– taken from "Fez: City of Islam" by Titus Burckhardt.</span>
+                </p>
             </div>
         </div>
         <div class="rhs">
             <div class="home-container">
                 <a href="index.html" style="text-decoration: none; color: black;">
-                    <div class="home-button"> Menu </div>    
+                    <div class="home-button">Menu</div>
                 </a>
             </div>
-            <div class="rhs-1">
-                Troyce Quimpo is an emerging Australian architect and designer, currently pursuing his studies at the University of Sydney.
-                As of January 2022, he was a second-year architecture student, actively seeking industry experience to complement his academic pursuits.
-            </div>
-            <div >
-                <div class="rhs-title-2"> A VISIONARY IN ARCHITECTURAL DESIGN</div>
-                <div class="rhs-text-2"> Troyce Quimpo, an emerging Australian architect and designer, is currently pursuing his studies at the University of Sydney. With a growing portfolio and active involvement in architectural projects, Troyce exemplifies a commitment to blending academic learning with practical industry experience. His works, such as "thecourtyardhouse_DRAWINGS" and "thestreethouse_DESIGN_BOOK," showcase his design proficiency and technical skills.
-                </div>
-            </div>
-            <div >
-                <div class="rhs-title-3"> Inspiring Leadership and Community Engagement</div>
-                <div class="rhs-text-3"> Beyond his architectural pursuits, Troyce has demonstrated leadership and dedication through extracurricular activities. As a General Executive member of the Sydney University Catholic Society for the 2023/2024 term, he contributed to fostering community spirit at the university. His earlier achievements at Oakhill College, including a nomination for the prestigious InTech exhibition, highlight his early promise in design and innovation.
-                </div>
-            </div>
-            <div >
-                <div class="rhs-title-4"> Excellence in Sports and Teamwork</div>
-                <div class="rhs-text-4">Troyce's talents extend beyond the realm of architecture into sports, where he has consistently demonstrated excellence and leadership. As a basketball player, he was recognised as the Most Valuable Player for the Hills Hornets in both 2014 and 2016, showcasing his dedication to teamwork and personal growth.
-                </div>
+            <div class="rhs-text">
+                <p>I’m a Masters student at the University of Sydney studying B Design in Architecture (Hons) / M Architecture.</p> <br>
+                <p>I am an architect drawn to the unofficial life of architecture — where vernacular craft, memory, and spirit shape form. My work seeks the forgotten dialogue between matter and soul, nature and culture, place and the sacred.</p>
             </div>
         </div>
     </div>
+    <script>
+function checkDeviceType() {
+  const userAgentIsMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const screenIsSmall = screen.width <= 768;
+
+  if (userAgentIsMobile || screenIsSmall) {
+    console.log("Mobile device detected");
+  } else {
+    console.log("Desktop device detected");
+  }
+
+  console.log("innerWidth:", window.innerWidth);
+  console.log("document.documentElement.clientWidth:", document.documentElement.clientWidth);
+  console.log("screen.width:", screen.width);
+  console.log("screen.availWidth:", screen.availWidth);
+}
+
+checkDeviceType();
+setInterval(checkDeviceType, 5000);
+
+
+    </script>
 </body>
 </html>

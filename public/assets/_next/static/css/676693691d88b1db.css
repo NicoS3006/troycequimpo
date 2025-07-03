@@ -98,8 +98,8 @@
   position: relative;
 }
 .hover-target-edge3 {
+  cursor: pointer;
   position: relative;
-  z-index: 10;
 }
 
 .PhysicsSimulation_physicsContainer__l20q0 img,.PhysicsSimulation_rigidBody__FrI2H {

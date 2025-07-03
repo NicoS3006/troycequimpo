@@ -1,4 +1,4 @@
-/* Desktop Styles (UNCHANGED) */
+/* Desktop Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,66 +6,121 @@
 }
 
 body, html {
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 
 .container {
     display: flex;
-    height: 100vh; /* Full height of the viewport */
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100vh;
+    position: relative; /* for absolute subtext */
 }
 
 .lhs {
-    width: 100%;
+    width: 50%; /* Half of container */
     height: 100%;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    padding: 5% 20px 20px 20px;
-    gap: 0%;
+    justify-content: flex-end;
+    padding: 1% 20px 20px 20px;
 }
 
-.rhs {
-    width: 100%;
-    height: 100%;
+.lhs-content {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    padding: 5% 10% 20px 20px;
-    justify-content: start;
-    gap: 8%;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .tp {
-    width: 100%;
-    height: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .tp-image {
-    width: 80%;
-    height: 95%;
+    width: 90%;
+    height: 100%;
 }
 
-.about-text {
-    width: 100%;
-    height: 100%;
+.about-letters {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    max-height: 150px;
 }
 
 .letters {
     width: 40%;
-    height: 35%;
+    height: auto;
     margin: 0% -13%;
 }
 
-.rhs-1 {
-    font-family: sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
+.about-subtext {
+    position: absolute;
+    bottom: 2rem;
+    left: 7.2rem;
+    width: 100%;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    font-style: italic;
 }
 
-.rhs-title, .rhs-title-2, .rhs-title-3, .rhs-title-4{
+.about-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-style: normal;
+}
+
+.rhs {
+    width: 50%; /* Half of container */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10% 20px 20px;
+    justify-content: flex-start;
+}
+
+.home-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.home-button {
+    border: solid 1px black;
+    border-radius: 100px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-button:hover {
+    cursor: pointer;
+}
+
+.rhs-text {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-bottom: 5%;
+    justify-content: center; 
+    margin-top:25%;
+}
+
+.rhs-text p {
+    margin-bottom: 1rem;
+}
+
+.rhs-title, .rhs-title-2, .rhs-title-3, .rhs-title-4 {
     line-height: 1rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -80,36 +135,11 @@ body, html {
     font-weight: 400;
 }
 
-
-
-.home-container {
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-decoration: none;
-    margin-bottom: -2%;
-}
-
-.home-button {
-    height: 100%;
-    width: 150%;
-    border: solid 1px black;
-    border-radius: 100px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    transform: translateX(-20%);
-}
-
-.home-button:hover {
-    cursor: pointer;
-}
-
 .mobile-home-button {
     display: none;
 }
+
+
 
 /* Mobile Styles (ONLY CHANGES FOR MOBILE) */
 @media (max-width: 768px) {
@@ -154,6 +184,7 @@ body, html {
         height: 100%;
         display: flex;
         flex-direction: column; /* Stack items vertically */
+        align-items: center;
         padding: 5% 20px 20px 20px;
         gap: 0%;
         transform: translateY(10%);

@@ -1548,27 +1548,34 @@
         };
         document.addEventListener('click', initAudio, { once: true });
 
-        // Image path fixing - Restored working version
         function fixAllPaths() {
           document.querySelectorAll('img[src*="_next/image"], source[srcset*="_next/image"]').forEach(img => {
             const currentSrc = img.getAttribute('src') || img.getAttribute('srcset');
+
             if (currentSrc) {
-              const match = currentSrc.match(/Selection%2F(\d+)\.webp/i);
-              if (match) {
-                const imageNumber = match[1];
-                const newSrc = `public/assets/selection/${imageNumber.padStart(3, '0')}.webp`;
+              // Example: detect all /_next/image?url=%2Fassets%2Fimages%2FINTBAU-Summer-School-2025-Submission%2F01_INTBAU.jpg
+              const urlMatch = currentSrc.match(/url=([^&]+)/i);
+              if (urlMatch) {
+                let decodedPath = decodeURIComponent(urlMatch[1]); // e.g., /assets/images/INTBAU-Summer-School-2025-Submission/01_INTBAU.jpg
+
+                // Strip possible leading slash if needed
+                if (decodedPath.startsWith('/')) {
+                  decodedPath = decodedPath.slice(1);
+                }
+
+                // Update src or srcset
+                const newSrc = `/${decodedPath}`; // Always ensure root-relative
                 if (img.hasAttribute('src')) {
                   img.setAttribute('src', newSrc);
                 }
                 if (img.hasAttribute('srcset')) {
-                  const sizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
-                  const srcset = sizes.map(size => `${newSrc} ${size}w`).join(', ');
-                  img.setAttribute('srcset', srcset);
+                  img.setAttribute('srcset', newSrc);
                 }
               }
             }
           });
         }
+
 
         // SVG path fixing
         function fixSvgPaths() {
