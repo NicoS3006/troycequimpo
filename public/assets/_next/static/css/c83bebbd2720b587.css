@@ -536,12 +536,20 @@ html {
   justify-content: space-between;
   line-height: normal;
   font-weight: 500;
+  height: 260px !important;
+  max-height: 260px !important;
+  overflow-y: scroll !important;
 }
+
 .details p {
   width: 55%;
   font-size: 0.75vw;
   letter-spacing: -0.005vw;
   font-weight: 400;
+  height: auto !important;
+}
+.details.background p {
+  height: auto !important;
 }
 .details p span {
   display: block;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Page</title>
+    <title>Manifesto</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css">
 
     <!-- Locomotive Scroll JS -->
@@ -48,12 +48,18 @@
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
       }
+      .contact-image img {
+        margin: 0;
+        padding: 0 0% 0 12%;
+      }
       .contactpage-image {
-        height: 75%;
-        width: 75%;
+        width: 50%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
       }
       .contact-info {
         display: flex;
@@ -65,8 +71,15 @@
         gap: 10%;
         padding: 0 0% 0 12%;
         position: relative;
-        bottom: 5%;
       }
+      .manifesto-diagram-image {
+        width: 100%;
+        max-width: 600px; /* adjust to taste */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* centre horizontally */
+      }
+
       .email {
         text-decoration: underline;
         font-size: 1.5vw;
@@ -414,6 +427,7 @@
         flex-direction: column;
         justify-content: start;
         align-items: start;
+        text-align: center;
         font-size: calc(18px + 4 * (100vw - 1200px) / 720);
         font-weight: 100;
         line-height: 1.8em;
@@ -510,14 +524,16 @@
       }
 
       .contact-text {
-        width: 98%;
+        width: 80%;
         height: 20%;
         display: flex;
         justify-content: center;
         position: relative;
         padding: 2% 0% 0% 0%;
+        margin-left:0.5%;
         margin-bottom: -5%;
       }
+
 
       /* Mobile Version Styling */
 
@@ -676,7 +692,7 @@
       <div class="left">
         <div class="contact-image">
           <img
-            src="public/assets/images/Old-assets/012_ARCHITECTURE_BATCH.webp"
+            src="public/assets/images/Manifesto/manifesto-hero.png"
             alt="Contact Image"
             class="contactpage-image"
           />
@@ -721,6 +737,9 @@
         </div>
         <div class="contact-info">
           <div class="s-contact-info">
+            Custody of the Architect’s Heart
+          </div>
+          <div class="s-contact-info">
             Unprogram the heart from architecture orthodoxy for it is homogenizing, unidirectional and globalizing.
             The architect must transcend the humanist campaign. By receptivity and mirroring the Divine Geometer, the
             architect’s heart will be sensitive and capable of sharing these hidden, timeless, true and good beauties.
@@ -734,54 +753,36 @@
           </a>
         </div>
         <div class="rhs-top">
-            <div class="rhs-title1"> 
-                Core Principles
-            </div>
             <div class="rhs-p1">
-                <div class="subtitle">Sustainability and Environmental Responsibility</div>
-                <div class="text">Troyce places sustainability at the forefront of his designs, ensuring that each project minimises environmental impact. His work incorporates energy-efficient solutions, eco-friendly materials, and innovative techniques to address modern ecological challenges.</div>
-            </div>
-            <div class="rhs-p2">
-                <div class="subtitle">Human-Centric Design</div>
-                <div class="text">Understanding that architecture profoundly influences human behaviour and wellbeing, Troyce crafts spaces that prioritise comfort, functionality, and connection.</div>
-            </div>
-            <div class="rhs-p3">
-                <div class="subtitle">Adaptability and Timelessness</div>
-                <div class="text">Troyce believes that architecture should adapt to evolving needs while standing the test of time.</div>
-            </div>
-            <div class="rhs-p4">
-                <div class="subtitle">Contextual Sensitivity</div>
-                <div class="text">Acknowledging the significance of place, culture, and history, Troyce ensures that his designs resonate with the local context.
-                </div>
-            </div>
-            <div class="rhs-p5">
-                <div class="subtitle">Collaboration and Innovation</div>
-                <div class="text">Troyce values the collaborative nature of architectural work, frequently integrating diverse perspectives into his process.</div>
-            </div>
-        </div>
-        <div class="rhs-bottom">
-            <div class="rhs-p6">
                 <div class="subtitle">We are responsible to induce and sustain life.</div>
                 <div class="text">The real builder “imitates” the Divine Geometer when he builds: he breathes life into the clay.
                   Without that bond all buildings are shallow, no matter how deep their foundations or how high their walls.
                   For if “except the Lord builds the house, they labour in vain that build it.”</div>
-                <div class="text" style="text-align: center; margin-top: 3%;">Quoted from The Architect Dimitris Pikionis by Z. Lorentzatos</div>
+                <div class="text" style="text-align: center; margin-top: 3%;"> - Quoted from The Architect Dimitris Pikionis by Z. Lorentzatos</div>
             </div>
-            <div class="rhs-p7">
+            <div class="rhs-p2">
                 <div class="subtitle">We will remain receptive to the Ultimate’s language of creation.</div>
                 <div class="text">God has sealed my heart in his heart. God dwells in my heart.
                   From now on, man and God are in league, because they have the same heart and the same eyes: what God sees and hears, the believer can also see and hear.
                   I dare to say that such a love exists.</div>
-                <div class="text" style="text-align: center; margin-top: 3%;">Quoted from The Power of Silence by Cardinal R. Sarah</div>
+                <div class="text" style="text-align: center; margin-top: 3%;"> - Quoted from The Power of Silence by Cardinal R. Sarah</div>
             </div>
-            <div class="rhs-p8">
+            <div class="rhs-p3">
                 <div class="subtitle">As icons of the Ultimate, we are to transfuse the Ultimate into the work itself.</div>
                 <div class="text" style="text-align: center; margin-top: 3%;">Art is beauty and beauty is the radiance of truth, without which there is no art.</div>
                 <div class="text" style="margin-top: 3%;">Architects are rulers in the true sense of the word, since they find no ready-made constitution but must enact one. This is why great rulers are called the architect of nations.</div>
                 <div class="text" style="text-align: center; margin-top: 3%;">Work is the profit of cooperation, and the latter is possible only on the basis of love.</div>
-                <div class="text" style="text-align: center; margin-top: 3%;">The recorded words and thoughts of Antoni Gaudí</div>
+                <div class="text" style="text-align: center; margin-top: 3%;"> - The recorded words and thoughts of Antoni Gaudí</div>
             </div>
         </div>
+        <div class="rhs-bottom">
+          <img 
+            src="public/assets/images/Manifesto/manifesto-diagram.jpg" 
+            alt="Manifesto diagram" 
+            class="manifesto-diagram-image"
+          >
+        </div>
+
 
        
       </div>

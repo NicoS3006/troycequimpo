@@ -1749,5 +1749,13 @@
         }
       }});
     </script>
+    <script>
+      const detailsDiv = document.querySelector('.details');
+      const backgroundDiv = document.querySelector('.details.background');
+
+      detailsDiv.addEventListener('scroll', () => {
+        backgroundDiv.scrollTop = detailsDiv.scrollTop;
+      });
+    </script>
   </body>
 </html>
