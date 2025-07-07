@@ -1224,6 +1224,23 @@
           U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
           U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
+      .details, .details.background {
+        /* Copy the exact height/max-height from the computed styles */
+        height: 100%; 
+        max-height: 50vh; /* Use whatever value you found */
+        
+        /* The main div is likely 'auto' or 'scroll', but the background
+          should be 'hidden' to prevent a double scrollbar. */
+      }
+
+      .details {
+        overflow-y: auto; /* Or 'scroll' */
+      }
+
+      .details.background {
+        overflow-y: hidden; /* This is critical */
+        pointer-events: none;
+      }
     </style>
     <script>
       window.addEventListener('load', function() {
@@ -1748,14 +1765,6 @@
           };
         }
       }});
-    </script>
-    <script>
-      const detailsDiv = document.querySelector('.details');
-      const backgroundDiv = document.querySelector('.details.background');
-
-      detailsDiv.addEventListener('scroll', () => {
-        backgroundDiv.scrollTop = detailsDiv.scrollTop;
-      });
     </script>
   </body>
 </html>

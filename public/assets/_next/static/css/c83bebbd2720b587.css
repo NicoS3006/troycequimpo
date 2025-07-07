@@ -360,9 +360,6 @@ video {
 .z-10 {
   z-index: 10;
 }
-.ml-\[-300vh\] {
-  /* margin-left: -300vh; */
-}
 .mt-\[3vh\] {
   margin-top: 3vh;
 }
@@ -538,7 +535,7 @@ html {
   font-weight: 500;
   height: 260px !important;
   max-height: 260px !important;
-  overflow-y: scroll !important;
+  overflow: hidden;
 }
 
 .details p {
@@ -546,7 +543,8 @@ html {
   font-size: 0.75vw;
   letter-spacing: -0.005vw;
   font-weight: 400;
-  height: auto !important;
+  overflow: auto;
+  height: 268px
 }
 .details.background p {
   height: auto !important;

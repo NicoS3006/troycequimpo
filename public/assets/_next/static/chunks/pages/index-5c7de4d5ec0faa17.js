@@ -31,7 +31,7 @@
           "public/assets/images/INTBAU-Summer-School-2025-Submission/017_INTBAU.jpg",
         ],
         1: [
-          "public/assets/images/North-Eveleigh-Tech-Hub/01_community-hearth.jpg",
+          "public/assets/images/North-Eveleigh-Tech-Hub/01_commnuity-hearth.jpg",
           "public/assets/images/North-Eveleigh-Tech-Hub/02_fab-and-multifunction.jpg",
           "public/assets/images/North-Eveleigh-Tech-Hub/03_site-plan-and-sections.jpg",
           "public/assets/images/North-Eveleigh-Tech-Hub/04_tehcnhub.jpg",
@@ -473,6 +473,7 @@
           let r = n.cloneNode(!0);
           (r.className = "details background"),
             document.body.insertBefore(r, n.nextSibling);
+            r.style.display = "none";
         
           let l = v.L.wrapWords(n.querySelector("p")),
             c = v.L.wrapWords(r.querySelector("p"));
