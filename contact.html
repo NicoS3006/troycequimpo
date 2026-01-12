@@ -43,7 +43,7 @@
         align-items: center;
       }
       .contactpage-image {
-        height: 80%;
+        height: 90%;
         width: 80%;
       }
       .contact-info {
@@ -54,7 +54,7 @@
         width: 100%;
         justify-content: center;
         gap: 10%;
-        padding: 0 0 0 15%;
+        padding: 0 0 0 10%;
       }
       .email {
         text-decoration: underline;
@@ -454,6 +454,10 @@
       .s-contact-info {
         line-height: 1.8em;
         font-size: calc(18px + 4 * (100vw - 1200px) / 720);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.2em; /* scales with font-size, responsive */
       }
 
       body a,
@@ -463,11 +467,18 @@
       }
 
       .contact-text {
-        width: 100%;
+        width: 80%;
         height: 20%;
         display: flex;
-        justify-content: center;
+        align-items: flex-end;
+        padding-left: 8%;
       }
+        .contact-text .letters {
+        height: 100%;
+        width: 10%;
+        object-fit: contain;
+        margin: 0;
+        }
 
       /* Mobile Version Styling */
 
@@ -632,40 +643,32 @@
           />
         </div>
         <div class="contact-text">
-          <img
+          <img class="letters"
             src="public/assets/char3/c.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/o.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/n.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/t.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/a.svg"
-            style="position: relative; height: 100%; width: 10%; margin: 0 -1%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/c.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
-          <img
+          <img class="letters"
             src="public/assets/char3/t.svg"
-            style="position: relative; height: 100%; width: 10%"
           />
         </div>
         <div class="contact-info">
           <div class="s-contact-info">
             <a href="tel:0450 474 480" class="s-link-underline"
-              >T 0450 474 480</a
-            ><br />
+              >T 0450 474 480</a>
             <a
               href="mailto:troycequimpo@gmail.com"
               class="s-link-underline"
@@ -677,7 +680,7 @@
       <div class="right">
         <div class="home-container">
           <a href="index.html">
-            <div class="home-button">Menu</div>
+            <div class="home-button">RETURN HOME</div>
           </a>
         </div>
         <div class="pre-form-text">

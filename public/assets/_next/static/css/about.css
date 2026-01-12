@@ -38,7 +38,7 @@ body, html {
     width: 50%;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 10% auto 0 auto;
 }
 
 .tp-image {
@@ -49,9 +49,9 @@ body, html {
 .about-letters {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
     margin-bottom: 0;
     max-height: 150px;
+    margin-left: 12%;
 }
 
 .letters {
