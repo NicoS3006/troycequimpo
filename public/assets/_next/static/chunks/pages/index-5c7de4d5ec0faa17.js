@@ -12,107 +12,102 @@
     
     6213: function (e, t, i) {
       const imageSets = {
-        0: [
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/02_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/03_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/04_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/05_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/06_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/07_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/08_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/09_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/10_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/011_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/012_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/013_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/014_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/015_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/016_INTBAU.jpg",
-          "public/assets/images/INTBAU-Summer-School-2025-Submission/017_INTBAU.jpg",
+        "Tomorrow-when-The-War-began": [
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/00_drawing17.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/01_drawing.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/02_drawing2.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/03_drawing6.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/04_drawing1.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/05_drawing12.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/06_drawing13.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/07_drawing14.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/08_drawing15.jpg",
+          "public/assets/images/Final 10 Projects/Tomorrow when The War began/09_photo (2).jpg",
         ],
-        1: [
-          "public/assets/images/North-Eveleigh-Tech-Hub/01_commnuity-hearth.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/02_fab-and-multifunction.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/03_site-plan-and-sections.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/04_tehcnhub.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/05_render-1.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/06_render-2.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/07_section-1.jpg",
-          "public/assets/images/North-Eveleigh-Tech-Hub/08_section-2.jpg",      
+        "North-Eveleigh-Tech-Hub": [
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /00_studio3a_presentation_moneyshot.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /01_ commnuity hearth.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /02_ fab and multifunction.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /03_ site plan and sections.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /04_ tehcnhub.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /05_ render 1.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /06_ render 2.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /07_ section 1.jpg",
+          "public/assets/images/Final 10 Projects/North Eveleigh Tech Hub /08_ section 2.jpg",
         ],
-        2: [
-          "public/assets/images/Traces-A-Palimpsest-Project/00_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_05.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_06.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_07.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/01_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_05.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/02_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_05.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/03_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_05.jpg",
-
+        "A-Renascant-Exchange": [
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/00_market-entrance-43.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/01_Copy of _MG_7162.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/02_Copy of _MG_7206.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/03_Copy of _MG_7242.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/04_Copy of Site Plan.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/05_Copy of Floor Plan.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/06_Copy of Sectional Perspective 1.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/07_Copy of Sectional Perspective 2.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/08_Copy of Open market plan.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/09_Copy of Construction Axo.jpg",
+          "public/assets/images/Final 10 Projects/A Renascant Exchange/10_Copy of Elevation.jpg",
         ],
-        3: [
-          "public/assets/images/004_URBAN_BATCH.webp",
-          "public/assets/images/004_URBAN_BATCH.webp",
-          "public/assets/images/004_URBAN_BATCH.webp",
-          "public/assets/images/004_URBAN_BATCH.webp",
-          "public/assets/images/004_URBAN_BATCH.webp",
-          "public/assets/images/004_URBAN_BATCH.webp",
-
-          
+        "Traces-A-Palimpsest-Project": [
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/01_01.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/02_04.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/03_03.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/04_05.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/05_05.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/06_01.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/07_04.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/08_05.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/09_04.jpg",
+          "public/assets/images/Final 10 Projects/Traces A Palimpsest Project/10_03.jpg",
         ],
-        4: [
-          "public/assets/images/Traces-A-Palimpsest-Project/00_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_05.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_06.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/00_07.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/01_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/01_05.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/02_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/02_05.jpg",
-
-          "public/assets/images/Traces-A-Palimpsest-Project/03_01.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_02.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_03.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_04.jpg",
-          "public/assets/images/Traces-A-Palimpsest-Project/03_05.jpg",
+        "Richmond-Childcare": [
+          "public/assets/images/Final 10 Projects/Richmond Childcare/01_richmondchildcare.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Childcare/02_richmondchildcare.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Childcare/03_richmondchildcare.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Childcare/04_richmondchildcare.jpg",
         ],
-        5: [
-          "public/assets/images/006_HERO_BATCH.webp",
-          "public/assets/images/006_HERO_BATCH.webp",
-          "public/assets/images/006_HERO_BATCH.webp",
-          "public/assets/images/006_HERO_BATCH.webp",
-          "public/assets/images/006_HERO_BATCH.webp",
-          "public/assets/images/006_HERO_BATCH.webp",
-
+        "Lets-Build-a-Beautiful-City-2025-by-INTBAU-Netherlands": [
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/00_DSCF2852-editted-2.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/01_DSCF2873 editted.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/02_DSCF2874 editted.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/03_DSCF2879.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/04_DSCF2880 editted.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/05_DSCF2888 editted.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/06_DSCF2889 editted.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/07_ams_school_insta_post 1.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/08_ams_school_insta_post.jpg",
+          "public/assets/images/Final 10 Projects/Lets Build a Beautiful City 2025 by INTBAU Netherlands/09_cologne insta post.jpg",
         ],
-        // Add more sets as needed
+        "Richmond-Mall-Rotunda": [
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/00_IMG_6581.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/01_u.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/02_RENeDEweR2WWArtboard 2@3x-100.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/03_RENeDEweR2WWArtboard 6@1.5x-100.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/04_RENeDEweR2WWArtboard 3_3@3x-100.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/05_IMG_2225.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/06_IMG_2272.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/07_RENeDEweR2WWArtboard 6_1@1.5x-100.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/08_RENeDEweR2WWArtboard 3 copy 3@3x-100.jpg",
+          "public/assets/images/Final 10 Projects/Richmond Mall Rotunda/09_IMG_6597.jpg",
+        ],
+        "Custody-of-the-Architects-Heart": [
+          "public/assets/images/Final 10 Projects/Custody of the Architects Heart/custody-of-the-architects-heart-title-page-1.jpg",
+        ],
+        "Ethnography-of-Negotiation-Framework-to-investigate-Rammed-Earth-implementation": [
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/0_ETHNOGRAPHY OF NEGOTIATION cover image.png",
+        ],
+        "Pittwater-Summer-School-2025-by-Glenn-Murcutt-Architecture-Foundation": [
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/00_IMG_9327.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/01_.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/02.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/03.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/04.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/05.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/06_IMG_1594.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/07_IMG_1336.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/08_IMG_1299.jpg",
+          "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/09_IMG_7980.jpg",
+        ],
       };
       // Standalone function to create the carousel
       function createCarousel(images) {
@@ -140,8 +135,22 @@
         carouselContainer.appendChild(carouselTrack);
         newDiv.appendChild(carouselContainer);
 
-        // Start the infinite scroll
-        startCarousel(carouselTrack);
+        // Only start infinite scroll if more than 3 images
+        if (images.length > 3) {
+          startCarousel(carouselTrack);
+        } else {
+          // For 3 or fewer images, center them statically
+          carouselTrack.style.display = 'flex';
+          carouselTrack.style.justifyContent = 'center';
+          carouselTrack.style.alignItems = 'center';
+          carouselTrack.style.gap = '20px';
+          carouselTrack.style.width = '100%';
+          carouselTrack.style.height = '100%';
+          carouselTrack.style.position = 'absolute';
+          carouselTrack.style.left = '0';
+          carouselTrack.style.top = '0';
+          carouselTrack.style.transform = 'none';
+        }
       }
 
       // Standalone function to handle infinite scrolling
@@ -461,9 +470,10 @@
           // Append the new div and then the details div to the body
           document.body.appendChild(newDiv);
           document.body.appendChild(n);
-          
-         // Get the specific image set for the clicked square
-          const imagesToDisplay = imageSets[t] || []; // Default to empty if not found
+
+         // Get the slug from the clicked element to find the correct image set
+          const projectSlug = e.getAttribute("data-slug");
+          const imagesToDisplay = imageSets[projectSlug] || []; // Use slug to get correct images
 
           // Carousel is called with specific images
           setTimeout(() => {
@@ -997,6 +1007,7 @@
                       "data-index": t,
                       "data-description": e.description,
                       "data-title": e.title,
+                      "data-slug": e.slug,
                       className:
                         "jsx-d6a22ac56ece3798 square absolute h-[100vh] w-[100vh] top-0 cursor-pointer",
                       children: [
