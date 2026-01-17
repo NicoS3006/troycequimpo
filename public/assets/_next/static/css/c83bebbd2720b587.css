@@ -376,7 +376,7 @@ video {
   height: 1e150px;
 }
 .h-\[100vh\] {
-  height: 120vh;
+  height: 100vh;
 }
 .h-full {
   height: 100%;
@@ -388,7 +388,7 @@ video {
   width: 1e150px;
 }
 .w-\[100vh\] {
-  width: 160vh;
+  width: 100vh;
 }
 .w-full {
   width: 100%;
@@ -588,12 +588,14 @@ img {
   max-width: inherit;
 }
 .clone {
-  width: 100vh;
-  height: 100vh;
+  width: 80vw;
+  max-width: 1000px;
+  height: 60vh;
+  max-height: 60vh;
   border: 6px solid #fff;
   border-top: 0 solid transparent;
   box-sizing: border-box;
-  top: 0;
+  top: 5vh;
   right: 0;
   transform: translate(-50vw) translate(50%, 3vh) scale(0.3);
   backface-visibility: hidden;
@@ -784,20 +786,29 @@ body.dark .circle {
 }
 
 .modal-content {
-  margin: 15% auto;
+  margin: auto;
   padding: 20px;
   background: white;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 90%;
+  max-height: 90vh;
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .modal-content img {
   max-width: 100%;
+  max-height: calc(90vh - 60px);
   height: auto;
+  width: auto;
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .close-button {
@@ -813,3 +824,65 @@ body.dark .circle {
 .close-button:hover {
   color: red;
 }
+
+/* === VARIABLE WIDTH CAROUSEL OVERRIDES === */
+/* Override fixed square dimensions to allow variable widths */
+#container .square {
+  /* Height stays at 100vh, width is set dynamically via JS */
+  height: 100vh !important;
+  /* Remove any default width - JS will set it */
+}
+
+/* Slides have 6px border - account for this in box-sizing */
+#container .square {
+  box-sizing: border-box !important;
+}
+
+/* Ensure images cover the slide properly without distortion */
+#container .square img {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Enlarged clone images should maintain aspect ratio */
+.clone .square img {
+  object-fit: contain !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 60vh !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* Clone container should match the clicked slide's dimensions */
+.clone {
+  /* Width will be set dynamically via JS */
+  height: 60vh !important;
+  max-height: 60vh !important;
+  overflow: hidden !important;
+}
+
+/* Ensure cloned slides inside .clone also have proper image handling */
+.clone .square {
+  height: 60vh !important;
+  max-height: 60vh !important;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Override the Tailwind h-[100vh] class */
+.h-\[100vh\] {
+  height: 100vh !important;
+}
+

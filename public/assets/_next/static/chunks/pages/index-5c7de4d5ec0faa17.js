@@ -92,9 +92,20 @@
         ],
         "Custody-of-the-Architects-Heart": [
           "public/assets/images/Final 10 Projects/Custody of the Architects Heart/custody-of-the-architects-heart-title-page-1.jpg",
+          "public/assets/images/Final 10 Projects/Custody of the Architects Heart/02_text.jpg",
+          "public/assets/images/Final 10 Projects/Custody of the Architects Heart/03_text.jpg",
+          "public/assets/images/Final 10 Projects/Custody of the Architects Heart/04_text.jpg",
+          "public/assets/images/Final 10 Projects/Custody of the Architects Heart/05_text.jpg",
         ],
         "Ethnography-of-Negotiation-Framework-to-investigate-Rammed-Earth-implementation": [
           "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/0_ETHNOGRAPHY OF NEGOTIATION cover image.png",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/02_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/03_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/04_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/05_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/06_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/07_text-1.jpg",
+          "public/assets/images/Final 10 Projects/Ethnography of Negotiation Framework to investigate Rammed Earth implementation/08_text-1.jpg",
         ],
         "Pittwater-Summer-School-2025-by-Glenn-Murcutt-Architecture-Foundation": [
           "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/00_IMG_9327.jpg",
@@ -217,6 +228,55 @@
             });
         });
       }      
+      // === VARIABLE WIDTH CAROUSEL CONFIG ===
+      // Debug flag - set to true to see console logs of width calculations
+      const CAROUSEL_DEBUG = true;
+
+      // Slide dimensions mapped by project SLUG (width x 1050 height)
+      // This ensures correct sizing regardless of random item selection order
+      const SLIDE_DIMENSIONS_BY_SLUG = {
+        "Tomorrow-when-The-War-began": { width: 743, height: 1050 },
+        "North-Eveleigh-Tech-Hub": { width: 743, height: 1050 },
+        "Traces-A-Palimpsest-Project": { width: 743, height: 1050 },
+        "Custody-of-the-Architects-Heart": { width: 1050, height: 1050 },
+        "Ethnography-of-Negotiation-Framework-to-investigate-Rammed-Earth-implementation": { width: 1050, height: 1050 },
+        "Richmond-Mall-Rotunda": { width: 1575, height: 1050 },
+        "Richmond-Childcare": { width: 1867, height: 1050 },
+        "A-Renascant-Exchange": { width: 1867, height: 1050 },
+        "Lets-Build-a-Beautiful-City-2025-by-INTBAU-Netherlands": { width: 1485, height: 1050 },
+        "Pittwater-Summer-School-2025-by-Glenn-Murcutt-Architecture-Foundation": { width: 1050, height: 1050 }
+      };
+
+      // Default dimensions for unknown slides (square)
+      const DEFAULT_DIMENSIONS = { width: 1050, height: 1050 };
+
+      // Get dimensions for a slide by its slug
+      function getSlideDimensionsBySlug(slug) {
+        return SLIDE_DIMENSIONS_BY_SLUG[slug] || DEFAULT_DIMENSIONS;
+      }
+
+      // Calculate width in vh units for a slide element (reads slug from data attribute)
+      function getSlideWidthVhByElement(slideEl) {
+        const slug = slideEl ? slideEl.getAttribute('data-slug') : null;
+        const dim = getSlideDimensionsBySlug(slug);
+        return (dim.width / dim.height) * 100;
+      }
+
+      // Calculate width in vh for a given item (from the items array)
+      function getSlideWidthVhByItem(item) {
+        const dim = getSlideDimensionsBySlug(item.slug);
+        return (dim.width / dim.height) * 100;
+      }
+
+      // Get total width of all slides in vh (using items array)
+      function getTotalCarouselWidthVhFromItems(items) {
+        let total = 0;
+        for (let i = 0; i < items.length; i++) {
+          total += getSlideWidthVhByItem(items[i]);
+        }
+        return total;
+      }
+
       "use strict";
       i.r(t);
       var s = i(5893),
@@ -526,20 +586,50 @@
                   void 0 === i ||
                   i.playSound();
               let a = document.querySelector(".clone");
+              // Set clone container to match clicked slide's width
+              const clickedSlideWidthVh = getSlideWidthVhByItem(this.items[t]);
+              a.style.width = clickedSlideWidthVh + 'vh';
+              a.style.height = '100vh';
+              // Set the main cloned slide width
+              o.style.width = clickedSlideWidthVh + 'vh';
+              o.style.height = '100vh';
               a.appendChild(o);
               let c = this.items.length;
+              const itemsRef = this.items; // Reference for use in loop
+              // Calculate cumulative offsets for adjacent slides
               for (let e = -6; e <= 6; e++) {
                 let i = t + e;
                 if ((i < 0 ? (i += c) : i >= c && (i -= c), i !== t)) {
-                  let t = document.getElementById("post-".concat(i));
-                  if (t) {
-                    let i = t.cloneNode(!0);
-                    (i.style.cssText =
-                      "\n                                position: absolute;\n                                width: 100%;\n                                height: 100%;\n                                transform: translateX(".concat(
-                        100 * e,
-                        "%);\n                                transform-origin: center center;\n                                border: 6px solid white; \n                                box-sizing: border-box;\n                                border-top:0px solid transparent;\n                            "
-                      )),
-                      a.appendChild(i);
+                  let origSlide = document.getElementById("post-".concat(i));
+                  if (origSlide) {
+                    let clonedSlide = origSlide.cloneNode(!0);
+                    // Calculate cumulative offset in vh from center slide
+                    let offsetVh = 0;
+                    if (e < 0) {
+                      // Slides to the left: sum widths from e to -1
+                      for (let j = e; j < 0; j++) {
+                        let slideIdx = t + j;
+                        if (slideIdx < 0) slideIdx += c;
+                        else if (slideIdx >= c) slideIdx -= c;
+                        offsetVh -= getSlideWidthVhByItem(itemsRef[slideIdx]);
+                      }
+                    } else {
+                      // Slides to the right: sum widths from 0 to e-1
+                      for (let j = 0; j < e; j++) {
+                        let slideIdx = t + j;
+                        if (slideIdx < 0) slideIdx += c;
+                        else if (slideIdx >= c) slideIdx -= c;
+                        offsetVh += getSlideWidthVhByItem(itemsRef[slideIdx]);
+                      }
+                    }
+                    const slideWidthVh = getSlideWidthVhByItem(itemsRef[i]);
+                    (clonedSlide.style.cssText =
+                      "\n                                position: absolute;\n                                width: " + slideWidthVh + "vh;\n                                height: 100vh;\n                                transform: translateX(" + offsetVh + "vh);\n                                transform-origin: center center;\n                                border: 6px solid white; \n                                box-sizing: border-box;\n                                border-top:0px solid transparent;\n                            "),
+                      clonedSlide.dataset.offsetVh = offsetVh;
+                      a.appendChild(clonedSlide);
+                    if (CAROUSEL_DEBUG) {
+                      console.log(`[Carousel Clone] Slide ${i} (offset ${e}): translateX(${offsetVh.toFixed(2)}vh), width: ${slideWidthVh.toFixed(2)}vh`);
+                    }
                   }
                 }
               }
@@ -663,17 +753,29 @@
                       ),
                     a
                       .querySelectorAll(".square:not(:first-child)")
-                      .forEach((e) => {
-                        let t = e.style.transform.match(
-                            /translateX\(([-\d]+)%\)/
-                          ),
-                          i = t ? parseFloat(t[1]) : 0,
-                          s = i < 0 ? -100 : 100;
+                      .forEach((slideEl) => {
+                        // Parse vh-based translateX (e.g., "translateX(-150.5vh)")
+                        let vhMatch = slideEl.style.transform.match(
+                            /translateX\(([-\d.]+)vh\)/
+                          );
+                        // Fallback to percentage pattern for backwards compatibility
+                        let percentMatch = slideEl.style.transform.match(
+                            /translateX\(([-\d.]+)%\)/
+                          );
+                        let currentOffsetVh = vhMatch ? parseFloat(vhMatch[1]) :
+                                              (percentMatch ? parseFloat(percentMatch[1]) : 0);
+                        // Use stored offset if available
+                        if (slideEl.dataset.offsetVh) {
+                          currentOffsetVh = parseFloat(slideEl.dataset.offsetVh);
+                        }
+                        // Calculate additional offset for animation (slide out by ~100vh equivalent)
+                        let animationOffsetVh = currentOffsetVh < 0 ? -100 : 100;
+                        let targetOffsetVh = currentOffsetVh + animationOffsetVh;
                         o.to(
-                          e,
+                          slideEl,
                           {
                             duration: 0.3,
-                            xPercent: i + s,
+                            x: targetOffsetVh + "vh",
                             onStart: () => {
                               var e;
                               null === (e = this.audioControllerRef.current) ||
@@ -686,9 +788,9 @@
                               null === (t = this.audioControllerRef.current) ||
                                 void 0 === t ||
                                 t.playSound(),
-                                (e.style.transform = "translateX(".concat(
-                                  i,
-                                  "%)"
+                                (slideEl.style.transform = "translateX(".concat(
+                                  currentOffsetVh,
+                                  "vh)"
                                 ));
                             },
                           },
@@ -777,14 +879,79 @@
           this.animationId = requestAnimationFrame(e);
         }
         adjustSquaresPosition() {
-          let e = 100 * this.items.length,
-            t = this.currentPos % e;
-          (t = (t + e) % e),
-            this.items.forEach((i, s) => {
-              let o = (t + 100 * s) % e,
-                a = document.getElementById("post-".concat(s));
-              a && (a.style.transform = "translateX(".concat(o, "%)"));
-            });
+          // VARIABLE WIDTH CAROUSEL with vh-based absolute positioning
+          // Key insight: translateX(%) is relative to element's OWN width, which breaks with variable widths
+          // Solution: Use vh-based absolute positioning with cumulative offsets
+
+          const numSlides = this.items.length;
+
+          // Pre-calculate all slide widths and cumulative positions
+          if (!this._slideWidths) {
+            this._slideWidths = [];
+            this._cumulativePositions = [0]; // Position where each slide starts
+            let cumulative = 0;
+
+            for (let i = 0; i < numSlides; i++) {
+              const w = getSlideWidthVhByItem(this.items[i]);
+              this._slideWidths.push(w);
+              cumulative += w;
+              this._cumulativePositions.push(cumulative);
+            }
+            this._totalWidthVh = cumulative;
+
+            if (CAROUSEL_DEBUG) {
+              console.log('[Carousel] === Variable Width Mode (VH-based) ===');
+              console.log('[Carousel] Total width:', this._totalWidthVh.toFixed(2), 'vh');
+              for (let i = 0; i < numSlides; i++) {
+                console.log(`[Carousel] Slide ${i} "${this.items[i].slug}": width=${this._slideWidths[i].toFixed(2)}vh, basePos=${this._cumulativePositions[i].toFixed(2)}vh`);
+              }
+            }
+          }
+
+          // Convert currentPos from percentage (0-100 per slide) to vh units
+          // Original: currentPos of 100 = move 1 "slide" (100% of a square slide)
+          // For variable widths: we need to scale this to actual vh movement
+          // Average slide width provides the conversion factor
+          const avgSlideWidth = this._totalWidthVh / numSlides;
+          const scrollVh = (this.currentPos / 100) * avgSlideWidth;
+
+          // Normalize scroll position to wrap within total carousel width
+          let normalizedScroll = scrollVh % this._totalWidthVh;
+          if (normalizedScroll < 0) normalizedScroll += this._totalWidthVh;
+
+          this.items.forEach((item, index) => {
+            const slideEl = document.getElementById("post-".concat(index));
+            if (!slideEl) return;
+
+            const widthVh = this._slideWidths[index];
+            const basePos = this._cumulativePositions[index];
+
+            // Calculate position: base position minus scroll offset
+            let posVh = basePos - normalizedScroll;
+
+            // Wrap around for infinite scroll
+            // If slide goes too far left, wrap to the right
+            if (posVh < -widthVh) {
+              posVh += this._totalWidthVh;
+            }
+            // If slide goes too far right, wrap to the left
+            if (posVh > this._totalWidthVh - widthVh) {
+              posVh -= this._totalWidthVh;
+            }
+
+            // Apply styles
+            slideEl.style.setProperty('width', widthVh + 'vh', 'important');
+            slideEl.style.setProperty('height', '100vh', 'important');
+            slideEl.style.transform = "translateX(" + posVh + "vh)";
+
+            // Ensure images fill properly
+            const img = slideEl.querySelector('img');
+            if (img) {
+              img.style.objectFit = 'cover';
+              img.style.width = '100%';
+              img.style.height = '100%';
+            }
+          });
         }
         startAutoScroll() {
           let e = () => {
