@@ -557,11 +557,28 @@ html {
   width: 30%;
   font-size: 1vw;
   margin-top: 0;
+  margin-bottom: 0;
   line-height: 1vw;
   opacity: 0;
   font-weight: 500;
   letter-spacing: 0.05vw;
   text-transform: uppercase;
+}
+.project-meta {
+  position: absolute;
+  left: 2.5vw;
+  top: calc(1vw + 1.75vw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+  width: 30%;
+}
+.project-meta .meta-line {
+  font-size: 0.7vw;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.02vw;
+  opacity: 0;
 }
 .details.backgorund {
   z-index: 9;
@@ -743,7 +760,7 @@ body.dark .circle {
   background-color: transparent;
   padding-inline: 20px;
   z-index: 100;
-  height: 20%;
+  height: 350px;
   overflow: hidden;
 }
 
@@ -752,11 +769,12 @@ body.dark .circle {
   position: relative;
   width: 100%;
   overflow-x: hidden; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Disable vertical scrolling */
+  overflow-y: hidden; /* Hide vertical overflow */
   white-space: nowrap; /* Prevent line breaks for child elements */
-  height: 200px; /* Adjust height as needed */
+  height: 350px; /* Larger carousel height */
   display: flex; /* Ensure children are laid out in a row */
   scroll-behavior: smooth; /* Smooth scrolling */
+  align-items: center; /* Center images vertically */
 }
 
 /* Carousel track (optional, if used) */
@@ -765,12 +783,13 @@ body.dark .circle {
   gap: 10px; /* Add spacing between images */
 }
 
-/* Carousel images */
+/* Carousel images - scale to fit carousel height while maintaining proportions */
 .carousel-image {
-  width: 300px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
+  width: auto; /* Natural width based on aspect ratio */
+  height: 350px; /* Larger carousel height */
   flex-shrink: 0; /* Prevent images from shrinking */
   margin-right: 10px; /* Space between images */
+  object-fit: contain; /* Maintain aspect ratio */
 }
 /* Modal styles */
 .modal {

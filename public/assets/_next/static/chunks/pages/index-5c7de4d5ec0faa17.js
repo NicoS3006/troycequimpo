@@ -510,22 +510,25 @@
           let s = this.ease;
           (this.ease = 0.2), this.items[t];
           let o = e.getAttribute("data-title"),
-            a = e.getAttribute("data-description");
-        
+            a = e.getAttribute("data-description"),
+            projectCollaborator = e.getAttribute("data-collaborator") || "—",
+            projectType = e.getAttribute("data-type") || "",
+            projectTimeline = e.getAttribute("data-timeline") || "";
+
           // Remove any existing 'new-div' directly from the DOM
           const existingNewDiv = document.querySelector(".new-div");
           if (existingNewDiv) {
             document.body.removeChild(existingNewDiv);
           }
-        
+
           // Create the new div to be added above the 'details' div
           let newDiv = document.createElement("div");
           newDiv.className = "new-div";
-        
+
           // Create the 'details' div
           let n = document.createElement("div");
           (n.className = "details"),
-            (n.innerHTML = "<h2>".concat(o, "</h2><p>").concat(a, "</p>"));
+            (n.innerHTML = "<h2>".concat(o, "</h2><div class='project-meta'><span class='meta-line'>").concat(projectCollaborator, "</span><span class='meta-line'>").concat(projectType, "</span><span class='meta-line'>").concat(projectTimeline, "</span></div><p>").concat(a, "</p>"));
         
           // Append the new div and then the details div to the body
           document.body.appendChild(newDiv);
@@ -819,6 +822,12 @@
                           : e.playSound();
                       },
                       delay: 0.5,
+                    }),
+                    y.p8.to(n.querySelectorAll(".meta-line"), {
+                      opacity: 1,
+                      duration: 0.4,
+                      stagger: 0.1,
+                      delay: 0.7,
                     }),
                     o.fromTo(
                       ".dve-t",
@@ -1175,6 +1184,9 @@
                       "data-description": e.description,
                       "data-title": e.title,
                       "data-slug": e.slug,
+                      "data-collaborator": e.collaborator,
+                      "data-type": e.type,
+                      "data-timeline": e.timeline,
                       className:
                         "jsx-d6a22ac56ece3798 square absolute h-[100vh] w-[100vh] top-0 cursor-pointer",
                       children: [
