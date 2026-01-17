@@ -119,7 +119,7 @@
           "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/08_IMG_1299.jpg",
           "public/assets/images/Final 10 Projects/Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation/09_IMG_7980.jpg",
         ],
-      };
+      }; 
       // Standalone function to create the carousel
       function createCarousel(images) {
         const newDiv = document.querySelector('.new-div');
