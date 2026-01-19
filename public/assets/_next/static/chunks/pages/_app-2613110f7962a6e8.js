@@ -5216,12 +5216,27 @@
               )
           }
           componentDidMount() {
-              var t;
-              document.body.classList.add("mobile"),
-              this.containerHeight = (null === (t = this.containerRef.current) || void 0 === t ? void 0 : t.offsetHeight) || 0,
-              this.translateY = -(this.containerHeight - 40),
-              this.wrapIntroText()
-          }
+                var t;
+                this.isMobileSkip = window.matchMedia("(max-width: 999px)").matches;
+
+                document.body.classList.add("mobile"),
+                this.containerHeight = (null === (t = this.containerRef.current) || void 0 === t ? void 0 : t.offsetHeight) || 0,
+                this.translateY = -(this.containerHeight - 40);
+
+                if (!this.isMobileSkip) {
+                    this.wrapIntroText();
+                } else {
+                    // No intro on mobile
+                    this.setState({
+                    readyToStart: !0,
+                    skipPreloader: !0
+                    }, () => {
+                    // Force the “clicked / finished” state immediately on mobile
+                    this.handleAllImagesClicked();
+                    });
+                }
+                }
+
           wrapIntroText() {
               let t = document.createElement("div");
               t.className = "intro",
@@ -5667,7 +5682,7 @@
               requestAnimationFrame(this.animate.bind(this))
           }
           render() {
-              let {preloadProgress: t, imagesLoaded: e, readyToStart: i} = this.state;
+              let {preloadProgress: t, imagesLoaded: e, readyToStart: i, skipPreloader: n} = this.state;
               return (0,
               n.jsxs)(n.Fragment, {
                   children: [(0,
@@ -5726,7 +5741,7 @@
                   n.jsx)(r(), {
                       id: "4cd8aa9450b705a8",
                       children: 'body.mobile{text-decoration:none;color:white;margin:0;height:100vh;background-color:#000;line-height:15px;font-size:13px;letter-spacing:.2px;overflow:hidden;font-weight:600;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:"Barlow Semi Condensed",sans-serif}#header{width:95%;margin:0 auto;margin-top:8px;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;z-index:99999999999;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;text-transform:uppercase}.container{width:100%;height:100%;background-color:black;position:fixed;top:0;left:50%;-webkit-transform:translatex(-50%);-moz-transform:translatex(-50%);-ms-transform:translatex(-50%);-o-transform:translatex(-50%);transform:translatex(-50%);overflow:hidden;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-perspective:1e3px;-moz-perspective:1e3px;perspective:1e3px}.box{width:100vw;height:100vw;position:absolute;bottom:-100vw;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}.whiteMobile{position:absolute;top:0;left:0;width:100%;height:100%;background-color:white;opacity:0;z-index:2}.circleMobile{position:absolute;width:40px;height:40px;background-color:white;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;cursor:pointer;top:8px;right:8px;z-index:999999999999}.circleMobile::before{content:"\xd7";font-size:20px;color:black;line-height:0}.gradient,.gradient2{width:100%;position:absolute;height:33%;z-index:30;pointer-events:none}.gradient{bottom:0;background:-webkit-linear-gradient(bottom,black,transparent);background:-moz-linear-gradient(bottom,black,transparent);background:-o-linear-gradient(bottom,black,transparent);background:linear-gradient(360deg,black,transparent)}.gradient2{top:0;background:-webkit-linear-gradient(bottom,transparent,black);background:-moz-linear-gradient(bottom,transparent,black);background:-o-linear-gradient(bottom,transparent,black);background:linear-gradient(360deg,transparent,black)}.blackMobile{position:absolute;top:0;width:100%;height:100%;background:black;z-index:9223372036854775807;opacity:1;pointer-events:none}.logoMobile{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;z-index:999}.menuMobile{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;z-index:999}.menuMobile a{margin-left:15px}.content-div{position:absolute;width:100%;bottom:40px;left:0;padding:10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;pointer-events:none;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-webkit-align-items:flex-start;-moz-box-align:start;-ms-flex-align:start;align-items:flex-start;z-index:999999}.content-div span{display:block;margin-bottom:15px}.content-div h3{margin-right:30px;text-transform:uppercase}.content-div p{font-size:12px}.img-container{position:relative;width:100%;height:100%}.img-container img{-o-object-position:0%;object-position:0%;-o-object-fit:none;object-fit:none;height:100%!important;width:auto!important;pointer-events:none}.no-pointer-events{pointer-events:none}.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:white;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;color:black;background:white;font-size:12px;z-index:99999;text-transform:uppercase}.audio-bars{height:12px!important}.bar{background-color:white!important}.bar.paused{height:10px!important}.i-l{margin-bottom:.-6vw!important}.intro{position:fixed;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;color:white;z-index:99999999999999;text-transform:none;text-align:center;width:90vw;-webkit-transform:translate(-50%,-100%);-moz-transform:translate(-50%,-100%);-ms-transform:translate(-50%,-100%);-o-transform:translate(-50%,-100%);transform:translate(-50%,-100%);top:50%;left:50%;margin:0 auto;font-size:12px;line-height:13px;pointer-events:none}.intro p{font-weight:500}#rigidBody{-webkit-transform:translate(-50%,1500%)!important;-moz-transform:translate(-50%,1500%)!important;-ms-transform:translate(-50%,1500%)!important;-o-transform:translate(-50%,1500%)!important;transform:translate(-50%,1500%)!important}.invert{-webkit-filter:invert(1)!important;filter:invert(1)!important}'
-                  }), !e && (0,
+                  }), !e && !n && (0,
                   n.jsx)("div", {
                       className: "jsx-4cd8aa9450b705a8 preloader",
                       children: (0,
@@ -5884,8 +5899,8 @@
                   null === (t = this.audioControllerRef.current) || void 0 === t || t.startBackgroundMusic(),
                   this.initScrollingBoxAnimator(),
                   this.initializeObserver(),
-                  document.body.removeChild(this.introBackground),
-                  document.body.removeChild(this.introDiv),
+                  this.introBackground && this.introBackground.parentNode && document.body.removeChild(this.introBackground),
+                  this.introDiv && this.introDiv.parentNode && document.body.removeChild(this.introDiv),
                   document.body.classList.remove("invert"),
                   this.physicsSimRef.current && (this.physicsSimRef.current.setPhysicsContainerStyle("filter", "invert(0)"),
                   this.physicsSimRef.current.setPhysicsContainerStyle("right", "0px"),
@@ -5900,10 +5915,12 @@
               }
               ,
               this.state = {
-                  preloadProgress: 0,
-                  imagesLoaded: !1,
-                  readyToStart: !1
-              },
+                preloadProgress: 0,
+                imagesLoaded: !1,
+                readyToStart: !1,
+                skipPreloader: !1
+                },
+
               this.containerRef = a.createRef(),
               this.physicsSimRef = a.createRef(),
               this.audioControllerRef = a.createRef(),
