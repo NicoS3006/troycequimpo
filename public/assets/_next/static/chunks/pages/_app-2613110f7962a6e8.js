@@ -4526,36 +4526,85 @@
         , o = i(6038);
       class l {
           init() {
-              this.allImagesLoaded( () => {
-                  this.initialImageSizing(),
-                  this.applyScaleToImages(),
-                  this.physicsSimulation(),
-                  this.addClickListeners()
-              }
-              ),
-              window.addEventListener("resize", () => {
-                  clearTimeout(this.resizeTimeout),
-                  cancelAnimationFrame(this.animationFrameId),
-                  this.resizeTimeout = window.setTimeout( () => {
-                      this.initialImageSizing(),
-                      this.applyScaleToImages(),
-                      this.physicsSimulation(),
-                      this.addClickListeners()
-                  }
-                  , this.config.debounceDelay)
-              }
-              ),
-              window.addEventListener("mousemove", t => {
-                  this.updateMousePosition(t.clientX, window.innerHeight - t.clientY)
-              }
-              ),
-              window.addEventListener("touchmove", t => {
-                  let e = t.touches[0];
-                  this.updateMousePosition(e.clientX, window.innerHeight - e.clientY)
-              }
-              ),
-              this.applyMessageConfig()
-          }
+  const t = window.matchMedia("(min-width: 1000px)").matches;
+
+  this.allImagesLoaded(() => {
+    this.initialImageSizing(),
+    this.applyScaleToImages();
+
+    if (!t) {
+      const e = document.querySelectorAll(".".concat(a().physicsContainer, " img"));
+      e.forEach((t, e) => {
+        const i = this.initialPositions[e];
+        i && (
+          t.style.left = "".concat(i.left, "px"),
+          t.style.width = "".concat(i.width, "px"),
+          t.style.height = "".concat(i.height, "px"),
+          t.style.bottom = "".concat(i.bottom, "px"),
+          t.style.transform = "rotate(0deg)",
+          t.style.opacity = "1",
+          t.style.pointerEvents = "auto",
+          t.classList.add(a().detached),
+          this.detachedImages.add(t)
+        )
+      }),
+      this.clickedImagesCount = e.length,
+      this.onAllImagesClicked();
+      return;
+    }
+
+    this.physicsSimulation(),
+    this.addClickListeners()
+  }),
+
+  window.addEventListener("resize", () => {
+    clearTimeout(this.resizeTimeout),
+    cancelAnimationFrame(this.animationFrameId),
+    this.resizeTimeout = window.setTimeout(() => {
+      const t = window.matchMedia("(min-width: 1000px)").matches;
+
+      this.initialImageSizing(),
+      this.applyScaleToImages();
+
+      if (!t) {
+        const t = document.querySelectorAll(".".concat(a().physicsContainer, " img"));
+        t.forEach((t, e) => {
+          const i = this.initialPositions[e];
+          i && (
+            t.style.left = "".concat(i.left, "px"),
+            t.style.width = "".concat(i.width, "px"),
+            t.style.height = "".concat(i.height, "px"),
+            t.style.bottom = "".concat(i.bottom, "px"),
+            t.style.transform = "rotate(0deg)",
+            t.style.opacity = "1",
+            t.style.pointerEvents = "auto",
+            t.classList.add(a().detached),
+            this.detachedImages.add(t)
+          )
+        }),
+        this.clickedImagesCount = t.length,
+        this.onAllImagesClicked();
+        return;
+      }
+
+      this.physicsSimulation(),
+      this.addClickListeners()
+    }, this.config.debounceDelay)
+  }),
+
+  t && window.addEventListener("mousemove", t => {
+    this.updateMousePosition(t.clientX, window.innerHeight - t.clientY)
+  }),
+
+  window.addEventListener("touchmove", e => {
+    if (!t) return;
+    let i = e.touches[0];
+    this.updateMousePosition(i.clientX, window.innerHeight - i.clientY)
+  }),
+
+  this.applyMessageConfig()
+}
+
           applyMessageConfig() {
               this.rigidBody = document.querySelector(".".concat(a().rigidBody)),
               this.introRigidBody = document.querySelector(".intro"),

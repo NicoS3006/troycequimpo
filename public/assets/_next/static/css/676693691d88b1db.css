@@ -9,11 +9,7 @@
   background-color: #000;
   transform-origin: bottom right;
 }
-@media (max-width: 999px) {
-  .PhysicsSimulation_physicsContainer__l20q0 {
-  display: none !important;
-}
-}
+
 
 .PhysicsSimulation_physicsContainer__l20q0 img {
   height: auto;
