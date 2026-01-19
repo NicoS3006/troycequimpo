@@ -5216,26 +5216,49 @@
               )
           }
           componentDidMount() {
-                var t;
-                this.isMobileSkip = window.matchMedia("(max-width: 999px)").matches;
+  var t;
 
-                document.body.classList.add("mobile"),
-                this.containerHeight = (null === (t = this.containerRef.current) || void 0 === t ? void 0 : t.offsetHeight) || 0,
-                this.translateY = -(this.containerHeight - 40);
+  // Use width only (as requested). If you want this to be immune to desktop zoom,
+  // swap this to a coarse pointer check too.
+  this.isMobileSkip = window.matchMedia("(max-width: 999px)").matches;
 
-                if (!this.isMobileSkip) {
-                    this.wrapIntroText();
-                } else {
-                    // No intro on mobile
-                    this.setState({
-                    readyToStart: !0,
-                    skipPreloader: !0
-                    }, () => {
-                    // Force the “clicked / finished” state immediately on mobile
-                    this.handleAllImagesClicked();
-                    });
-                }
-                }
+  document.body.classList.add("mobile"),
+  this.containerHeight = (null === (t = this.containerRef.current) || void 0 === t ? void 0 : t.offsetHeight) || 0,
+  this.translateY = -(this.containerHeight - 40);
+
+  // MOBILE: Force everything to "fully loaded" instantly and jump to end state
+  if (this.isMobileSkip) {
+    // Force preloader to completion immediately
+    this.imagesLoadedCount = this.imagesToLoad;
+
+    this.setState({
+      preloadProgress: 100,
+      imagesLoaded: !0,
+      readyToStart: !0,
+      skipPreloader: !0
+    }, () => {
+      // Whatever your desktop path does when it hits 100%
+      document.body.classList.add("invert");
+
+      // Skip intro entirely if it already exists for some reason
+      if (this.introBackground && this.introBackground.parentNode) {
+        document.body.removeChild(this.introBackground);
+      }
+      if (this.introDiv && this.introDiv.parentNode) {
+        document.body.removeChild(this.introDiv);
+      }
+
+      // Jump straight to finished state
+      this.handleAllImagesClicked();
+    });
+
+    return;
+  }
+
+  // DESKTOP: original behaviour
+  this.wrapIntroText();
+}
+
 
           wrapIntroText() {
               let t = document.createElement("div");
@@ -5880,19 +5903,26 @@
               }
               ,
               this.handleImageLoad = () => {
-                  this.imagesLoadedCount++;
-                  let t = Math.round(this.imagesLoadedCount / this.imagesToLoad * 100);
-                  this.setState({
-                      preloadProgress: t
-                  }, () => {
-                      100 === t && (this.setState({
-                          imagesLoaded: !0,
-                          readyToStart: !0
-                      }),
-                      document.body.classList.add("invert"))
-                  }
-                  )
-              }
+  // If we are skipping on mobile, do not let individual image loads
+  // update state or re-trigger any loading logic
+  if (this.isMobileSkip) return;
+
+  this.imagesLoadedCount++;
+  let t = Math.round(this.imagesLoadedCount / this.imagesToLoad * 100);
+
+  this.setState({
+    preloadProgress: t
+  }, () => {
+    100 === t && (
+      this.setState({
+        imagesLoaded: !0,
+        readyToStart: !0
+      }),
+      document.body.classList.add("invert")
+    )
+  })
+}
+
               ,
               this.handleAllImagesClicked = () => {
                   var t;
