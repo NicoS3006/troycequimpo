@@ -1360,6 +1360,21 @@
     </script>
   </head>
   <body>
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav">
+      <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="mobile-menu-dropdown">
+        <a href="works.html" class="mobile-menu-link">WORKS</a>
+        <a href="about.html" class="mobile-menu-link">ABOUT</a>
+        <a href="manifesto.html" class="mobile-menu-link">MANIFESTO</a>
+        <a href="contact.html" class="mobile-menu-link">CONTACT</a>
+      </div>
+    </nav>
+
     <div id="__next">
       <div>
         <div class="logo-container">
@@ -1930,6 +1945,28 @@
             aboutText.style.opacity = "0";
           });
         });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const mobileMenuDropdown = document.querySelector(".mobile-menu-dropdown");
+
+        if (mobileMenuBtn && mobileMenuDropdown) {
+          mobileMenuBtn.addEventListener("click", () => {
+            mobileMenuBtn.classList.toggle("active");
+            mobileMenuDropdown.classList.toggle("active");
+            const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+            mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!e.target.closest(".mobile-nav")) {
+              mobileMenuBtn.classList.remove("active");
+              mobileMenuDropdown.classList.remove("active");
+              mobileMenuBtn.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
       });
     </script>
   </body>

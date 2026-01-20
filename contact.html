@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Page</title>
+    <link rel="stylesheet" href="public/assets/_next/static/css/676693691d88b1db.css">
     <script src="contact.js" defer></script>
     <style>
       body {
@@ -184,33 +185,13 @@
       .s-checkbox__input {
         cursor: pointer;
       }
-      .s-checkbox__input:not(old) {
+      .s-checkbox__input {
         width: 1.2em;
         height: 1.2em;
         margin: 0;
         padding: 0;
-        opacity: 0;
-      }
-      .s-checkbox__input:not(old):checked + .s-checkbox__box:after {
-        background-image: url(public/assets/images/checkbox-checked.svg);
-        background-size: cover;
-      }
-      .s-checkbox__box {
-        width: 1.2em;
-        height: 1.2em;
-        position: absolute;
-        pointer-events: none;
-      }
-      .s-checkbox__box:after {
-        content: "";
-        background-image: url(public/assets/images/checkbox.svg);
-        background-size: cover;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
+        cursor: pointer;
+        accent-color: #000;
       }
 
       .s-spacer {
@@ -480,127 +461,6 @@
         margin: 0;
         }
 
-      /* Mobile Version Styling */
-
-      @media (max-width: 600px) {
-        body {
-          display: flex;
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          height: auto;
-          width: 100vw;
-          overflow-y: visible;
-          overflow-x: hidden;
-        }
-        .container {
-          display: flex;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          padding: 20px;
-        }
-        .left {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          height: 100%;
-          gap: 15px;
-          padding: 5px 20px 0px 0px;
-        }
-        .right {
-          width: 100%;
-          height: 100%;
-          padding: 4.3% 20px 20px 0px;
-        }
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 10px;
-          height: 100%;
-          width: 100%;
-          justify-content: center;
-          gap: 10%;
-          padding: 10% 0 0 0%;
-        }
-        .contact-text {
-          margin-left: -20px;
-        }
-        .home-container {
-          display: none !important;
-          width: 100%;
-          height: 5%;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-        }
-
-        .home-button {
-          height: 100%;
-          width: 100%;
-          border: solid 1px black;
-          border-radius: 100px;
-          padding: 10px;
-          display: flex;
-          justify-content: center;
-          transform: translateX(-20%);
-        }
-
-        .home-button:hover {
-          cursor: pointer;
-        }
-
-        .mobile-home-button {
-          display: flex !important;
-          justify-content: flex-end;
-          width: 100%;
-          height: 5vh;
-          margin-left: -12%;
-        }
-
-        .mobile-home-container {
-          height: 80%;
-          width: 15%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          text-align: center;
-          border: solid 1px black;
-          border-radius: 23px;
-        }
-
-        .pre-form-text {
-          overflow-wrap: break-word;
-          display: flex;
-          width: 90%;
-          justify-content: start;
-          align-items: start;
-          font-size: calc(18px + 4 * (100vw - 1200px) / 720);
-          font-weight: 100;
-          line-height: 1.8em;
-          margin: 3% 0% 5% 0%;
-        }
-
-        .mobile-home-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-
-        .contactpage-image {
-          width: 110vw;
-          left: -7%;
-          position: relative;
-        }
-      }
-
-      @media (min-width: 501px) and (max-width: 650px) {
-        .container {
-          gap: 5%;
-        }
-      }
-
       .home-container {
         width: 100%;
         height: 5%;
@@ -624,16 +484,136 @@
         cursor: pointer;
       }
 
-      .mobile-home-button {
-        display: none;
+      /* Mobile Version Styling */
+      @media (max-width: 768px) {
+        html, body {
+          height: auto;
+          overflow-x: hidden !important;
+          overflow-y: auto;
+          width: 100% !important;
+          max-width: 100vw !important;
+        }
+        .container {
+          flex-direction: column;
+          padding: 60px 20px 40px 20px;
+          height: auto;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box;
+        }
+        .left {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto;
+          padding: 0;
+          gap: 15px;
+        }
+        .right {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto;
+          padding: 20px 0;
+        }
+        .contact-image {
+          width: 100% !important;
+          height: auto;
+        }
+        .contactpage-image {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto;
+        }
+        .contact-text {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto;
+          padding-left: 0;
+          justify-content: center;
+          margin: 0;
+        }
+        .contact-text .letters {
+          height: 40px;
+          width: auto;
+        }
+        .contact-info {
+          width: 100% !important;
+          padding: 15px 0;
+          gap: 10px;
+        }
+        .s-contact-info {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5em;
+          font-size: 14px;
+        }
+        .home-container {
+          display: none;
+        }
+        .pre-form-text {
+          font-size: 15px;
+          width: 100%;
+          line-height: 1.5em;
+          margin: 10px 0 20px 0;
+        }
+        .s-form {
+          width: 100%;
+          height: auto;
+        }
+        .s-form__field {
+          margin-bottom: 5px;
+        }
+        .s-form__input .s-input {
+          font-size: 16px;
+          padding: 12px 0;
+        }
+        .s-form__input textarea.s-input {
+          height: auto;
+          min-height: 2.5em;
+          padding: 8px 0;
+        }
+        .s-input-top {
+          height: auto !important;
+          min-height: 2.5em !important;
+        }
+        .s-spacer--medium {
+          height: 1rem;
+        }
+        .s-checkbox {
+          padding: 10px 0;
+        }
+        .s-checkbox__label {
+          font-size: 14px;
+        }
+        .s-link-button {
+          margin-top: 10px;
+          padding: 0.5em;
+          margin-left: 0;
+        }
+        #thankYouPopup {
+          width: 80% !important;
+          height: auto !important;
+          padding: 30px 20px !important;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="mobile-home-button">
-        <a class="mobile-home-container" href="index.html"> Menu </a>
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav">
+      <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="mobile-menu-dropdown">
+        <a href="works.html" class="mobile-menu-link">WORKS</a>
+        <a href="about.html" class="mobile-menu-link">ABOUT</a>
+        <a href="manifesto.html" class="mobile-menu-link">MANIFESTO</a>
+        <a href="contact.html" class="mobile-menu-link">CONTACT</a>
       </div>
+    </nav>
+
+    <div class="container">
       <div class="left">
         <div class="contact-image">
           <img
@@ -755,38 +735,38 @@
 
             <div class="s-form__field">
               <div class="s-form__label">
-                <label class="s-label" for="contactForm_message">
+                <label class="s-label" for="contactForm_projectType">
                   <span class="s-form__label__info"></span
                 ></label>
               </div>
               <div class="s-form__input">
-                <textarea
-                  name="message"
-                  class="s-input s-input--textarea js-form-input s-input-top"
+                <input
+                  type="text"
+                  name="projectType"
+                  class="s-input js-form-input"
                   placeholder="Type of Project *"
-                  id="contactForm_message"
+                  id="contactForm_projectType"
                   required=""
-                  rows="5"
-                ></textarea>
+                />
               </div>
             </div>
             <div class="s-spacer s-spacer--medium"></div>
 
             <div class="s-form__field">
               <div class="s-form__label">
-                <label class="s-label" for="contactForm_message">
+                <label class="s-label" for="contactForm_enquiry">
                   <span class="s-form__label__info"></span
                 ></label>
               </div>
               <div class="s-form__input">
-                <textarea
-                  name="message"
-                  class="s-input s-input--textarea js-form-input"
+                <input
+                  type="text"
+                  name="enquiry"
+                  class="s-input js-form-input"
                   placeholder="Your Enquiry *"
-                  id="contactForm_message"
+                  id="contactForm_enquiry"
                   required=""
-                  rows="5"
-                ></textarea>
+                />
               </div>
             </div>
             <div class="s-spacer s-spacer--medium"></div>
@@ -1032,5 +1012,27 @@
         </script>
       </div>
     </div>
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const mobileMenuDropdown = document.querySelector(".mobile-menu-dropdown");
+
+      if (mobileMenuBtn && mobileMenuDropdown) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenuBtn.classList.toggle("active");
+          mobileMenuDropdown.classList.toggle("active");
+          const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+          mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".mobile-nav")) {
+            mobileMenuBtn.classList.remove("active");
+            mobileMenuDropdown.classList.remove("active");
+            mobileMenuBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
