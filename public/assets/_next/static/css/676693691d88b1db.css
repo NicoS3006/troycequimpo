@@ -13,6 +13,7 @@
 
 .PhysicsSimulation_physicsContainer__l20q0 img {
   height: auto;
+  filter: invert(1);
   transform-origin: center center;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
