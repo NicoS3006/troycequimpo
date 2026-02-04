@@ -454,13 +454,18 @@
             document.body.removeChild(this.detailsDiv);
             this.detailsDiv = null;
           }
-        
+
           // Remove the new-div if it exists
           const existingNewDiv = document.querySelector(".new-div");
           if (existingNewDiv) {
             document.body.removeChild(existingNewDiv);
           }
-        
+
+          // Change nav link back to "RETURN TO HOME" when project is closed
+          if (this.navLink) {
+            this.navLink.innerHTML = '<a href="/" class="jsx-d6a22ac56ece3798">RETURN TO HOME</a>';
+          }
+
           this.handleCircleClickPostAnimation();
         }
         handleCircleClickPostAnimation() {
@@ -491,6 +496,18 @@
         handleSquareClick(e, t) {
           var i;
           if (!this.clickable) return;
+
+          // Change nav link to "RETURN TO WORKS" when project is opened
+          if (this.navLink) {
+            this.navLink.innerHTML = '<span class="jsx-d6a22ac56ece3798" style="cursor: pointer;">RETURN TO WORKS</span>';
+            this.navLink.querySelector('span').onclick = () => {
+              this.circle.style.pointerEvents = "none";
+              this.circle.style.opacity = "0";
+              this.circleVisible = false;
+              this.completeAndReverse();
+            };
+          }
+
           (this.container.style.pointerEvents = "none"),
             null === (i = this.audioControllerRef.current) ||
               void 0 === i ||
@@ -1151,13 +1168,13 @@
                     ],
                   }),
                   (0, s.jsxs)("nav", {
+                    ref: (e) => (this.navLink = e),
                     className: "jsx-d6a22ac56ece3798",
                     children: [
                       (0, s.jsx)("a", {
-                        href: "index.html",
-                        rel: "noopener noreferrer",
+                        href: "/",
                         className: "jsx-d6a22ac56ece3798",
-                        children: "RETURN HOME",
+                        children: "RETURN TO HOME",
                       }),
                     ],
                   }),
