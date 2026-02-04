@@ -567,7 +567,7 @@ html {
 .project-meta {
   position: absolute;
   left: 2.5vw;
-  top: calc(1vw + 1.75vw);
+  top: calc(1vw + 3.5vw);
   display: flex;
   flex-direction: column;
   gap: 0.3vw;
@@ -617,6 +617,96 @@ img {
   transform: translate(-50vw) translate(50%, 3vh) scale(0.3);
   backface-visibility: hidden;
   transform-origin: top center;
+}
+
+/* Richmond Mall Rotunda specific styling */
+.clone[data-active-project="Richmond Mall Rotunda"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-32vw) translate(55%, 15vh) scale(0.95) !important;
+}
+
+/* A Renascant Exchange specific styling */
+.clone[data-active-project="A Renascant Exchange"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-32vw) translate(49%, 15vh) scale(0.9) !important;
+}
+
+/* Lets Build a Beautiful City 2025 by INTBAU Netherlands specific styling */
+.clone[data-active-project="Lets Build a Beautiful City 2025 by INTBAU Netherlands"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-32vw) translate(60%, 15vh) scale(0.9) !important;
+}
+
+/* Richmond Childcare specific styling */
+.clone[data-active-project="Richmond Childcare"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-32vw) translate(47%, 15vh) scale(0.9) !important;
+}
+
+/* Custody of the Architect's Heart specific styling */
+.clone[data-active-project="Custody of the Architect's Heart"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-12vw) translate(50%, 15vh) !important;
+}
+
+/* North Eveleigh Tech Hub specific styling */
+.clone[data-active-project="North Eveleigh Tech Hub"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-10vw) translate(57%, 16vh) !important;
+}
+
+/* Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation specific styling */
+.clone[data-active-project="Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-17vw) translate(50%, 18vh) scale(0.9) !important;
+}
+
+/* Tomorrow When the War Began specific styling */
+.clone[data-active-project="Tomorrow When the War Began"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-10vw) translate(50%, 18vh) scale(0.9) !important;
+}
+
+/* Traces: A Palimpsest Project specific styling */
+.clone[data-active-project="Traces: A Palimpsest Project"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-6vw) translate(50%, 18vh) !important;
+}
+
+/* Ethnography of Negotiation: Framework to investigate Rammed Earth implementation specific styling */
+.clone[data-active-project="Ethnography of Negotiation: Framework to investigate Rammed Earth implementation"] {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  height: 50vh !important;
+  max-height: 50vh !important;
+  transform: translate(-17vw) translate(50%, 18vh) scale(0.9) !important;
 }
 .circle,
 .clone {
@@ -868,6 +958,56 @@ body.dark .circle {
   left: 0 !important;
 }
 
+/* Richmond Mall Rotunda - use contain to show full image */
+.clone[data-active-project="Richmond Mall Rotunda"] .square img {
+  object-fit: contain !important;
+}
+
+/* A Renascant Exchange - use contain to show full image */
+.clone[data-active-project="A Renascant Exchange"] .square img {
+  object-fit: contain !important;
+}
+
+/* Lets Build a Beautiful City 2025 by INTBAU Netherlands - use contain to show full image */
+.clone[data-active-project="Lets Build a Beautiful City 2025 by INTBAU Netherlands"] .square img {
+  object-fit: contain !important;
+}
+
+/* Richmond Childcare - use contain to show full image */
+.clone[data-active-project="Richmond Childcare"] .square img {
+  object-fit: contain !important;
+}
+
+/* Custody of the Architect's Heart - use contain to show full image */
+.clone[data-active-project="Custody of the Architect's Heart"] .square img {
+  object-fit: contain !important;
+}
+
+/* North Eveleigh Tech Hub - use contain to show full image */
+.clone[data-active-project="North Eveleigh Tech Hub"] .square img {
+  object-fit: contain !important;
+}
+
+/* Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation - use contain to show full image */
+.clone[data-active-project="Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation"] .square img {
+  object-fit: contain !important;
+}
+
+/* Tomorrow When the War Began - use contain to show full image */
+.clone[data-active-project="Tomorrow When the War Began"] .square img {
+  object-fit: contain !important;
+}
+
+/* Traces: A Palimpsest Project - use contain to show full image */
+.clone[data-active-project="Traces: A Palimpsest Project"] .square img {
+  object-fit: contain !important;
+}
+
+/* Ethnography of Negotiation: Framework to investigate Rammed Earth implementation - use contain to show full image */
+.clone[data-active-project="Ethnography of Negotiation: Framework to investigate Rammed Earth implementation"] .square img {
+  object-fit: contain !important;
+}
+
 /* Enlarged clone images should maintain aspect ratio */
 .clone .square img {
   object-fit: contain !important;
@@ -882,12 +1022,112 @@ body.dark .circle {
   display: block !important;
 }
 
+/* Richmond Mall Rotunda - specific height */
+.clone[data-active-project="Richmond Mall Rotunda"] .square img {
+  max-height: 50vh !important;
+}
+
+/* A Renascant Exchange - specific height */
+.clone[data-active-project="A Renascant Exchange"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Lets Build a Beautiful City 2025 by INTBAU Netherlands - specific height */
+.clone[data-active-project="Lets Build a Beautiful City 2025 by INTBAU Netherlands"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Richmond Childcare - specific height */
+.clone[data-active-project="Richmond Childcare"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Custody of the Architect's Heart - specific height */
+.clone[data-active-project="Custody of the Architect's Heart"] .square img {
+  max-height: 50vh !important;
+}
+
+/* North Eveleigh Tech Hub - specific height */
+.clone[data-active-project="North Eveleigh Tech Hub"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation - specific height */
+.clone[data-active-project="Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Tomorrow When the War Began - specific height */
+.clone[data-active-project="Tomorrow When the War Began"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Traces: A Palimpsest Project - specific height */
+.clone[data-active-project="Traces: A Palimpsest Project"] .square img {
+  max-height: 50vh !important;
+}
+
+/* Ethnography of Negotiation: Framework to investigate Rammed Earth implementation - specific height */
+.clone[data-active-project="Ethnography of Negotiation: Framework to investigate Rammed Earth implementation"] .square img {
+  max-height: 50vh !important;
+}
+
 /* Clone container should match the clicked slide's dimensions */
 .clone {
   /* Width will be set dynamically via JS */
   height: 60vh !important;
   max-height: 60vh !important;
   overflow: hidden !important;
+}
+
+.clone[data-active-project="Richmond Mall Rotunda"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="A Renascant Exchange"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Lets Build a Beautiful City 2025 by INTBAU Netherlands"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Richmond Childcare"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Custody of the Architect's Heart"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="North Eveleigh Tech Hub"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Tomorrow When the War Began"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Traces: A Palimpsest Project"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Ethnography of Negotiation: Framework to investigate Rammed Earth implementation"] {
+  height: 50vh !important;
+  max-height: 50vh !important;
 }
 
 /* Ensure cloned slides inside .clone also have proper image handling */
@@ -898,6 +1138,56 @@ body.dark .circle {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+}
+
+.clone[data-active-project="Richmond Mall Rotunda"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="A Renascant Exchange"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Lets Build a Beautiful City 2025 by INTBAU Netherlands"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Richmond Childcare"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Custody of the Architect's Heart"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="North Eveleigh Tech Hub"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Tomorrow When the War Began"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Traces: A Palimpsest Project"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
+}
+
+.clone[data-active-project="Ethnography of Negotiation: Framework to investigate Rammed Earth implementation"] .square {
+  height: 50vh !important;
+  max-height: 50vh !important;
 }
 
 /* Override the Tailwind h-[100vh] class */

@@ -1762,5 +1762,136 @@
         }
       }});
     </script>
+    <script>
+      // Add data-active-project to clone div for special projects
+      document.addEventListener('DOMContentLoaded', function() {
+
+        function checkForSpecialProjects() {
+          const cloneContainer = document.querySelector('.clone');
+          if (!cloneContainer) return false;
+
+          let projectName = null;
+
+          // Get image and title info
+          const clonedSquare = cloneContainer.querySelector('.square');
+          const img = clonedSquare ? clonedSquare.querySelector('img') : null;
+          const detailsTitle = document.querySelector('.details h2');
+          const titleText = detailsTitle ? detailsTitle.textContent.toUpperCase().trim() : '';
+          const imgSrc = img && img.src ? img.src : '';
+
+          // Check for Richmond Childcare (check before Richmond Mall Rotunda to avoid confusion)
+          if (imgSrc.includes('Richmond Childcare') || imgSrc.includes('richmondchildcare')) {
+            projectName = 'Richmond Childcare';
+            console.log('Richmond Childcare detected via image src:', imgSrc);
+          } else if (titleText.includes('RICHMOND') && titleText.includes('CHILDCARE')) {
+            projectName = 'Richmond Childcare';
+            console.log('Richmond Childcare detected via title:', titleText);
+          }
+          // Check for Richmond Mall Rotunda
+          else if (imgSrc.includes('Richmond Mall Rotunda') || imgSrc.includes('IMG_6581')) {
+            projectName = 'Richmond Mall Rotunda';
+            console.log('Richmond Mall Rotunda detected via image src:', imgSrc);
+          } else if (titleText.includes('RICHMOND') && titleText.includes('ROTUNDA')) {
+            projectName = 'Richmond Mall Rotunda';
+            console.log('Richmond Mall Rotunda detected via title:', titleText);
+          }
+          // Check for A Renascant Exchange
+          else if (imgSrc.includes('A Renascant Exchange') || imgSrc.includes('market-entrance')) {
+            projectName = 'A Renascant Exchange';
+            console.log('A Renascant Exchange detected via image src:', imgSrc);
+          } else if (titleText.includes('RENASCANT') && titleText.includes('EXCHANGE')) {
+            projectName = 'A Renascant Exchange';
+            console.log('A Renascant Exchange detected via title:', titleText);
+          }
+          // Check for Lets Build a Beautiful City 2025 by INTBAU Netherlands
+          else if (imgSrc.includes('Lets Build a Beautiful City') || imgSrc.includes('INTBAU') || imgSrc.includes('DSCF2880')) {
+            projectName = 'Lets Build a Beautiful City 2025 by INTBAU Netherlands';
+            console.log('Lets Build a Beautiful City 2025 by INTBAU Netherlands detected via image src:', imgSrc);
+          } else if (titleText.includes('INTBAU') || (titleText.includes('BEAUTIFUL') && titleText.includes('CITY'))) {
+            projectName = 'Lets Build a Beautiful City 2025 by INTBAU Netherlands';
+            console.log('Lets Build a Beautiful City 2025 by INTBAU Netherlands detected via title:', titleText);
+          }
+          // Check for Custody of the Architect's Heart
+          else if (imgSrc.includes('Custody') || imgSrc.includes('custody') || imgSrc.includes('architect')) {
+            projectName = 'Custody of the Architect\'s Heart';
+            console.log('Custody of the Architect\'s Heart detected via image src:', imgSrc);
+          } else if (titleText.includes('CUSTODY') || (titleText.includes('ARCHITECT') && titleText.includes('HEART'))) {
+            projectName = 'Custody of the Architect\'s Heart';
+            console.log('Custody of the Architect\'s Heart detected via title:', titleText);
+          }
+          // Check for North Eveleigh Tech Hub
+          else if (imgSrc.includes('North Eveleigh') || imgSrc.includes('eveleigh') || imgSrc.includes('Tech Hub')) {
+            projectName = 'North Eveleigh Tech Hub';
+            console.log('North Eveleigh Tech Hub detected via image src:', imgSrc);
+          } else if (titleText.includes('EVELEIGH') || (titleText.includes('NORTH') && titleText.includes('TECH'))) {
+            projectName = 'North Eveleigh Tech Hub';
+            console.log('North Eveleigh Tech Hub detected via title:', titleText);
+          }
+          // Check for Pittwater Summer School 2025
+          else if (imgSrc.includes('Pittwater') || imgSrc.includes('pittwater') || imgSrc.includes('Glenn Murcutt')) {
+            projectName = 'Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation';
+            console.log('Pittwater Summer School 2025 detected via image src:', imgSrc);
+          } else if (titleText.includes('PITTWATER') || titleText.includes('GLENN MURCUTT') || (titleText.includes('SUMMER') && titleText.includes('SCHOOL'))) {
+            projectName = 'Pittwater Summer School 2025 by Glenn Murcutt Architecture Foundation';
+            console.log('Pittwater Summer School 2025 detected via title:', titleText);
+          }
+          // Check for Tomorrow When the War Began
+          else if (imgSrc.includes('Tomorrow') || imgSrc.includes('tomorrow') || imgSrc.includes('War Began')) {
+            projectName = 'Tomorrow When the War Began';
+            console.log('Tomorrow When the War Began detected via image src:', imgSrc);
+          } else if (titleText.includes('TOMORROW') || (titleText.includes('WAR') && titleText.includes('BEGAN'))) {
+            projectName = 'Tomorrow When the War Began';
+            console.log('Tomorrow When the War Began detected via title:', titleText);
+          }
+          // Check for Traces: A Palimpsest Project
+          else if (imgSrc.includes('Traces') || imgSrc.includes('traces') || imgSrc.includes('Palimpsest')) {
+            projectName = 'Traces: A Palimpsest Project';
+            console.log('Traces: A Palimpsest Project detected via image src:', imgSrc);
+          } else if (titleText.includes('TRACES') || titleText.includes('PALIMPSEST')) {
+            projectName = 'Traces: A Palimpsest Project';
+            console.log('Traces: A Palimpsest Project detected via title:', titleText);
+          }
+          // Check for Ethnography of Negotiation: Framework to investigate Rammed Earth implementation
+          else if (imgSrc.includes('Ethnography') || imgSrc.includes('ethnography') || imgSrc.includes('Rammed Earth')) {
+            projectName = 'Ethnography of Negotiation: Framework to investigate Rammed Earth implementation';
+            console.log('Ethnography of Negotiation detected via image src:', imgSrc);
+          } else if (titleText.includes('ETHNOGRAPHY') || titleText.includes('NEGOTIATION') || (titleText.includes('RAMMED') && titleText.includes('EARTH'))) {
+            projectName = 'Ethnography of Negotiation: Framework to investigate Rammed Earth implementation';
+            console.log('Ethnography of Negotiation detected via title:', titleText);
+          }
+
+          // Apply or remove attribute
+          if (projectName) {
+            cloneContainer.setAttribute('data-active-project', projectName);
+          } else {
+            cloneContainer.removeAttribute('data-active-project');
+          }
+
+          return projectName !== null;
+        }
+
+        // Watch for DOM changes
+        const observer = new MutationObserver(function(mutations) {
+          setTimeout(checkForSpecialProjects, 50);
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          characterData: true
+        });
+
+        // Check on any click
+        document.addEventListener('click', function() {
+          setTimeout(checkForSpecialProjects, 100);
+          setTimeout(checkForSpecialProjects, 300);
+          setTimeout(checkForSpecialProjects, 500);
+        });
+
+        // Initial check after page load
+        setTimeout(checkForSpecialProjects, 1000);
+      });
+    </script>
   </body>
 </html>
