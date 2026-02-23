@@ -260,7 +260,7 @@
   transform: translate(-80%, -50%);
   font-size: 4vw;
   font-weight: bold;
-  color: rgb(74, 73, 73);
+  color: #0080FF;
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.3s ease;
