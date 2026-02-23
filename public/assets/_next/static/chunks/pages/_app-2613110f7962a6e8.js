@@ -5263,7 +5263,7 @@
           wrapIntroText() {
               let t = document.createElement("div");
               t.className = "intro",
-              t.innerHTML = "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget ex ac tortor aliquet tincidunt id vitae arcu. Nullam euismod, lacus a tincidunt dictum, augue ligula sollicitudin libero, nec vehicula turpis justo vel erat. Ut fermentum nisi at sapien luctus, eu eleifend justo ultrices. Aliquam vehicula, lectus sit amet mollis cursus, lorem felis consequat est, ut luctus libero risus sit amet arcu. Pellentesque at risus non elit porttitor viverra.  </span></p>";
+              t.innerHTML = "<p><span>Unless the Lord build the house, they labour in vain that build it. Unless the Lord keep the city, he watcheth in vain that keepeth it. It is vain for you to rise before light, rise ye after you have sitten, you that eat the bread of sorrow. When he shall give sleep to his beloved. - Psalm 127:1-2</span></p>";
               let e = t.cloneNode(!0);
               e.className = "intro background",
               document.body.appendChild(t),
